@@ -1,0 +1,24 @@
+{
+  "name": "w3binder",
+  "version": "1.0.0",
+  "description": "AHK script for change w3 binds",
+  "main": "index.ahk",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arziburst/w3Binder.git"
+  },
+  "keywords": [
+    "autohotkey",
+    "warcraft3",
+    "reforged"
+  ],
+  "author": "arziburst@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arziburst/w3Binder/issues"
+  },
+  "homepage": "https://github.com/Arziburst/w3Binder#readme"
+}
