@@ -135,7 +135,9 @@ return
 Return
 
 ~RButton::
-    builderModeOn := false
+    If (builderModeOn) {
+        builderModeOn := false
+    }
 Return
 
 +Esc::Reload
