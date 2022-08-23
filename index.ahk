@@ -3,9 +3,11 @@
 #Include, ./src/unit.ahk
 #Include, ./src/unitData.ahk
 #Include, ./src/tools.ahk
+#Include, ./src/builderMode.ahk
 
 ;----------------------------------------Instances
 
+; ./src/unitData.ahk, ./src/unit.ahk
 MainHero := new Unit(DeathKnight)
 SecondaryHero := new Unit(Leech)
 LastHero := new Unit(DreadLord)
@@ -18,33 +20,36 @@ BuildingOne := new Unit(_BuildingOne)
 BuildingTwo := new Unit(_BuildingTwo)
 BuildingThree := new Unit(_BuildingThree)
 
+BuildersGroup := new Unit(_Builders)
+BuilderTech := new BuilderMode(BuildersGroup.bindKey)
+
 ;----------------------------------------Heroes
 
-F1:: MainHero.unitMove() return
-+F1:: MainHero.useMainSpell() return
-^F1:: MainHero.useSecondarySpell() return
-!F1:: MainHero.useItem() return
+F1:: MainHero.unitMove() return ; Q
++F1:: MainHero.useMainSpell() return ; Shift + Q
+^F1:: MainHero.useSecondarySpell() return ; Ctrl + Q
+!F1:: MainHero.useItem() return ; Alt + Q
 F14:: MainHero.bindOneOrMany() return
 
-F2:: SecondaryHero.unitMove() return
-+F2:: SecondaryHero.useMainSpell() return
-^F2:: SecondaryHero.useSecondarySpell() return
-!F2:: SecondaryHero.useItem() return
+F2:: SecondaryHero.unitMove() return ; W
++F2:: SecondaryHero.useMainSpell() return ; Shift + W
+^F2:: SecondaryHero.useSecondarySpell() return ; Ctrl + W
+!F2:: SecondaryHero.useItem() return ; Alt + W
 F15:: SecondaryHero.bindOneOrMany() return
 
-F3:: LastHero.unitMove() return
-+F3:: LastHero.useMainSpell() return
-^F3:: LastHero.useSecondarySpell() return
-!F3:: LastHero.useItem() return
+F3:: LastHero.unitMove() return ; E
++F3:: LastHero.useMainSpell() return ; Shift + E
+^F3:: LastHero.useSecondarySpell() return ; Ctrl + E
+!F3:: LastHero.useItem() return ; Alt + E
 F16:: LastHero.bindOneOrMany() return
 
-F5::
+F5:: ; R
     MainHero.unitMove()
     SecondaryHero.unitMove()
     LastHero.unitMove()
 return
 
-+F5::
++F5:: ; Shift + R
     MainHero.useMainSpell()
     Sleep, 50
     SecondaryHero.useMainSpell()
@@ -52,7 +57,7 @@ return
     LastHero.useMainSpell()
 return
 
-!F5::
+!F5:: ; Alt + R
     MainHero.useItem()
     Sleep, 50
     SecondaryHero.useItem()
@@ -60,7 +65,7 @@ return
     LastHero.useItem()
 return
 
-F10::
+F10:: ; Z
     MainHero.heroLvlUp()
     SecondaryHero.heroLvlUp()
     LastHero.heroLvlUp()
@@ -68,68 +73,70 @@ return
 
 ;----------------------------------------Armys
 
-F6:: ArmyOne.unitMove() return
-+F6:: ArmyOne.unitMove("attack") return
-F17:: ArmyOne.bindOneOrMany() return
-+F17:: ArmyOne.bindOneToMany() return
-^F17:: ArmyOne.bindManyToMany() return
+F6:: ArmyOne.unitMove() return ; A
++F6:: ArmyOne.unitMove("attack") return ; Shift + A
+F17:: ArmyOne.bindManyToMany() return
 
-F7:: ArmyTwo.unitMove() return
-+F7:: ArmyTwo.unitMove("attack") return
-F18:: ArmyTwo.bindOneOrMany() return
-+F18:: ArmyTwo.bindOneToMany() return
-^F18:: ArmyTwo.bindManyToMany() return
+F7:: ArmyTwo.unitMove() return ; S
++F7:: ArmyTwo.unitMove("attack") return ; Shift + S
+F18:: ArmyTwo.bindManyToMany() return
 
-F8:: ArmyThree.unitMove() return
-+F8:: ArmyThree.unitMove("attack") return
-F19:: ArmyThree.bindOneOrMany() return
-+F19:: ArmyThree.bindOneToMany() return
-^F19:: ArmyThree.bindManyToMany() return
+F8:: ArmyThree.unitMove() return ; D
++F8:: ArmyThree.unitMove("attack") return ; Shift + D
+F19:: ArmyThree.bindManyToMany() return
 
-F9::
+F9:: ; F
     ArmyOne.unitMove()
     ArmyTwo.unitMove()
     ArmyThree.unitMove()
 return
 
-+F9::
++F9:: ; Shift + F
     ArmyOne.unitMove("attack")
     ArmyTwo.unitMove("attack")
     ArmyThree.unitMove("attack")
 return
 
+;----------------------------------------Builders
+; ./src/builderMode.ahk
+F11:: BuildersGroup.unitMove() return ; X
+F21:: BuildersGroup.bindOneOrMany() return
+
++F11:: BuilderTech.startBuilding() return ; Shift + X
+WheelUp:: BuilderTech.scrollBuildings(1) return
+WheelDown:: BuilderTech.scrollBuildings(-1) return
+
 ;----------------------------------------Buildings
 
-F12::
-    toggleBuildingsByBind() ; ./src/tools.ahk
-return
+; ./src/tools.ahk
+F12:: toggleBuildingsByBind() return ; C
 
-F20::
+F23::
     BuildingOne.bindOneOrMany()
-    buildingBindChecker(BuildingOne.bindKey) ; ./src/tools.ahk
+    buildingBindChecker(BuildingOne.bindKey)
 return
 
-F21::
+F24::
     BuildingTwo.bindOneOrMany()
-    buildingBindChecker(BuildingTwo.bindKey) ; ./src/tools.ahk
+    buildingBindChecker(BuildingTwo.bindKey)
 return
 
-F22::
++F24::
     BuildingThree.bindOneOrMany()
-    buildingBindChecker(BuildingThree.bindKey) ; ./src/tools.ahk
+    buildingBindChecker(BuildingThree.bindKey)
 return
-; ----------------------------------------------
 
-; F11::
-; return
+; ;----------------------------------------Globals
 
+~LButton::
+    If (builderModeOn) {
+        BuilderTech.pickBuilding()
+    }
+Return
 
-; F13::
-; return
-
-; !Esc::
-; return
-
+~RButton::
+    builderModeOn := false
+Return
 
 +Esc::Reload
 ^Esc::ExitApp

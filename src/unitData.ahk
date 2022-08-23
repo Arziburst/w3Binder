@@ -42,3 +42,7 @@ class _BuildingTwo {
 class _BuildingThree {
     static bindKey := 9
 }
+
+class _Builders {
+    static bindKey := 0
+}
