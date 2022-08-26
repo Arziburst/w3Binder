@@ -31,18 +31,11 @@ class _ArmyThree {
     static bindKey := 6
 }
 
-class _BuildingOne {
-    static bindKey := 7
-}
-
-class _BuildingTwo {
-    static bindKey := 8
-}
-
-class _BuildingThree {
-    static bindKey := 9
+class _Buildings {
+    static buildingsBinds := [ 7, 8, 9 ]
 }
 
 class _Builders {
     static bindKey := 0
+    static buildings := ["z", "g", "v", "r", "c", "h", "n", "a"] ; "t", "s", "b"
 }

@@ -7,7 +7,6 @@ class Unit {
     }
 
     ;----------------------------------------Unit
-
     unitSelect() {
         Send, % this.bindKey
     }
@@ -15,13 +14,6 @@ class Unit {
     bindOneOrMany() {
         binder := % this.bindKey
         Send, ^{Click, Left}
-        Send, ^%binder%
-    }
-
-    bindOneToMany() {
-        binder := % this.bindKey
-        this.unitSelect()
-        Send, +{Click, Left}
         Send, ^%binder%
     }
 
@@ -84,6 +76,4 @@ class Unit {
 
         Send, {Esc}
     }
-
-    ;----------------------------------------Buildings
 }
