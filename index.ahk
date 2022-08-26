@@ -28,6 +28,7 @@ BuilderEntity := new BuilderMode(_Builders)
 BuildingsEntity := new Buildings(_Buildings)
 
 ;----------------------------------------Heroes
+
 $q:: MainHero.unitMove() return
 $+q:: MainHero.useMainSpell() return
 $^q:: MainHero.useSecondarySpell() return
