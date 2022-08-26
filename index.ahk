@@ -32,25 +32,19 @@ $q:: MainHero.unitMove() return
 $+q:: MainHero.useMainSpell() return
 $^q:: MainHero.useSecondarySpell() return
 $!q:: MainHero.useItem() return
-
 $1:: MainHero.bindOneOrMany() return
-F14:: MainHero.bindOneOrMany() return
 
 $w:: SecondaryHero.unitMove() return
 $+w:: SecondaryHero.useMainSpell() return
 $^w:: SecondaryHero.useSecondarySpell() return
 $!w:: SecondaryHero.useItem() return
-
 $2:: SecondaryHero.bindOneOrMany() return
-F15:: SecondaryHero.bindOneOrMany() return
 
 $e:: LastHero.unitMove() return
 $+e:: LastHero.useMainSpell() return
 $^e:: LastHero.useSecondarySpell() return
 $!e:: LastHero.useItem() return
-
 $3:: LastHero.bindOneOrMany() return
-F16:: LastHero.bindOneOrMany() return
 
 $r::
     MainHero.unitMove()
