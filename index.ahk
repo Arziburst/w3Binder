@@ -29,31 +29,37 @@ BuildingsEntity := new Buildings(_Buildings)
 
 ;----------------------------------------Heroes
 
-$q:: MainHero.unitMove() return
-$+q:: MainHero.useMainSpell() return
-$^q:: MainHero.useSecondarySpell() return
-$!q:: MainHero.useItem() return
-$1:: MainHero.bindOneOrMany() return
+$q:: MainHero.unitMove() return ; Q
+$+q:: MainHero.useMainSpell() return ; SHIFT + Q
+$^q:: MainHero.useSecondarySpell() return ; CTRL + Q
+$^!q:: MainHero.useThirdSpell() return ; CTRL + ALT + Q
+$^+q:: MainHero.useUltimate() return ; CTRL + SHIFT + Q
+$!q:: MainHero.bindOneOrMany() return ; ALT + Q
+$+!q:: MainHero.bindManyToMany() return ; SHIFT + ALT + Q
 
-$w:: SecondaryHero.unitMove() return
-$+w:: SecondaryHero.useMainSpell() return
-$^w:: SecondaryHero.useSecondarySpell() return
-$!w:: SecondaryHero.useItem() return
-$2:: SecondaryHero.bindOneOrMany() return
+$w:: SecondaryHero.unitMove() return ; W
+$+w:: SecondaryHero.useMainSpell() return ; SHIFT + W
+$^w:: SecondaryHero.useSecondarySpell() return ; CTRL + W
+$^!w:: SecondaryHero.useThirdSpell() return ; CTRL + ALT + W
+$^+w:: SecondaryHero.useUltimate() return ; CTRL + SHIFT + W
+$!w:: SecondaryHero.bindOneOrMany() return ; ALT + W
+$+!w:: SecondaryHero.bindManyToMany() return ; SHIFT + ALT + W
 
-$e:: LastHero.unitMove() return
-$+e:: LastHero.useMainSpell() return
-$^e:: LastHero.useSecondarySpell() return
-$!e:: LastHero.useItem() return
-$3:: LastHero.bindOneOrMany() return
+$e:: LastHero.unitMove() return ; E
+$+e:: LastHero.useMainSpell() return ; SHIFT + E
+$^e:: LastHero.useSecondarySpell() return ; CTRL + E
+$^!e:: LastHero.useThirdSpell() return ; CTRL + ALT + E
+$^+e:: LastHero.useUltimate() return ; CTRL + SHIFT + E
+$!e:: LastHero.bindOneOrMany() return ; ALT + E
+$+!e:: LastHero.bindManyToMany() return ; SHIFT + ALT + E
 
-$r::
+$r:: ; R
     MainHero.unitMove()
     SecondaryHero.unitMove()
     LastHero.unitMove()
 return
 
-$+r::
+$+r:: ; SHIFT + R
     MainHero.useMainSpell()
     Sleep, 50
     SecondaryHero.useMainSpell()
@@ -61,15 +67,7 @@ $+r::
     LastHero.useMainSpell()
 return
 
-$!r::
-    MainHero.useItem()
-    Sleep, 50
-    SecondaryHero.useItem()
-    Sleep, 50
-    LastHero.useItem()
-return
-
-$z::
+$^r:: ; CTRL + R
     MainHero.heroLvlUp()
     SecondaryHero.heroLvlUp()
     LastHero.heroLvlUp()
@@ -77,28 +75,28 @@ return
 
 ;----------------------------------------Armys
 
-$a:: ArmyOne.unitMove() return
-$+a:: ArmyOne.unitMove("attack") return
-$4:: ArmyOne.bindOneOrMany() return
-$+4:: ArmyOne.bindManyToMany() return
+$a:: ArmyOne.unitMove() return ; A
+$+a:: ArmyOne.unitMove("attack") return ; SHIFT + A
+$!a:: ArmyOne.bindOneOrMany() return ; ALT + A
+$+!a:: ArmyOne.bindManyToMany() return ; SHIFT + ALT + A
 
-$s:: ArmyTwo.unitMove() return
-$+s:: ArmyTwo.unitMove("attack") return
-$5:: ArmyTwo.bindOneOrMany() return
-$+5:: ArmyTwo.bindManyToMany() return
+$s:: ArmyTwo.unitMove() return ; S
+$+s:: ArmyTwo.unitMove("attack") return ; SHIFT + S
+$!s:: ArmyTwo.bindOneOrMany() return ; ALT + S
+$+!s:: ArmyTwo.bindManyToMany() return ; SHIFT + ALT + S
 
 $d:: ArmyThree.unitMove() return ; D
-$+d:: ArmyThree.unitMove("attack") return
-$6:: ArmyThree.bindOneOrMany() return
-$+6:: ArmyThree.bindManyToMany() return
+$+d:: ArmyThree.unitMove("attack") return ; SHIFT + D
+$!d:: ArmyThree.bindOneOrMany() return ; ALT + D
+$+!d:: ArmyThree.bindManyToMany() return ; SHIFT + ALT + D
 
-$f::
+$f:: ; F
     ArmyOne.unitMove()
     ArmyTwo.unitMove()
     ArmyThree.unitMove()
 return
 
-$+f::
+$+f:: ; SHIFT + F
     ArmyOne.unitMove("attack")
     ArmyTwo.unitMove("attack")
     ArmyThree.unitMove("attack")
@@ -106,31 +104,31 @@ return
 
 ;----------------------------------------Builders
 
-$x:: BuildersGroup.unitMove() return
-$7:: BuildersGroup.bindOneOrMany() return
-$+7:: BuildersGroup.bindManyToMany() return
+$x:: BuildersGroup.unitMove() return ; X
+$!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
+$+!x:: BuildersGroup.bindManyToMany() return ; SHIFT + ALT + X
 
-$+x:: BuilderEntity.startBuilding() return
-WheelUp:: BuilderEntity.scrollBuildings(1) return
-WheelDown:: BuilderEntity.scrollBuildings(-1) return
+$+x:: BuilderEntity.startBuilding() return ; SHIFT + X
+WheelUp:: BuilderEntity.scrollBuildings(1) return ; MouseWhellUP
+WheelDown:: BuilderEntity.scrollBuildings(-1) return ; MouseWhellDown
 
 ;----------------------------------------Buildings
 
-$c:: BuildingsEntity.toggleBuildings() return
-$8:: BuildingsEntity.bindOneOrMany() return
+$c:: BuildingsEntity.toggleBuildings() return ; C
+$!c:: BuildingsEntity.bindOneOrMany() return ; ALT + C
 
 ;----------------------------------------Globals
 
-~LButton::
+~LButton:: ; LEFT CLICK
     If (BuilderEntity.builderModeState()) {
         Send, +{Click}
         BuilderEntity.continueBuilding()
     }
 Return
 
-~RButton::
+~RButton:: ; RIGHT CLICK
     BuilderEntity.endBuilding()
 Return
 
-+Esc::Reload
-^Esc::ExitApp
++Esc::Reload ; SHIFT + ESC
+^Esc::ExitApp ; CTRL + ESC

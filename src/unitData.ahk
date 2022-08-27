@@ -1,22 +1,25 @@
 class DeathKnight {
     static bindKey := 1
-    static spellsUpgradePriority := ["d", "c", "u", "e"]
-    static mainSpell := "c"
-    static secondarySpell := "d"
+    static MS := "c"
+    static SS := "u"
+    static TS := "e"
+    static ULT := "d"
 }
 
 class Leech {
     static bindKey := 2
-    static spellsUpgradePriority := ["d", "n", "f", "r"]
-    static mainSpell := "n"
-    static secondarySpell := "f"
+    static MS := "n"
+    static SS := "f"
+    static TS := "r"
+    static ULT := "d"
 }
 
 class DreadLord {
     static bindKey := 3
-    static spellsUpgradePriority := ["n", "c", "v", "e"]
-    static mainSpell := "c"
-    static secondarySpell := "n"
+    static MS := "c"
+    static SS := "n"
+    static TS := "e"
+    static ULT := "d"
 }
 
 class _ArmyOne {

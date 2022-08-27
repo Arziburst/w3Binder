@@ -1,12 +1,19 @@
 class Unit {
     __New(options) {
         this.bindKey := options.bindKey
-        this.mainSpell := options.mainSpell
-        this.secondarySpell := options.secondarySpell
-        this.spellsUpgradePriority := options.spellsUpgradePriority
+        this.MS := options.MS
+        this.SS := options.SS
+        this.TS := options.TS
+        this.ULT := options.ULT
+        this.upgradePriority := []
+        this.upgradePriority.Push(this.ULT)
+        this.upgradePriority.Push(this.MS)
+        this.upgradePriority.Push(this.SS)
+        this.upgradePriority.Push(this.TS)
     }
 
     ;----------------------------------------Unit
+
     unitSelect() {
         Send, % this.bindKey
     }
@@ -36,10 +43,6 @@ class Unit {
     }
 
     useSpell(spellButton) {
-        If (spellButton = "") {
-            return
-        }
-
         this.unitSelect()
         Sleep, 50
         Send, %spellButton%
@@ -47,11 +50,27 @@ class Unit {
     }
 
     useMainSpell() {
-        this.useSpell(this.mainSpell)
+        If (this.MS) {
+            this.useSpell(this.MS)
+        }
     }
 
     useSecondarySpell() {
-        this.useSpell(this.secondarySpell)
+        If (this.SS) {
+            this.useSpell(this.SS)
+        }
+    }
+
+    useThirdSpell() {
+        If (this.TS) {
+            this.useSpell(this.TS)
+        }
+    }
+
+    useUltimate() {
+        If (this.ULT) {
+            this.useSpell(this.ULT)
+        }
     }
 
     ;----------------------------------------Hero
@@ -62,14 +81,10 @@ class Unit {
     }
 
     heroLvlUp() {
-        If (this.spellsUpgradePriority = "") {
-            return
-        }
-
         this.unitSelect()
         Sleep, 50
 
-        For K, SpellButton in this.spellsUpgradePriority {
+        For K, SpellButton in this.upgradePriority {
             Send, o
             Send, %SpellButton%
         }
