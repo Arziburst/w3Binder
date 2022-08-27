@@ -17,9 +17,9 @@ class Leech {
 class DreadLord {
     static bindKey := 3
     static MS := "c"
-    static SS := "n"
+    static SS := "v"
     static TS := "e"
-    static ULT := "d"
+    static ULT := "n"
 }
 
 class _ArmyOne {
