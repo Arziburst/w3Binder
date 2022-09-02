@@ -29,7 +29,13 @@ BuildingsEntity := new Buildings(_Buildings)
 
 ;----------------------------------------Heroes
 
-$q:: MainHero.unitMove() return ; Q
+$q:: ; Q
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("q")
+    } Else {
+        MainHero.unitMove()
+    }
+return
 $+q:: MainHero.useMainSpell() return ; SHIFT + Q
 $^q:: MainHero.useSecondarySpell() return ; CTRL + Q
 $^!q:: MainHero.useThirdSpell() return ; CTRL + ALT + Q
@@ -104,11 +110,11 @@ return
 
 ;----------------------------------------Builders
 
-$x:: BuildersGroup.unitMove() return ; Xbb
+$x:: BuildersGroup.unitMove() return ; X
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
 $+!x:: BuildersGroup.bindManyToMany() return ; SHIFT + ALT + X
 
-$z:: BuilderEntity.startBuilding() return ; SHIFT + X
+$z:: BuilderEntity.startBuilding() return ; Z
 ; WheelUp:: BuilderEntity.scrollBuildings(1) return ; MouseWhellUP
 ; WheelDown:: BuilderEntity.scrollBuildings(-1) return ; MouseWhellDown
 
@@ -119,12 +125,12 @@ $!c:: BuildingsEntity.bindOneOrMany() return ; ALT + C
 
 ;----------------------------------------Globals
 
-~LButton:: ; LEFT CLICK
-    If (BuilderEntity.builderModeState()) {
-        Send, +{Click}
-        BuilderEntity.continueBuilding()
-    }
-Return
+; ~LButton:: ; LEFT CLICK
+;     If (BuilderEntity.builderModeState()) {
+;         Send, +{Click}
+;         BuilderEntity.continueBuilding()
+;     }
+; Return
 
 ~RButton:: ; RIGHT CLICK
     BuilderEntity.endBuilding()
