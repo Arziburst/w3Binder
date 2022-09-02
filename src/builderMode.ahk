@@ -1,5 +1,4 @@
 class BuilderMode {
-    actualBuilding := 1
     builderMode := false
 
     __New(options) {
@@ -16,9 +15,8 @@ class BuilderMode {
     }
 
     continueBuilding() {
-        Send, {Esc}
+        ; Send, {Esc}
         Send, b
-        Send % this.buildings[this.actualBuilding]
     }
 
     startBuilding() {
@@ -31,22 +29,22 @@ class BuilderMode {
         this.builderMode := false
     }
 
-    scrollBuildings(step) {
-        If (this.builderMode = false) {
-            return
-        }
+    ; scrollBuildings(step) {
+    ;     If (this.builderMode = false) {
+    ;         return
+    ;     }
 
-        buildingsArrayLength := this.buildings.Length()
-        this.actualBuilding := this.actualBuilding + step
+    ;     buildingsArrayLength := this.buildings.Length()
+    ;     this.actualBuilding := this.actualBuilding + step
 
-        If (this.actualBuilding >= buildingsArrayLength) {
-            this.actualBuilding := 1
-        }
+    ;     If (this.actualBuilding >= buildingsArrayLength) {
+    ;         this.actualBuilding := 1
+    ;     }
 
-        If (this.actualBuilding <= 0) {
-            this.actualBuilding := buildingsArrayLength
-        }
+    ;     If (this.actualBuilding <= 0) {
+    ;         this.actualBuilding := buildingsArrayLength
+    ;     }
 
-        this.continueBuilding()
-    }
+    ;     this.continueBuilding()
+    ; }
 }

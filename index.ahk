@@ -104,13 +104,13 @@ return
 
 ;----------------------------------------Builders
 
-$x:: BuildersGroup.unitMove() return ; X
+$x:: BuildersGroup.unitMove() return ; Xbb
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
 $+!x:: BuildersGroup.bindManyToMany() return ; SHIFT + ALT + X
 
-$+x:: BuilderEntity.startBuilding() return ; SHIFT + X
-WheelUp:: BuilderEntity.scrollBuildings(1) return ; MouseWhellUP
-WheelDown:: BuilderEntity.scrollBuildings(-1) return ; MouseWhellDown
+$z:: BuilderEntity.startBuilding() return ; SHIFT + X
+; WheelUp:: BuilderEntity.scrollBuildings(1) return ; MouseWhellUP
+; WheelDown:: BuilderEntity.scrollBuildings(-1) return ; MouseWhellDown
 
 ;----------------------------------------Buildings
 
