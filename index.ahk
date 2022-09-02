@@ -43,7 +43,13 @@ $^+q:: MainHero.useUltimate() return ; CTRL + SHIFT + Q
 $!q:: MainHero.bindOneOrMany() return ; ALT + Q
 $+!q:: MainHero.bindManyToMany() return ; SHIFT + ALT + Q
 
-$w:: SecondaryHero.unitMove() return ; W
+$w::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("w")
+    } Else {
+        SecondaryHero.unitMove()
+    }
+return ; W
 $+w:: SecondaryHero.useMainSpell() return ; SHIFT + W
 $^w:: SecondaryHero.useSecondarySpell() return ; CTRL + W
 $^!w:: SecondaryHero.useThirdSpell() return ; CTRL + ALT + W
@@ -51,7 +57,13 @@ $^+w:: SecondaryHero.useUltimate() return ; CTRL + SHIFT + W
 $!w:: SecondaryHero.bindOneOrMany() return ; ALT + W
 $+!w:: SecondaryHero.bindManyToMany() return ; SHIFT + ALT + W
 
-$e:: LastHero.unitMove() return ; E
+$e::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("e")
+    } Else {
+        LastHero.unitMove()
+    }
+return ; E
 $+e:: LastHero.useMainSpell() return ; SHIFT + E
 $^e:: LastHero.useSecondarySpell() return ; CTRL + E
 $^!e:: LastHero.useThirdSpell() return ; CTRL + ALT + E
@@ -60,9 +72,13 @@ $!e:: LastHero.bindOneOrMany() return ; ALT + E
 $+!e:: LastHero.bindManyToMany() return ; SHIFT + ALT + E
 
 $r:: ; R
-    MainHero.unitMove()
-    SecondaryHero.unitMove()
-    LastHero.unitMove()
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("r")
+    } Else {
+        MainHero.unitMove()
+        SecondaryHero.unitMove()
+        LastHero.unitMove()
+    }
 return
 
 $+r:: ; SHIFT + R
@@ -81,25 +97,47 @@ return
 
 ;----------------------------------------Armys
 
-$a:: ArmyOne.unitMove() return ; A
+$a:: 
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("a")
+    } Else {
+        ArmyOne.unitMove()
+    }
+return ; A
 $+a:: ArmyOne.unitMove("attack") return ; SHIFT + A
 $!a:: ArmyOne.bindOneOrMany() return ; ALT + A
 $+!a:: ArmyOne.bindManyToMany() return ; SHIFT + ALT + A
 
-$s:: ArmyTwo.unitMove() return ; S
+$s::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("s")
+    } Else {
+        ArmyTwo.unitMove()
+    }
+return ; S
 $+s:: ArmyTwo.unitMove("attack") return ; SHIFT + S
 $!s:: ArmyTwo.bindOneOrMany() return ; ALT + S
 $+!s:: ArmyTwo.bindManyToMany() return ; SHIFT + ALT + S
 
-$d:: ArmyThree.unitMove() return ; D
+$d::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("d")
+    } Else {
+        ArmyThree.unitMove()
+    }
+return ; D
 $+d:: ArmyThree.unitMove("attack") return ; SHIFT + D
 $!d:: ArmyThree.bindOneOrMany() return ; ALT + D
 $+!d:: ArmyThree.bindManyToMany() return ; SHIFT + ALT + D
 
 $f:: ; F
-    ArmyOne.unitMove()
-    ArmyTwo.unitMove()
-    ArmyThree.unitMove()
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("f")
+    } Else {
+        ArmyOne.unitMove()
+        ArmyTwo.unitMove()
+        ArmyThree.unitMove()
+    }
 return
 
 $+f:: ; SHIFT + F
@@ -109,28 +147,44 @@ $+f:: ; SHIFT + F
 return
 
 ;----------------------------------------Builders
+$z::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("z")
+    } Else {
+        BuilderEntity.startBuilding()
+    }
+return ; Z
 
-$x:: BuildersGroup.unitMove() return ; X
+$x::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("x")
+    } Else {
+        BuildersGroup.unitMove()
+    }
+return ; X
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
 $+!x:: BuildersGroup.bindManyToMany() return ; SHIFT + ALT + X
 
-$z:: BuilderEntity.startBuilding() return ; Z
 ; WheelUp:: BuilderEntity.scrollBuildings(1) return ; MouseWhellUP
 ; WheelDown:: BuilderEntity.scrollBuildings(-1) return ; MouseWhellDown
 
 ;----------------------------------------Buildings
 
-$c:: BuildingsEntity.toggleBuildings() return ; C
+$c::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("c")
+    } Else {
+        BuildingsEntity.toggleBuildings()
+    }
+return ; C
 $!c:: BuildingsEntity.bindOneOrMany() return ; ALT + C
 
+$v::
+    If (BuilderEntity.builderModeState()) {
+        BuilderEntity.buildBuilding("v")
+    }
+return ; C
 ;----------------------------------------Globals
-
-; ~LButton:: ; LEFT CLICK
-;     If (BuilderEntity.builderModeState()) {
-;         Send, +{Click}
-;         BuilderEntity.continueBuilding()
-;     }
-; Return
 
 ~RButton:: ; RIGHT CLICK
     BuilderEntity.endBuilding()

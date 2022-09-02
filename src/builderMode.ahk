@@ -4,7 +4,7 @@ class BuilderMode {
     __New(options) {
         this.bindKey := options.bindKey
         this.buildings := options.buildings
-        this.keyboard := ["q","w","e","r","a","s","d","f","z","x","c","v"]
+        this.keyboard := [ "q", "w", "e", "r", "a", "s", "d","f","z","x","c","v"]
     }
 
     builderModeState() {
@@ -30,6 +30,7 @@ class BuilderMode {
         }
 
         Send, % this.buildings[buildingIndex]
+        this.builderMode := false
     }
 
     startBuilding() {
