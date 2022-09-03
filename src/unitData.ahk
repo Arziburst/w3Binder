@@ -38,8 +38,8 @@ class _Buildings {
     static buildingsBinds := [ 7, 8, 9 ]
 }
 
-class _Builders { 
+class _Builders {
     static bindKey := 0
-    static buildings := [ "h", "b", "m", "w", "o", "a", "s", "e", "t", "v" ] ; Horde
-;   static buildings := ["z", "g", "v", "r", "c", "h", "n", "a"] ; "t", "s", "b" ; Undead
+    ; static buildings := [ "h", "b", "m", "w", "o", "a", "s", "e", "t", "v" ] ; Horde
+    static buildings := [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ] ; Undead
 }

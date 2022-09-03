@@ -155,6 +155,14 @@ $z::
     }
 return ; Z
 
+steps := 1
+
+; $tab::
+;     If (BuilderEntity.builderModeState()) {
+;         BuilderEntity.selectNextBuild()
+;     }
+; return ; TAB
+
 $x::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.buildBuilding("x")
@@ -162,6 +170,7 @@ $x::
         BuildersGroup.unitMove()
     }
 return ; X
+
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
 $+!x:: BuildersGroup.bindManyToMany() return ; SHIFT + ALT + X
 

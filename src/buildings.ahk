@@ -11,8 +11,6 @@ class Buildings {
                 return i
             }
         }
-
-        return 1
     }
 
     nextStep() {
@@ -24,22 +22,19 @@ class Buildings {
         }
 
         this.selectedKeyBind := this.buildingsBinds[nextKeyIndex]
-
-        return this.selectedKeyBind
     }
 
     bindOneOrMany() {
-        selectedKB := ""
-
         If (this.selectedKeyBind = false) {
             this.selectedKeyBind := this.buildingsBinds[1]
-            selectedKB := this.selectedKeyBind
         } else {
-            selectedKB := this.nextStep()
+            this.nextStep()
         }
 
+        selectedKB := this.selectedKeyBind
+
         Send, ^{Click}
-        Send ^%selectedKB%
+        Send, ^%selectedKB%
     }
 
     toggleBuildings() {
@@ -47,8 +42,8 @@ class Buildings {
             return
         }
 
-        selectedKB := this.nextStep()
+        this.nextStep()
 
-        Send, %selectedKB%
+        Send, % this.selectedKeyBind
     }
 }
