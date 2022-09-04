@@ -5,7 +5,7 @@ class Buildings {
         this.buildingsBinds := options.buildingsBinds
     }
 
-    ArrayIndexOf(arr, item) {
+    _ArrayIndexOf(arr, item) {
         for i, val in arr {
             if (val = item) {
                 return i
@@ -13,8 +13,8 @@ class Buildings {
         }
     }
 
-    nextStep() {
-        indexOfSelectedKeyBind := this.ArrayIndexOf(this.buildingsBinds, this.selectedKeyBind)
+    _nextStep() {
+        indexOfSelectedKeyBind := this._ArrayIndexOf(this.buildingsBinds, this.selectedKeyBind)
         nextKeyIndex := indexOfSelectedKeyBind + 1
 
         if (nextKeyIndex > this.buildingsBinds.Length()) {
@@ -28,7 +28,7 @@ class Buildings {
         If (this.selectedKeyBind = false) {
             this.selectedKeyBind := this.buildingsBinds[1]
         } else {
-            this.nextStep()
+            this._nextStep()
         }
 
         selectedKB := this.selectedKeyBind
@@ -42,7 +42,7 @@ class Buildings {
             return
         }
 
-        this.nextStep()
+        this._nextStep()
 
         Send, % this.selectedKeyBind
     }

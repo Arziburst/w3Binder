@@ -31,45 +31,53 @@ class Unit {
         Send, ^%binder%
     }
 
-    unitMove(isAttack := "") {
+    unitMove() {
         this.unitSelect()
-
-        If (isAttack) {
-            Send, a
-            Send, {Click}
-        } Else {
-            Send, {Click, Right}
-        }
+        Send, {Click, Right}
+        Sleep, 50
     }
 
-    useSpell(spellButton) {
+    unitAttack() {
         this.unitSelect()
+        Send, a
+        Send, {Click}
         Sleep, 50
+    }
+
+    unitHold() {
+        this.unitSelect()
+        Send, h
+        Sleep, 50
+    }
+
+    _useSpell(spellButton) {
+        this.unitSelect()
         Send, %spellButton%
         Send, {Click}
+        Sleep, 50
     }
 
     useMainSpell() {
         If (this.MS) {
-            this.useSpell(this.MS)
+            this._useSpell(this.MS)
         }
     }
 
     useSecondarySpell() {
         If (this.SS) {
-            this.useSpell(this.SS)
+            this._useSpell(this.SS)
         }
     }
 
     useThirdSpell() {
         If (this.TS) {
-            this.useSpell(this.TS)
+            this._useSpell(this.TS)
         }
     }
 
     useUltimate() {
         If (this.ULT) {
-            this.useSpell(this.ULT)
+            this._useSpell(this.ULT)
         }
     }
 
@@ -82,7 +90,6 @@ class Unit {
 
     heroLvlUp() {
         this.unitSelect()
-        Sleep, 50
 
         For K, SpellButton in this.upgradePriority {
             Send, o
@@ -90,5 +97,6 @@ class Unit {
         }
 
         Send, {Esc}
+        Sleep, 50
     }
 }
