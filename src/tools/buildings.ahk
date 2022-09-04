@@ -5,18 +5,16 @@ class Buildings {
         this.buildingsBinds := options.buildingsBinds
     }
 
-    ArrayIndexOf(arr, item) {
+    _ArrayIndexOf(arr, item) {
         for i, val in arr {
             if (val = item) {
                 return i
             }
         }
-
-        return 1
     }
 
-    nextStep() {
-        indexOfSelectedKeyBind := this.ArrayIndexOf(this.buildingsBinds, this.selectedKeyBind)
+    _nextStep() {
+        indexOfSelectedKeyBind := this._ArrayIndexOf(this.buildingsBinds, this.selectedKeyBind)
         nextKeyIndex := indexOfSelectedKeyBind + 1
 
         if (nextKeyIndex > this.buildingsBinds.Length()) {
@@ -24,22 +22,19 @@ class Buildings {
         }
 
         this.selectedKeyBind := this.buildingsBinds[nextKeyIndex]
-
-        return this.selectedKeyBind
     }
 
     bindOneOrMany() {
-        selectedKB := ""
-
         If (this.selectedKeyBind = false) {
             this.selectedKeyBind := this.buildingsBinds[1]
-            selectedKB := this.selectedKeyBind
         } else {
-            selectedKB := this.nextStep()
+            this._nextStep()
         }
 
+        selectedKB := this.selectedKeyBind
+
         Send, ^{Click}
-        Send ^%selectedKB%
+        Send, ^%selectedKB%
     }
 
     toggleBuildings() {
@@ -47,8 +42,8 @@ class Buildings {
             return
         }
 
-        selectedKB := this.nextStep()
+        this._nextStep()
 
-        Send, %selectedKB%
+        Send, % this.selectedKeyBind
     }
 }
