@@ -41,10 +41,10 @@ $q:: ; Q
 return
 $+q:: HeroOne.useMainSpell() return ; SHIFT + Q
 $^q:: HeroOne.useSecondarySpell() return ; CTRL + Q
-$^!q:: HeroOne.useThirdSpell() return ; CTRL + ALT + Q
+$+!q:: HeroOne.useThirdSpell() return ; SHIFT + ALT + Q
 $^+q:: HeroOne.useUltimate() return ; CTRL + SHIFT + Q
 $!q:: HeroOne.bindOneOrMany() return ; ALT + Q
-$+!q:: HeroOne.bindManyToMany() return ; SHIFT + ALT + Q
+$^!q:: HeroOne.bindManyToMany() return ; CTRL + ALT + Q
 
 $w::
     If (BuilderEntity.builderModeState()) {
@@ -55,10 +55,10 @@ $w::
 return ; W
 $+w:: HeroTwo.useMainSpell() return ; SHIFT + W
 $^w:: HeroTwo.useSecondarySpell() return ; CTRL + W
-$^!w:: HeroTwo.useThirdSpell() return ; CTRL + ALT + W
+$+!w:: HeroTwo.useThirdSpell() return ; SHIFT + ALT + W
 $^+w:: HeroTwo.useUltimate() return ; CTRL + SHIFT + W
 $!w:: HeroTwo.bindOneOrMany() return ; ALT + W
-$+!w:: HeroTwo.bindManyToMany() return ; SHIFT + ALT + W
+$^!w:: HeroTwo.bindManyToMany() return ; CTRL + ALT + W
 
 $e::
     If (BuilderEntity.builderModeState()) {
@@ -69,10 +69,10 @@ $e::
 return ; E
 $+e:: HeroThree.useMainSpell() return ; SHIFT + E
 $^e:: HeroThree.useSecondarySpell() return ; CTRL + E
-$^!e:: HeroThree.useThirdSpell() return ; CTRL + ALT + E
+$+!e:: HeroThree.useThirdSpell() return ; SHIFT + ALT + E
 $^+e:: HeroThree.useUltimate() return ; CTRL + SHIFT + E
 $!e:: HeroThree.bindOneOrMany() return ; ALT + E
-$+!e:: HeroThree.bindManyToMany() return ; SHIFT + ALT + E
+$^!e:: HeroThree.bindManyToMany() return ; CTRL + ALT + E
 
 $r:: ; R
     If (BuilderEntity.builderModeState()) {
@@ -108,7 +108,7 @@ return ; A
 $+a:: ArmyOne.unitAttack() return ; SHIFT + A
 $^a:: ArmyOne.unitHold() return ; CTRL + A
 $!a:: ArmyOne.bindOneOrMany() return ; ALT + A
-$+!a:: ArmyOne.bindManyToMany() return ; SHIFT + ALT + A
+$^!a:: ArmyOne.bindManyToMany() return ; CTRL + ALT + A
 
 $s::
     If (BuilderEntity.builderModeState()) {
@@ -120,7 +120,7 @@ return ; S
 $+s:: ArmyTwo.unitAttack() return ; SHIFT + S
 $^s:: ArmyTwo.unitHold() return ; CTRL + S
 $!s:: ArmyTwo.bindOneOrMany() return ; ALT + S
-$+!s:: ArmyTwo.bindManyToMany() return ; SHIFT + ALT + S
+$^!s:: ArmyTwo.bindManyToMany() return ; CTRL + ALT + S
 
 $d::
     If (BuilderEntity.builderModeState()) {
@@ -132,7 +132,7 @@ return ; D
 $+d:: ArmyThree.unitAttack() return ; SHIFT + D
 $^d:: ArmyThree.unitHold() return ; CTRL + D
 $!d:: ArmyThree.bindOneOrMany() return ; ALT + D
-$+!d:: ArmyThree.bindManyToMany() return ; SHIFT + ALT + D
+$^!d:: ArmyThree.bindManyToMany() return ; CTRL + ALT + D
 
 $f:: ; F
     If (BuilderEntity.builderModeState()) {
@@ -172,7 +172,7 @@ $x::
 return ; X
 
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
-$+!x:: BuildersGroup.bindManyToMany() return ; SHIFT + ALT + X
+$^!x:: BuildersGroup.bindManyToMany() return ; CTRL + ALT + X
 
 ;----------------------------------------Buildings
 
