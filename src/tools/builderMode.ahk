@@ -12,13 +12,12 @@ class BuilderMode {
     }
 
     startBuilding() {
-        Send, {Esc}
-
         If (A_TimeSincePriorHotkey > 350) {
             Send, % this.bindKey
         }
 
         If (this.builderMode) {
+            Send, {Esc}
             this.builderMode := false
         } else {
             this.builderMode := true

@@ -1,5 +1,9 @@
 class heroOneData {
     static bindKey := 1
+    ; static MS := "w" ; Master
+    ; static SS := "c"
+    ; static TS := "r"
+    ; static ULT := "b"
     static MS := "c"
     static SS := "u"
     static TS := "e"
@@ -8,6 +12,10 @@ class heroOneData {
 
 class heroTwoData {
     static bindKey := 2
+    ; static MS := "e"
+    ; static SS := "x"
+    ; static TS := "w"
+    ; static ULT := "v"
     static MS := "n"
     static SS := "f"
     static TS := "r"
@@ -16,6 +24,10 @@ class heroTwoData {
 
 class heroThreeData {
     static bindKey := 3
+    ; static MS := "t"
+    ; static SS := "c"
+    ; static TS := "f"
+    ; static ULT := "e"
     static MS := "c"
     static SS := "v"
     static TS := "e"
