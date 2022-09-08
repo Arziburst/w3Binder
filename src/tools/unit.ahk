@@ -1,18 +1,10 @@
 class Unit {
     __New(options) {
         this.bindKey := options.bindKey
-        this.MS := options.MS
-        this.SS := options.SS
-        this.TS := options.TS
-        this.ULT := options.ULT
-        this.upgradePriority := []
-        this.upgradePriority.Push(this.ULT)
-        this.upgradePriority.Push(this.MS)
-        this.upgradePriority.Push(this.SS)
-        this.upgradePriority.Push(this.TS)
+        this.spells := options.spells
+        this.upgradePriority := options.upgradePriority
+        this.comboKey := options.comboKey
     }
-
-    ;----------------------------------------Unit
 
     unitSelect() {
         Send, % this.bindKey
@@ -39,57 +31,33 @@ class Unit {
 
     unitAttack() {
         this.unitSelect()
+        Sleep, 50
         Send, a
         Send, {Click}
-        Sleep, 50
     }
 
     unitHold() {
         this.unitSelect()
+        Sleep, 50
         Send, h
-        Sleep, 50
     }
 
-    _useSpell(spellButton) {
+    useComboSpell() {
         this.unitSelect()
-        Send, %spellButton%
-        Send, {Click}
         Sleep, 50
+        Send, % this.comboKey
+        Send, {Click}
     }
-
-    useMainSpell() {
-        If (this.MS) {
-            this._useSpell(this.MS)
-        }
-    }
-
-    useSecondarySpell() {
-        If (this.SS) {
-            this._useSpell(this.SS)
-        }
-    }
-
-    useThirdSpell() {
-        If (this.TS) {
-            this._useSpell(this.TS)
-        }
-    }
-
-    useUltimate() {
-        If (this.ULT) {
-            this._useSpell(this.ULT)
-        }
-    }
-
-    ;----------------------------------------Hero
 
     useItem() {
         this.unitSelect()
+        Sleep, 50
         Send, {Numpad7}
     }
 
-    heroLvlUp() {
+    heroAutoLvlUp() {
         this.unitSelect()
+        Sleep, 50
 
         For K, SpellButton in this.upgradePriority {
             Send, o
@@ -97,6 +65,30 @@ class Unit {
         }
 
         Send, {Esc}
+        Sleep, 50
+    }
+    
+    heroCustomLvlUp(spellButtonIndex) {
+        spellButton := this.spells[spellButtonIndex]
+
+        If (!spellButton) {
+            return
+        }
+
+        Send, o
+        Send, %spellButton%
+        Send, {Esc}
+        Sleep, 50
+    }
+    
+    useSpellWithManager(spellButtonIndex) {
+        spellButton := this.spells[spellButtonIndex]
+
+        If (!spellButton) {
+            return
+        }
+
+        Send, %spellButton%
         Sleep, 50
     }
 }

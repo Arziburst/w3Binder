@@ -5,10 +5,9 @@
 ;----------------------------------------Imports
 
 #Include, ./src/staticData.ahk
-
 #Include, ./src/gui/Main.ahk
-
 #Include, ./src/tools/unit.ahk
+#Include, ./src/tools/spellManager.ahk
 #Include, ./src/tools/builderMode.ahk
 #Include, ./src/tools/buildings.ahk
 
@@ -22,6 +21,8 @@ ArmyOne := new Unit(armyOneData)
 ArmyTwo := new Unit(armyTwoData)
 ArmyThree := new Unit(armyThreeData)
 
+spellManager := new SpellManager([HeroOne, HeroTwo, HeroThree, ArmyOne, ArmyTwo, ArmyThree])
+
 BuildingOne := new Unit(_BuildingOne)
 BuildingTwo := new Unit(_BuildingTwo)
 BuildingThree := new Unit(_BuildingThree)
@@ -32,17 +33,26 @@ BuildingsEntity := new Buildings(buildingsData)
 
 ;----------------------------------------Heroes
 
+$1:: spellManager.useSpell(1) return ; 1
+$2:: spellManager.useSpell(2) return ; 2
+$3:: spellManager.useSpell(3) return ; 3
+$4:: spellManager.useSpell(4) return ; 4
+
+$+1:: spellManager.spellUp(1) return ; SHIFT + 1
+$+2:: spellManager.spellUp(2) return ; SHIFT + 2
+$+3:: spellManager.spellUp(3) return ; SHIFT + 3
+$+4:: spellManager.spellUp(4) return ; SHIFT + 4
+
 $q:: ; Q
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
         HeroOne.unitMove()
+        spellManager.recordKey()
     }
 return
-$+q:: HeroOne.useMainSpell() return ; SHIFT + Q
-$^q:: HeroOne.useSecondarySpell() return ; CTRL + Q
-$+!q:: HeroOne.useThirdSpell() return ; SHIFT + ALT + Q
-$^+q:: HeroOne.useUltimate() return ; CTRL + SHIFT + Q
+$+q:: HeroOne.unitAttack() return ; SHIFT + Q
+$^q:: HeroOne.unitHold() return ; CTRL + Q
 $!q:: HeroOne.bindOneOrMany() return ; ALT + Q
 $^!q:: HeroOne.bindManyToMany() return ; CTRL + ALT + Q
 
@@ -51,12 +61,11 @@ $w::
         BuilderEntity.build()
     } Else {
         HeroTwo.unitMove()
+        spellManager.recordKey()
     }
 return ; W
-$+w:: HeroTwo.useMainSpell() return ; SHIFT + W
-$^w:: HeroTwo.useSecondarySpell() return ; CTRL + W
-$+!w:: HeroTwo.useThirdSpell() return ; SHIFT + ALT + W
-$^+w:: HeroTwo.useUltimate() return ; CTRL + SHIFT + W
+$+w:: HeroTwo.unitAttack() return ; SHIFT + W
+$^w:: HeroTwo.unitHold() return ; CTRL + W
 $!w:: HeroTwo.bindOneOrMany() return ; ALT + W
 $^!w:: HeroTwo.bindManyToMany() return ; CTRL + ALT + W
 
@@ -65,12 +74,11 @@ $e::
         BuilderEntity.build()
     } Else {
         HeroThree.unitMove()
+        spellManager.recordKey()
     }
 return ; E
-$+e:: HeroThree.useMainSpell() return ; SHIFT + E
-$^e:: HeroThree.useSecondarySpell() return ; CTRL + E
-$+!e:: HeroThree.useThirdSpell() return ; SHIFT + ALT + E
-$^+e:: HeroThree.useUltimate() return ; CTRL + SHIFT + E
+$+e:: HeroThree.unitAttack() return ; SHIFT + E
+$^e:: HeroThree.unitHold() return ; CTRL + E
 $!e:: HeroThree.bindOneOrMany() return ; ALT + E
 $^!e:: HeroThree.bindManyToMany() return ; CTRL + ALT + E
 
@@ -85,26 +93,33 @@ $r:: ; R
 return
 
 $+r:: ; SHIFT + R
-    HeroOne.useMainSpell()
-    HeroTwo.useMainSpell()
-    HeroThree.useMainSpell()
+    HeroOne.unitAttack()
+    HeroTwo.unitAttack()
+    HeroThree.unitAttack()
 return
 
 $^r:: ; CTRL + R
-    HeroOne.heroLvlUp()
-    HeroTwo.heroLvlUp()
-    HeroThree.heroLvlUp()
+    HeroOne.heroAutoLvlUp()
+    HeroTwo.heroAutoLvlUp()
+    HeroThree.heroAutoLvlUp()
+return
+
+$t:: ; T
+    HeroOne.useComboSpell()
+    HeroTwo.useComboSpell()
+    HeroThree.useComboSpell()
 return
 
 ;----------------------------------------Armys
 
-$a:: 
+$a:: ; A
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
         ArmyOne.unitMove()
+        spellManager.recordKey()
     }
-return ; A
+return
 $+a:: ArmyOne.unitAttack() return ; SHIFT + A
 $^a:: ArmyOne.unitHold() return ; CTRL + A
 $!a:: ArmyOne.bindOneOrMany() return ; ALT + A
@@ -115,6 +130,7 @@ $s::
         BuilderEntity.build()
     } Else {
         ArmyTwo.unitMove()
+        spellManager.recordKey()
     }
 return ; S
 $+s:: ArmyTwo.unitAttack() return ; SHIFT + S
@@ -127,6 +143,7 @@ $d::
         BuilderEntity.build()
     } Else {
         ArmyThree.unitMove()
+        spellManager.recordKey()
     }
 return ; D
 $+d:: ArmyThree.unitAttack() return ; SHIFT + D
@@ -190,21 +207,22 @@ $v::
         BuilderEntity.build()
     }
 return ; C
+
+;----------------------------------------GUI
+
+$F1::
+    toggleMainGui()
+return
+
 ;----------------------------------------Globals
 
 ~RButton:: ; RIGHT CLICK
     BuilderEntity.endBuilding()
 Return
 
-+Esc::Reload ; SHIFT + ESC
-^Esc::ExitApp ; CTRL + ESC
-
-;----------------------------------------GUI
-
 $`::
     BuilderEntity.startBuilding()
 return ; Z
 
-$F1::
-    toggleMainGui()
-return
++Esc::Reload ; SHIFT + ESC
+^Esc::ExitApp ; CTRL + ESC

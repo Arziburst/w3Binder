@@ -1,37 +1,34 @@
 class heroOneData {
     static bindKey := 1
+    static spells := ["c", "e", "u", "d"]
+    static upgradePriority := ["c", "u", "d", "e"]
+    static comboKey := "c"
     ; static MS := "w" ; Master
     ; static SS := "c"
     ; static TS := "r"
     ; static ULT := "b"
-    static MS := "c"
-    static SS := "u"
-    static TS := "e"
-    static ULT := "d"
 }
 
 class heroTwoData {
     static bindKey := 2
+    static spells := ["n", "f", "r", "d"]
+    static upgradePriority := ["n", "f", "d", "r"]
+    static comboKey := "n"
     ; static MS := "e"
     ; static SS := "x"
     ; static TS := "w"
     ; static ULT := "v"
-    static MS := "n"
-    static SS := "f"
-    static TS := "r"
-    static ULT := "d"
 }
 
 class heroThreeData {
     static bindKey := 3
+    static spells := ["c", "e", "v", "n"]
+    static upgradePriority := ["n", "c", "v", "e"]
+    static comboKey := "c"
     ; static MS := "t"
     ; static SS := "c"
     ; static TS := "f"
     ; static ULT := "e"
-    static MS := "c"
-    static SS := "v"
-    static TS := "e"
-    static ULT := "n"
 }
 
 class armyOneData {
