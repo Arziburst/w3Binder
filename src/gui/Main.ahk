@@ -9,6 +9,7 @@ Gui, Main:Add, ActiveX, w156 h156, % "mshtml:<img src='" image2 "' />"
 Gui, Main:Add, ActiveX, w156 h156, % "mshtml:<img src='" image1 "' />"
 Gui, Main:Add, ActiveX, w156 h156, % "mshtml:<img src='" image3 "' />"
 
+Gui, Main:Add, Text,, lastPresed, %lastPresed%
 Gui, Main:Add, Text,, Please enter your name:
 Gui, Main:Add, Edit, vName
 Gui, Main:Add, Button, Default w80, OK

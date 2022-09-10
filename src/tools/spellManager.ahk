@@ -6,16 +6,16 @@ Class SpellManager {
 
     recordKey() {
         this.lastPresed := StrReplace(A_ThisHotkey, "$", "")
+        newLastPresed := this.lastPresed
+        GuiControl, Main:Text, lastPresed, %newLastPresed%
     }
 
     useSpell(spellButtonIndex) {
         Switch this.lastPresed {
             Case "q":
                 this.units[1].useSpellWithManager(spellButtonIndex)
-
             Case "w":
                 this.units[2].useSpellWithManager(spellButtonIndex)
-
             Case "e":
                 this.units[3].useSpellWithManager(spellButtonIndex)
 

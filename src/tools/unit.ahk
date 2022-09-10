@@ -83,7 +83,6 @@ class Unit {
     
     useSpellWithManager(spellButtonIndex) {
         spellButton := this.spells[spellButtonIndex]
-
         If (!spellButton) {
             return
         }
