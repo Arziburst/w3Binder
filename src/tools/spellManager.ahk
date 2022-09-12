@@ -1,13 +1,33 @@
+; Constants
+
+
+global QuiClickBox := "12"
+
+global isMainGuiExist := false
+
+toggleMainGui() {
+    If (isMainGuiExist) {
+        Gui, Main:Hide
+        isMainGuiExist := false
+    } else {
+        Gui, Main:Show
+        isMainGuiExist := true
+    }
+}
+
 Class SpellManager {
     __New(units) {
-        this.lastPresed := false
+        this.lastPresed := "z"
         this.units := units
+        Gui, Main:+AlwaysOnTop
+        Gui, Main:Add, Text, w156 h156,vQuiClickBox, % this.lastPresed %
     }
 
     recordKey() {
         this.lastPresed := StrReplace(A_ThisHotkey, "$", "")
         newLastPresed := this.lastPresed
-        GuiControl, Main:Text, lastPresed, %newLastPresed%
+        GuiControl, Main:Text,vQuiClickBox, %newLastPresed%
+        return
     }
 
     useSpell(spellButtonIndex) {

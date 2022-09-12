@@ -5,7 +5,7 @@
 ;----------------------------------------Imports
 
 #Include, ./src/staticData.ahk
-#Include, ./src/gui/Main.ahk
+; #Include, ./src/gui/Main.ahk
 #Include, ./src/tools/unit.ahk
 #Include, ./src/tools/spellManager.ahk
 #Include, ./src/tools/builderMode.ahk
