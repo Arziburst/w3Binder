@@ -50,5 +50,6 @@ class buildingsData {
 class buildersData {
     static bindKey := 0
     ; static buildings := [ "h", "b", "m", "w", "o", "a", "s", "e", "t", "v" ] ; Horde
-    static buildings := [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ] ; Undead
+    ; static buildings := [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ] ; Undead
+    static buildings := [ "t", "r", "h", "p", "m", "a", "l", "w", "c", "d" ] ; night elf
 }

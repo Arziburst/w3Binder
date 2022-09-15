@@ -1,6 +1,4 @@
 ; Constants
-
-
 global QuiClickBox := "12"
 
 global isMainGuiExist := false
@@ -17,10 +15,10 @@ toggleMainGui() {
 
 Class SpellManager {
     __New(units) {
-        this.lastPresed := "z"
+        this.lastPresed := "b"
         this.units := units
         Gui, Main:+AlwaysOnTop
-        Gui, Main:Add, Text, w156 h156,vQuiClickBox, % this.lastPresed %
+        ; Gui, Main:Add, Text, w156 h156,vQuiClickBox, %this.lastPresed
     }
 
     recordKey() {
@@ -38,13 +36,10 @@ Class SpellManager {
                 this.units[2].useSpellWithManager(spellButtonIndex)
             Case "e":
                 this.units[3].useSpellWithManager(spellButtonIndex)
-
             Case "a":
                 this.units[4].useSpellWithManager(spellButtonIndex)
-
             Case "s":
                 this.units[5].useSpellWithManager(spellButtonIndex)
-
             Case "d":
                 this.units[6].useSpellWithManager(spellButtonIndex)
 
