@@ -1,8 +1,8 @@
-;----------------------------------------Libs
+;----------------------------------------LIBS
 
 #Include, ./node_modules/array.ahk/export.ahk
 
-;----------------------------------------Imports
+;----------------------------------------IMPORTS
 
 #Include, ./src/undead.ahk
 ; #Include, ./src/horde.ahk
@@ -18,7 +18,7 @@
 #Include, ./src/tools/builderMode.ahk
 #Include, ./src/tools/buildings.ahk
 
-;----------------------------------------Instances
+;----------------------------------------INSTANCES
 
 HeroOne := new Unit(heroOneData)
 HeroTwo := new Unit(heroTwoData)
@@ -38,7 +38,7 @@ BuildingsEntity := new Buildings(buildingsData)
 
 manager := new Manager([ HeroOne, HeroTwo, HeroThree, ArmyOne, ArmyTwo, ArmyThree, BuildersGroup ])
 
-;----------------------------------------Heroes
+;----------------------------------------NUMERIC MANAGER
 
 $1:: manager.useManager("useSpell") return ; 1
 $2:: manager.useManager("useSpell") return ; 2
@@ -56,6 +56,8 @@ $!3:: manager.useManager("useItem") return ; ALT + 3
 $!4:: manager.useManager("useItem") return ; ALT + 4
 $!5:: manager.useManager("useItem") return ; ALT + 4
 $!6:: manager.useManager("useItem") return ; ALT + 4
+
+; ----------------------------------------FIRST HERO
 
 $q:: ; Q
     If (BuilderEntity.builderModeState()) {
@@ -76,6 +78,8 @@ return ; CTRL + Q
 $!q:: HeroOne.bindOneOrMany() return ; ALT + Q
 $^!q:: HeroOne.bindManyToMany() return ; CTRL + ALT + Q
 
+; ----------------------------------------SECOND HERO
+
 $w::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -95,6 +99,8 @@ return ; CTRL + W
 $!w:: HeroTwo.bindOneOrMany() return ; ALT + W
 $^!w:: HeroTwo.bindManyToMany() return ; CTRL + ALT + W
 
+; ----------------------------------------THIRD HERO
+
 $e::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -113,6 +119,8 @@ $^e::
 return ; CTRL + E
 $!e:: HeroThree.bindOneOrMany() return ; ALT + E
 $^!e:: HeroThree.bindManyToMany() return ; CTRL + ALT + E
+
+; ----------------------------------------HERO COMBOS
 
 $r:: ; R
     manager.resetHotkeyState()
@@ -158,7 +166,7 @@ $+t:: ; SHIFT + T
     HeroThree.heroAutoLvlUp()
 return
 
-;----------------------------------------Armys
+;----------------------------------------ARMY ONE
 
 $a:: ; A
     If (BuilderEntity.builderModeState()) {
@@ -179,6 +187,8 @@ return ; CTRL + A
 $!a:: ArmyOne.bindOneOrMany() return ; ALT + A
 $^!a:: ArmyOne.bindManyToMany() return ; CTRL + ALT + A
 
+;----------------------------------------ARMY TWO
+
 $s::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -198,6 +208,8 @@ return ; CTRL + S
 $!s:: ArmyTwo.bindOneOrMany() return ; ALT + S
 $^!s:: ArmyTwo.bindManyToMany() return ; CTRL + ALT + S
 
+;----------------------------------------ARMY THREE
+
 $d::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -216,6 +228,8 @@ $^d::
 return ; CTRL + D
 $!d:: ArmyThree.bindOneOrMany() return ; ALT + D
 $^!d:: ArmyThree.bindManyToMany() return ; CTRL + ALT + D
+
+;----------------------------------------ARMYS COMBOS
 
 $f:: ; F
     manager.resetHotkeyState()
@@ -245,7 +259,7 @@ $^f:: ; CTRL + F
     ArmyThree.unitHold()
 return
 
-;----------------------------------------Builders
+;----------------------------------------BUILDERS
 $z::
     manager.resetHotkeyState()
 
@@ -273,7 +287,7 @@ return ; SHIFT + X
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
 $^!x:: BuildersGroup.bindManyToMany() return ; CTRL + ALT + X
 
-;----------------------------------------Buildings
+;----------------------------------------BUILDINGS
 
 $c::
     manager.resetHotkeyState()
@@ -300,7 +314,7 @@ $F1::
     toggleMainGui()
 return
 
-;----------------------------------------Globals
+;----------------------------------------GLOBALS
 
 $Space:: 
     manager.useManager("centerCameraOnLastUnit")
@@ -311,14 +325,16 @@ Return
 ; Return
 
 ~RButton:: ; RIGHT CLICK
+    manager.resetHotkeyState()
     BuilderEntity.endBuilding()
 Return
 
 $`::
+    manager.resetHotkeyState()
     BuilderEntity.startBuilding()
 return ; Z
 
-Esc::
+$Esc::
     manager.resetHotkeyState()
     BuilderEntity.endBuilding()
 return

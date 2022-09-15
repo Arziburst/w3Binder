@@ -1,34 +1,37 @@
 class heroOneData {
     static bindKey := 1
-    static spells := ["c", "e", "u", "d"]
+    static spells := ["c", "e", "u", "d"] ; DK
     static upgradePriority := ["c", "u", "d", "e"]
     static comboKey := "c"
 }
 
 class heroTwoData {
     static bindKey := 2
-    static spells := ["n", "f", "r", "d"]
+    static spells := ["n", "f", "r", "d"] ; Leech
     static upgradePriority := ["n", "f", "d", "r"]
     static comboKey := "n"
 }
 
 class heroThreeData {
     static bindKey := 3
-    static spells := ["c", "e", "v", "n"]
+    static spells := ["c", "e", "v", "n"] ; Demon
     static upgradePriority := ["n", "c", "v", "e"]
     static comboKey := "c"
 }
 
 class armyOneData {
     static bindKey := 4
+    static spells := [ "d", "o", false, "b" ] ; Sphinx
 }
 
 class armyTwoData {
     static bindKey := 5
+    static spells := [ "r", "u", "c", false ] ; Necromant
 }
 
 class armyThreeData {
     static bindKey := 6
+    static spells := [ "c", "n", "o", false ] ; Banshee
 }
 
 class buildingsData {
@@ -37,6 +40,6 @@ class buildingsData {
 
 class buildersData {
     static bindKey := 0
-    ; static buildings := [ "h", "b", "m", "w", "o", "a", "s", "e", "t", "v" ] ; Horde
+    static spells := [ false, "u", false, "c" ]
     static buildings := [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ] ; Undead
 }
