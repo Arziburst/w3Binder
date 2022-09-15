@@ -3,10 +3,6 @@ class heroOneData {
     static spells := ["c", "e", "u", "d"]
     static upgradePriority := ["c", "u", "d", "e"]
     static comboKey := "c"
-    ; static MS := "w" ; Master
-    ; static SS := "c"
-    ; static TS := "r"
-    ; static ULT := "b"
 }
 
 class heroTwoData {
@@ -14,10 +10,6 @@ class heroTwoData {
     static spells := ["n", "f", "r", "d"]
     static upgradePriority := ["n", "f", "d", "r"]
     static comboKey := "n"
-    ; static MS := "e"
-    ; static SS := "x"
-    ; static TS := "w"
-    ; static ULT := "v"
 }
 
 class heroThreeData {
@@ -25,10 +17,6 @@ class heroThreeData {
     static spells := ["c", "e", "v", "n"]
     static upgradePriority := ["n", "c", "v", "e"]
     static comboKey := "c"
-    ; static MS := "t"
-    ; static SS := "c"
-    ; static TS := "f"
-    ; static ULT := "e"
 }
 
 class armyOneData {

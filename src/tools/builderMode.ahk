@@ -29,10 +29,14 @@ class BuilderMode {
     }
 
     build() {
-        keyboardButton := StrReplace(A_ThisHotkey, "$", "")
+        thisHotkey := StrReplace(A_ThisHotkey, "$", "") ; refactor to any hotkey
+        thisHotkey := StrReplace(thisHotkey, "+", "") ; refactor to any hotkey
+        thisHotkey := StrReplace(thisHotkey, "^", "") ; refactor to any hotkey
+        thisHotkey := StrReplace(thisHotkey, "!", "") ; refactor to any hotkey
+        thisHotkey := StrReplace(thisHotkey, "~", "") ; refactor to any hotkey
 
         For index, kButton in this.keyboard {
-            If (kButton = keyboardButton) {
+            If (kButton = thisHotkey) {
                 Send, % this.buildings[index]
             }
         }

@@ -4,10 +4,19 @@ class Unit {
         this.spells := options.spells
         this.upgradePriority := options.upgradePriority
         this.comboKey := options.comboKey
+        this.items := [ "Numpad7", "Numpad8", "Numpad4", "Numpad5", "Numpad1", "Numpad2" ]
     }
 
-    unitSelect() {
-        Send, % this.bindKey
+    unitSelect(isUnitSelect := true) {
+        If (isUnitSelect) {
+            Send, % this.bindKey
+            Sleep, 50
+        }
+    }
+
+    centerCameraOnUnit() {
+        this.unitSelect()
+        this.unitSelect()
     }
 
     bindOneOrMany() {
@@ -23,41 +32,30 @@ class Unit {
         Send, ^%binder%
     }
 
-    unitMove() {
-        this.unitSelect()
+    unitMove(isUnitSelect := true) {
+        this.unitSelect(isUnitSelect)
         Send, {Click, Right}
-        Sleep, 50
     }
 
-    unitAttack() {
-        this.unitSelect()
-        Sleep, 50
+    unitAttack(isUnitSelect := true) {
+        this.unitSelect(isUnitSelect)
         Send, a
         Send, {Click}
     }
 
-    unitHold() {
-        this.unitSelect()
-        Sleep, 50
+    unitHold(isUnitSelect := true) {
+        this.unitSelect(isUnitSelect)
         Send, h
     }
 
     useComboSpell() {
         this.unitSelect()
-        Sleep, 50
         Send, % this.comboKey
         Send, {Click}
     }
 
-    useItem() {
-        this.unitSelect()
-        Sleep, 50
-        Send, {Numpad7}
-    }
-
     heroAutoLvlUp() {
         this.unitSelect()
-        Sleep, 50
 
         For K, SpellButton in this.upgradePriority {
             Send, o
@@ -81,6 +79,17 @@ class Unit {
         Sleep, 50
     }
     
+    useItemWithManager(itemIndex) {
+        itemButton := this.items[itemIndex]
+
+        If (!itemButton) {
+            return
+        }
+
+        Send, {%itemButton%}
+        Sleep, 50
+    }
+
     useSpellWithManager(spellButtonIndex) {
         spellButton := this.spells[spellButtonIndex]
 
