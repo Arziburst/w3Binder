@@ -41,5 +41,5 @@ class buildingsData {
 class buildersData {
     static bindKey := 0
     static spells := [ false, "u", false, "c" ]
-    static buildings := [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ] ; Undead
+    static buildings := [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ]
 }

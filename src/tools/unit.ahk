@@ -46,6 +46,10 @@ class Unit {
     }
 
     useComboSpell() {
+        If (!this.combo) {
+            return
+        }
+
         this.unitSelect()
         Send, % this.combo.key
 

@@ -4,10 +4,10 @@
 
 ;----------------------------------------IMPORTS
 
-#Include, ./src/undead.ahk
-; #Include, ./src/horde.ahk
-; #Include, ./src/nigthElf.ahk
-; #Include, ./src/human.ahk
+#Include, ./src/data/undead.ahk
+; #Include, ./src/data/horde.ahk
+; #Include, ./src/data/nigthElf.ahk
+; #Include, ./src/data/alliance.ahk
 
 #Include, ./src/gui/Main.ahk
 
