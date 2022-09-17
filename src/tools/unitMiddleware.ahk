@@ -56,7 +56,7 @@ Class UnitMiddleware {
 
     unitHold() {
         isUnitSelect := this._recordHotkey()
-        this._getActualUnit().unitAttack(isUnitSelect)
+        this._getActualUnit().unitHold(isUnitSelect)
     }
 
     useSpell(numericKey) {
