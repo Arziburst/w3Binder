@@ -1,6 +1,6 @@
 {
   "name": "w3binder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AHK script for change w3 binds",
   "main": "index.ahk",
   "scripts": {

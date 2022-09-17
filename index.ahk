@@ -11,8 +11,7 @@
 
 #Include, ./src/gui/Main.ahk
 
-#Include, ./src/tools/manager.ahk
-#Include, ./src/tools/manager.ahk
+#Include, ./src/tools/unitMiddleware.ahk
 
 #Include, ./src/tools/unit.ahk
 #Include, ./src/tools/builderMode.ahk
@@ -36,26 +35,26 @@ BuildersGroup := new Unit(buildersData)
 BuilderEntity := new BuilderMode(buildersData)
 BuildingsEntity := new Buildings(buildingsData)
 
-manager := new Manager([ HeroOne, HeroTwo, HeroThree, ArmyOne, ArmyTwo, ArmyThree, BuildersGroup ])
+unitMiddleware := new UnitMiddleware([ HeroOne, HeroTwo, HeroThree, ArmyOne, ArmyTwo, ArmyThree, BuildersGroup ])
 
 ;----------------------------------------NUMERIC MANAGER
 
-$1:: manager.useManager("useSpell") return ; 1
-$2:: manager.useManager("useSpell") return ; 2
-$3:: manager.useManager("useSpell") return ; 3
-$4:: manager.useManager("useSpell") return ; 4
+$1:: unitMiddleware.useSpell(1) return ; 1
+$2:: unitMiddleware.useSpell(2) return ; 2
+$3:: unitMiddleware.useSpell(3) return ; 3
+$4:: unitMiddleware.useSpell(4) return ; 4
 
-$+1:: manager.useManager("spellLvlUp") return ; SHIFT + 1
-$+2:: manager.useManager("spellLvlUp") return ; SHIFT + 2
-$+3:: manager.useManager("spellLvlUp") return ; SHIFT + 3
-$+4:: manager.useManager("spellLvlUp") return ; SHIFT + 4
+$+1:: unitMiddleware.heroLvlUp(1) return ; SHIFT + 1
+$+2:: unitMiddleware.heroLvlUp(2) return ; SHIFT + 2
+$+3:: unitMiddleware.heroLvlUp(3) return ; SHIFT + 3
+$+4:: unitMiddleware.heroLvlUp(4) return ; SHIFT + 4
 
-$!1:: manager.useManager("useItem") return ; ALT + 1
-$!2:: manager.useManager("useItem") return ; ALT + 2
-$!3:: manager.useManager("useItem") return ; ALT + 3
-$!4:: manager.useManager("useItem") return ; ALT + 4
-$!5:: manager.useManager("useItem") return ; ALT + 4
-$!6:: manager.useManager("useItem") return ; ALT + 4
+$!1:: unitMiddleware.useItem(1) return ; ALT + 1
+$!2:: unitMiddleware.useItem(2) return ; ALT + 2
+$!3:: unitMiddleware.useItem(3) return ; ALT + 3
+$!4:: unitMiddleware.useItem(4) return ; ALT + 4
+$!5:: unitMiddleware.useItem(5) return ; ALT + 5
+$!6:: unitMiddleware.useItem(6) return ; ALT + 6
 
 ; ----------------------------------------FIRST HERO
 
@@ -63,18 +62,11 @@ $q:: ; Q
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        HeroOne.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return
-$+q:: 
-    isUnitSelect := manager.recordHotkey()
-    HeroOne.unitAttack(isUnitSelect) 
-return ; SHIFT + Q
-$^q:: 
-    isUnitSelect := manager.recordHotkey()
-    HeroOne.unitHold(isUnitSelect) 
-return ; CTRL + Q
+$+q:: unitMiddleware.unitAttack() return ; SHIFT + Q
+$^q:: unitMiddleware.unitHold() return ; CTRL + Q
 $!q:: HeroOne.bindOneOrMany() return ; ALT + Q
 $^!q:: HeroOne.bindManyToMany() return ; CTRL + ALT + Q
 
@@ -84,18 +76,11 @@ $w::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        HeroTwo.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return ; W
-$+w::
-    isUnitSelect := manager.recordHotkey()
-    HeroTwo.unitAttack(isUnitSelect)
-return ; SHIFT + W
-$^w:: 
-    isUnitSelect := manager.recordHotkey()
-    HeroTwo.unitHold(isUnitSelect)
-return ; CTRL + W
+$+w:: unitMiddleware.unitAttack() return ; SHIFT + W
+$^w:: unitMiddleware.unitHold() return ; CTRL + W
 $!w:: HeroTwo.bindOneOrMany() return ; ALT + W
 $^!w:: HeroTwo.bindManyToMany() return ; CTRL + ALT + W
 
@@ -105,25 +90,18 @@ $e::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        HeroThree.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return ; E
-$+e::
-    isUnitSelect := manager.recordHotkey()
-    HeroThree.unitAttack(isUnitSelect)
-return ; SHIFT + E
-$^e:: 
-    isUnitSelect := manager.recordHotkey()
-    HeroThree.unitHold(isUnitSelect) 
-return ; CTRL + E
+$+e:: unitMiddleware.unitAttack() return ; SHIFT + E
+$^e:: unitMiddleware.unitHold() return ; CTRL + E
 $!e:: HeroThree.bindOneOrMany() return ; ALT + E
 $^!e:: HeroThree.bindManyToMany() return ; CTRL + ALT + E
 
 ; ----------------------------------------HERO COMBOS
 
 $r:: ; R
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -135,7 +113,7 @@ $r:: ; R
 return
 
 $+r:: ; SHIFT + R
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     HeroOne.unitAttack()
     HeroTwo.unitAttack()
@@ -143,7 +121,7 @@ $+r:: ; SHIFT + R
 return
 
 $^r:: ; CTRL + R
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     HeroOne.unitHold()
     HeroTwo.unitHold()
@@ -151,7 +129,7 @@ $^r:: ; CTRL + R
 return
 
 $t:: ; T
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     HeroOne.useComboSpell()
     HeroTwo.useComboSpell()
@@ -159,7 +137,7 @@ $t:: ; T
 return
 
 $+t:: ; SHIFT + T
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     HeroOne.heroAutoLvlUp()
     HeroTwo.heroAutoLvlUp()
@@ -172,18 +150,11 @@ $a:: ; A
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        ArmyOne.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return
-$+a::
-    isUnitSelect := manager.recordHotkey()
-    ArmyOne.unitAttack(isUnitSelect)
-return ; SHIFT + A
-$^a::
-    isUnitSelect := manager.recordHotkey()
-    ArmyOne.unitHold(isUnitSelect) 
-return ; CTRL + A
+$+a:: unitMiddleware.unitAttack() return ; SHIFT + A
+$^a:: unitMiddleware.unitHold() return ; CTRL + A
 $!a:: ArmyOne.bindOneOrMany() return ; ALT + A
 $^!a:: ArmyOne.bindManyToMany() return ; CTRL + ALT + A
 
@@ -193,18 +164,11 @@ $s::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        ArmyTwo.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return ; S
-$+s::
-    isUnitSelect := manager.recordHotkey()
-    ArmyTwo.unitAttack(isUnitSelect)
-return ; SHIFT + S
-$^s:: 
-    isUnitSelect := manager.recordHotkey()
-    ArmyTwo.unitHold(isUnitSelect) 
-return ; CTRL + S
+$+s:: unitMiddleware.unitAttack(isUnitSelect) return ; SHIFT + S
+$^s:: unitMiddleware.unitHold() return ; CTRL + S
 $!s:: ArmyTwo.bindOneOrMany() return ; ALT + S
 $^!s:: ArmyTwo.bindManyToMany() return ; CTRL + ALT + S
 
@@ -214,25 +178,18 @@ $d::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        ArmyThree.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return ; D
-$+d:: 
-    isUnitSelect := manager.recordHotkey()
-    ArmyThree.unitAttack(isUnitSelect) 
-return ; SHIFT + D
-$^d:: 
-    isUnitSelect := manager.recordHotkey()
-    ArmyThree.unitHold(isUnitSelect) 
-return ; CTRL + D
+$+d:: unitMiddleware.unitAttack() return ; SHIFT + D
+$^d:: unitMiddleware.unitHold() return ; CTRL + D
 $!d:: ArmyThree.bindOneOrMany() return ; ALT + D
 $^!d:: ArmyThree.bindManyToMany() return ; CTRL + ALT + D
 
 ;----------------------------------------ARMYS COMBOS
 
 $f:: ; F
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -244,7 +201,7 @@ $f:: ; F
 return
 
 $+f:: ; SHIFT + F
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     ArmyOne.unitAttack()
     ArmyTwo.unitAttack()
@@ -252,7 +209,7 @@ $+f:: ; SHIFT + F
 return
 
 $^f:: ; CTRL + F
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     ArmyOne.unitHold()
     ArmyTwo.unitHold()
@@ -261,7 +218,7 @@ return
 
 ;----------------------------------------BUILDERS
 $z::
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -272,25 +229,18 @@ $x::
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
     } Else {
-        isUnitSelect := manager.recordHotkey()
-        BuildersGroup.unitMove(isUnitSelect)
+        unitMiddleware.unitMove()
     }
 return ; X
-$+x::
-    isUnitSelect := manager.recordHotkey()
-    BuildersGroup.unitAttack(isUnitSelect)
-return ; SHIFT + X
-$^x::
-    isUnitSelect := manager.recordHotkey()
-    BuildersGroup.unitHold(isUnitSelect)
-return ; SHIFT + X
+$+x:: unitMiddleware.unitAttack() return ; SHIFT + X
+$^x:: unitMiddleware.unitHold() return ; CTRL + X
 $!x:: BuildersGroup.bindOneOrMany() return ; ALT + X
 $^!x:: BuildersGroup.bindManyToMany() return ; CTRL + ALT + X
 
 ;----------------------------------------BUILDINGS
 
 $c::
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -301,7 +251,7 @@ return ; C
 $!c:: BuildingsEntity.bindOneOrMany() return ; ALT + C
 
 $v::
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
 
     If (BuilderEntity.builderModeState()) {
         BuilderEntity.build()
@@ -317,25 +267,25 @@ return
 ;----------------------------------------GLOBALS
 
 $Space:: 
-    manager.useManager("centerCameraOnLastUnit")
+    unitMiddleware.centerCameraOnUnit()
+    BuilderEntity.endBuilding()
 Return
 
-; ~LButton:: ; LEFT CLICK
-;     manager.resetHotkeyState()
-; Return
+~LButton:: ; LEFT CLICK
+    unitMiddleware.resetHotkeyState()
+Return
 
 ~RButton:: ; RIGHT CLICK
-    manager.resetHotkeyState()
     BuilderEntity.endBuilding()
 Return
 
 $`::
-    manager.resetHotkeyState()
+    unitMiddleware.setHotkey("x")
     BuilderEntity.startBuilding()
 return ; Z
 
 $Esc::
-    manager.resetHotkeyState()
+    unitMiddleware.resetHotkeyState()
     BuilderEntity.endBuilding()
 return
 

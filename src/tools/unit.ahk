@@ -1,22 +1,12 @@
+global delay := 50
+
 class Unit {
     __New(options) {
         this.bindKey := options.bindKey
         this.spells := options.spells
         this.upgradePriority := options.upgradePriority
-        this.comboKey := options.comboKey
+        this.combo := options.combo
         this.items := [ "Numpad7", "Numpad8", "Numpad4", "Numpad5", "Numpad1", "Numpad2" ]
-    }
-
-    unitSelect(isUnitSelect := true) {
-        If (isUnitSelect) {
-            Send, % this.bindKey
-            Sleep, 50
-        }
-    }
-
-    centerCameraOnUnit() {
-        this.unitSelect()
-        this.unitSelect()
     }
 
     bindOneOrMany() {
@@ -30,6 +20,13 @@ class Unit {
         this.unitSelect()
         Send, ^+{Click, Left}
         Send, ^%binder%
+    }
+
+    unitSelect(isUnitSelect := true) {
+        If (isUnitSelect) {
+            Send, % this.bindKey
+            Sleep, %delay%
+        }
     }
 
     unitMove(isUnitSelect := true) {
@@ -50,8 +47,11 @@ class Unit {
 
     useComboSpell() {
         this.unitSelect()
-        Send, % this.comboKey
-        Send, {Click}
+        Send, % this.combo.key
+
+        if (this.combo.isClick) {
+            Send, {Click}
+        }
     }
 
     heroAutoLvlUp() {
@@ -63,11 +63,11 @@ class Unit {
         }
 
         Send, {Esc}
-        Sleep, 50
+        Sleep, %delay%
     }
     
-    heroCustomLvlUp(spellButtonIndex) {
-        spellButton := this.spells[spellButtonIndex]
+    heroLvlUp(numericKey) {
+        spellButton := this.spells[numericKey]
 
         If (!spellButton) {
             return
@@ -76,28 +76,33 @@ class Unit {
         Send, o
         Send, %spellButton%
         Send, {Esc}
-        Sleep, 50
+        Sleep, %delay%
     }
     
-    useItemWithManager(itemIndex) {
-        itemButton := this.items[itemIndex]
+    useItem(numericKey) {
+        itemButton := this.items[numericKey]
 
         If (!itemButton) {
             return
         }
 
         Send, {%itemButton%}
-        Sleep, 50
+        Sleep, %delay%
     }
 
-    useSpellWithManager(spellButtonIndex) {
-        spellButton := this.spells[spellButtonIndex]
+    useSpell(numericKey) {
+        spellButton := this.spells[numericKey]
 
         If (!spellButton) {
             return
         }
 
         Send, %spellButton%
-        Sleep, 50
+        Sleep, %delay%
+    }
+
+    centerCameraOnUnit() {
+        this.unitSelect()
+        this.unitSelect()
     }
 }

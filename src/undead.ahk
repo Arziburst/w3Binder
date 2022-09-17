@@ -2,21 +2,21 @@ class heroOneData {
     static bindKey := 1
     static spells := ["c", "e", "u", "d"] ; DK
     static upgradePriority := ["c", "u", "d", "e"]
-    static comboKey := "c"
+    static combo := { key: "c", isClick: true }
 }
 
 class heroTwoData {
     static bindKey := 2
     static spells := ["n", "f", "r", "d"] ; Leech
     static upgradePriority := ["n", "f", "d", "r"]
-    static comboKey := "n"
+    static combo := { key: "n", isClick: true }
 }
 
 class heroThreeData {
     static bindKey := 3
     static spells := ["c", "e", "v", "n"] ; Demon
     static upgradePriority := ["n", "c", "v", "e"]
-    static comboKey := "c"
+    static combo := { key: "c", isClick: true }
 }
 
 class armyOneData {
