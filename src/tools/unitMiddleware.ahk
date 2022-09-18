@@ -3,7 +3,7 @@ Class UnitMiddleware {
         this.units := units
         this.lastHotkey := false
         this.keyboard := [ "q", "w", "e", "a", "s", "d", "x" ]
-        this.spellItemMode := false
+        this.numericModeOn := false
     }
 
     _findIndex() {
@@ -33,15 +33,18 @@ Class UnitMiddleware {
     }
 
     _recordHotkey() {
-        this.spellItemMode := false
         thisHotkey := this._getThisHotKey()
-        result := thisHotkey == this.lastHotkey ? false : thisHotkey
+        isHotKeyChanged := thisHotkey != this.lastHotkey
 
-        If (result) {
-            this.lastHotkey := result
+        If (isHotKeyChanged) {
+            this.lastHotkey := thisHotkey
         }
 
-        return result
+        isUnitSelect := this.numericModeOn ? thisHotkey : isHotKeyChanged
+
+        this.numericModeOn := false
+
+        return isUnitSelect
     }
 
     unitMove() {
@@ -60,16 +63,17 @@ Class UnitMiddleware {
     }
 
     useSpell(numericKey) {
-        this.spellItemMode := true
+        this.numericModeOn := true
         this._getActualUnit().useSpell(numericKey)
     }
 
     useItem(numericKey) {
-        this.spellItemMode := true
+        this.numericModeOn := true
         this._getActualUnit().useItem(numericKey)
     }
 
     heroLvlUp(numericKey) {
+        this.numericModeOn := true
         this._getActualUnit().heroLvlUp(numericKey)
     }
 
@@ -78,9 +82,7 @@ Class UnitMiddleware {
     }
 
     resetHotkeyState() {
-        If (this.spellItemMode) {
-            this.spellItemMode := false
-        } Else {
+        If (!this.numericModeOn) {
             this.lastHotkey := false
         }
     }
