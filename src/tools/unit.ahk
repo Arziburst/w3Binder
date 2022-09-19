@@ -1,4 +1,4 @@
-global delay := 50
+global delay := 35
 
 class Unit {
     __New(options) {
@@ -15,9 +15,11 @@ class Unit {
         Send, ^%binder%
     }
 
-    bindManyToMany() {
+    bindManyToMany(isUnitSelect := true) {
+        If (isUnitSelect) {
+            this.unitSelect()
+        }
         binder := % this.bindKey
-        this.unitSelect()
         Send, ^+{Click, Left}
         Send, ^%binder%
     }

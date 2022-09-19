@@ -1,7 +1,6 @@
 class Buildings {
-    selectedKeyBind := false
-
     __New(options) {
+        this.selectedKeyBind := false
         this.buildingsBinds := options.buildingsBinds
     }
 

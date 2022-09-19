@@ -1,9 +1,12 @@
 Class UnitMiddleware {
-    __New(units) {
+    __New(units, builderMode) {
         this.units := units
+        this.builderMode := builderMode
         this.lastHotkey := false
-        this.keyboard := [ "q", "w", "e", "a", "s", "d", "x" ]
         this.numericModeOn := false
+        this.afterBuilderMode := false
+        ;                  heroOne heroTwo heroThree false armyOne armyTwo armyThree false false builders false false
+        this.keyboard := [ "q",    "w",    "e",      "r",  "a",    "s",    "d",      "f",  "z",  "x",     "c",  "v"]
     }
 
     _findIndex() {
@@ -32,8 +35,9 @@ Class UnitMiddleware {
         return thisHotkey
     }
 
-    _recordHotkey() {
-        thisHotkey := this._getThisHotKey()
+    _recordHotkey(newHotkey:=false) {
+        thisHotkey := newHotkey ? newHotkey : this._getThisHotKey()
+
         isHotKeyChanged := thisHotkey != this.lastHotkey
 
         If (isHotKeyChanged) {
@@ -47,11 +51,34 @@ Class UnitMiddleware {
         return isUnitSelect
     }
 
+    bindOneOrMany() {
+        this._recordHotkey()
+        this._getActualUnit().bindOneOrMany()
+    }
+
+    bindManyToMany() {
+        isUnitSelect := this._recordHotkey()
+        this._getActualUnit().bindManyToMany(isUnitSelect)
+    }
+
     unitMove() {
         isUnitSelect := this._recordHotkey()
         this._getActualUnit().unitMove(isUnitSelect)
     }
-
+    
+    unitMoveOrBuild() {
+        If (builderMode.getBuilderModeState()) {
+            builderMode.build(this._getThisHotKey())
+        } else {
+            If (builderMode.getAfterBuilderMode()) {
+                builderMode.resetAfterBuilderMode()
+                Send, {Esc}
+            } else {
+                this.unitMove()
+            }
+        }
+    }
+    
     unitAttack() {
         isUnitSelect := this._recordHotkey()
         this._getActualUnit().unitAttack(isUnitSelect)
@@ -79,10 +106,14 @@ Class UnitMiddleware {
 
     centerCameraOnUnit() {
         this._getActualUnit().centerCameraOnUnit()
+
+        If (this.lastHotkey == "x" and builderMode.getBuilderModeState()) {
+            Send, b
+        }
     }
 
     resetHotkeyState() {
-        If (!this.numericModeOn) {
+        If (!this.numericModeOn and !builderMode.getAfterBuilderMode()) {
             this.lastHotkey := false
         }
     }
