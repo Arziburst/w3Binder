@@ -11,11 +11,11 @@
 
 #Include, ./src/gui/Main.ahk
 
-#Include, ./src/tools/unitMiddleware.ahk
+#Include, ./src/core.ahk
 
-#Include, ./src/tools/unit.ahk
-#Include, ./src/tools/builderMode.ahk
-#Include, ./src/tools/buildings.ahk
+#Include, ./src/services/unit.ahk
+#Include, ./src/services/builderMode.ahk
+#Include, ./src/services/buildings.ahk
 
 ;----------------------------------------INSTANCES
 
@@ -33,50 +33,50 @@ buildings := new Buildings(buildingsData)
 ;          Q        W        E          R      A        S        D          F      Z      X         C      V
 units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
 
-unitMiddleware := new UnitMiddleware(units, builderMode)
+core := new Core(units, builderMode)
 
 ;----------------------------------------NUMERIC MANAGER
 
-$1:: unitMiddleware.useSpell(1) return ; 1
-$2:: unitMiddleware.useSpell(2) return ; 2
-$3:: unitMiddleware.useSpell(3) return ; 3
-$4:: unitMiddleware.useSpell(4) return ; 4
+$1:: core.useSpell(1) return ; 1
+$2:: core.useSpell(2) return ; 2
+$3:: core.useSpell(3) return ; 3
+$4:: core.useSpell(4) return ; 4
 
-$+1:: unitMiddleware.heroLvlUp(1) return ; SHIFT + 1
-$+2:: unitMiddleware.heroLvlUp(2) return ; SHIFT + 2
-$+3:: unitMiddleware.heroLvlUp(3) return ; SHIFT + 3
-$+4:: unitMiddleware.heroLvlUp(4) return ; SHIFT + 4
+$+1:: core.heroLvlUp(1) return ; SHIFT + 1
+$+2:: core.heroLvlUp(2) return ; SHIFT + 2
+$+3:: core.heroLvlUp(3) return ; SHIFT + 3
+$+4:: core.heroLvlUp(4) return ; SHIFT + 4
 
-$!1:: unitMiddleware.useItem(1) return ; ALT + 1
-$!2:: unitMiddleware.useItem(2) return ; ALT + 2
-$!3:: unitMiddleware.useItem(3) return ; ALT + 3
-$!4:: unitMiddleware.useItem(4) return ; ALT + 4
-$!5:: unitMiddleware.useItem(5) return ; ALT + 5
-$!6:: unitMiddleware.useItem(6) return ; ALT + 6
+$!1:: core.useItem(1) return ; ALT + 1
+$!2:: core.useItem(2) return ; ALT + 2
+$!3:: core.useItem(3) return ; ALT + 3
+$!4:: core.useItem(4) return ; ALT + 4
+$!5:: core.useItem(5) return ; ALT + 5
+$!6:: core.useItem(6) return ; ALT + 6
 
 ; ----------------------------------------FIRST HERO
 
-$q:: unitMiddleware.unitMoveOrBuild() return
-$+q:: unitMiddleware.unitAttack() return ; SHIFT + Q
-$^q:: unitMiddleware.unitHold() return ; CTRL + Q
-$!q:: unitMiddleware.bindOneOrMany() return ; ALT + Q
-$^!q:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + Q
+$q:: core.unitMoveOrBuild() return
+$+q:: core.unitAttack() return ; SHIFT + Q
+$^q:: core.unitHold() return ; CTRL + Q
+$!q:: core.bindOneOrMany() return ; ALT + Q
+$^!q:: core.bindManyToMany() return ; CTRL + ALT + Q
 
 ; ----------------------------------------SECOND HERO
 
-$w:: unitMiddleware.unitMoveOrBuild() return ; W
-$+w:: unitMiddleware.unitAttack() return ; SHIFT + W
-$^w:: unitMiddleware.unitHold() return ; CTRL + W
-$!w:: unitMiddleware.bindOneOrMany() return ; ALT + W
-$^!w:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + W
+$w:: core.unitMoveOrBuild() return ; W
+$+w:: core.unitAttack() return ; SHIFT + W
+$^w:: core.unitHold() return ; CTRL + W
+$!w:: core.bindOneOrMany() return ; ALT + W
+$^!w:: core.bindManyToMany() return ; CTRL + ALT + W
 
 ; ----------------------------------------THIRD HERO
 
-$e:: unitMiddleware.unitMoveOrBuild() return ; E
-$+e:: unitMiddleware.unitAttack() return ; SHIFT + E
-$^e:: unitMiddleware.unitHold() return ; CTRL + E
-$!e:: unitMiddleware.bindOneOrMany() return ; ALT + E
-$^!e:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + E
+$e:: core.unitMoveOrBuild() return ; E
+$+e:: core.unitAttack() return ; SHIFT + E
+$^e:: core.unitHold() return ; CTRL + E
+$!e:: core.bindOneOrMany() return ; ALT + E
+$^!e:: core.bindManyToMany() return ; CTRL + ALT + E
 
 ; ----------------------------------------HERO COMBOS
 
@@ -87,11 +87,11 @@ $r:: ; R
         heroThree.unitMove()
     }
 
-    unitMiddleware.unitMoveOrBuild()
+    core.unitMoveOrBuild()
 return
 
 $+r:: ; SHIFT + R
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
 
     heroOne.unitAttack()
     heroTwo.unitAttack()
@@ -99,7 +99,7 @@ $+r:: ; SHIFT + R
 return
 
 $^r:: ; CTRL + R
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
 
     heroOne.unitHold()
     heroTwo.unitHold()
@@ -107,7 +107,7 @@ $^r:: ; CTRL + R
 return
 
 $t:: ; T
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
 
     heroOne.useComboSpell()
     heroTwo.useComboSpell()
@@ -115,7 +115,7 @@ $t:: ; T
 return
 
 $+t:: ; SHIFT + T
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
 
     heroOne.heroAutoLvlUp()
     heroTwo.heroAutoLvlUp()
@@ -124,27 +124,27 @@ return
 
 ;----------------------------------------ARMY ONE
 
-$a:: unitMiddleware.unitMoveOrBuild() return ; A
-$+a:: unitMiddleware.unitAttack() return ; SHIFT + A
-$^a:: unitMiddleware.unitHold() return ; CTRL + A
-$!a:: unitMiddleware.bindOneOrMany() return ; ALT + A
-$^!a:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + A
+$a:: core.unitMoveOrBuild() return ; A
+$+a:: core.unitAttack() return ; SHIFT + A
+$^a:: core.unitHold() return ; CTRL + A
+$!a:: core.bindOneOrMany() return ; ALT + A
+$^!a:: core.bindManyToMany() return ; CTRL + ALT + A
 
 ;----------------------------------------ARMY TWO
 
-$s:: unitMiddleware.unitMoveOrBuild() return ; S
-$+s:: unitMiddleware.unitAttack() return ; SHIFT + S
-$^s:: unitMiddleware.unitHold() return ; CTRL + S
-$!s:: unitMiddleware.bindOneOrMany() return ; ALT + S
-$^!s:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + S
+$s:: core.unitMoveOrBuild() return ; S
+$+s:: core.unitAttack() return ; SHIFT + S
+$^s:: core.unitHold() return ; CTRL + S
+$!s:: core.bindOneOrMany() return ; ALT + S
+$^!s:: core.bindManyToMany() return ; CTRL + ALT + S
 
 ;----------------------------------------ARMY THREE
 
-$d:: unitMiddleware.unitMoveOrBuild() return ; D
-$+d:: unitMiddleware.unitAttack() return ; SHIFT + D
-$^d:: unitMiddleware.unitHold() return ; CTRL + D
-$!d:: unitMiddleware.bindOneOrMany() return ; ALT + D
-$^!d:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + D
+$d:: core.unitMoveOrBuild() return ; D
+$+d:: core.unitAttack() return ; SHIFT + D
+$^d:: core.unitHold() return ; CTRL + D
+$!d:: core.bindOneOrMany() return ; ALT + D
+$^!d:: core.bindManyToMany() return ; CTRL + ALT + D
 
 ;----------------------------------------ARMYS COMBOS
 
@@ -155,11 +155,11 @@ $f:: ; F
         armyThree.unitMove()
     }
 
-    unitMiddleware.unitMoveOrBuild()
+    core.unitMoveOrBuild()
 return
 
 $+f:: ; SHIFT + F
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
 
     armyOne.unitAttack()
     armyTwo.unitAttack()
@@ -167,7 +167,7 @@ $+f:: ; SHIFT + F
 return
 
 $^f:: ; CTRL + F
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
 
     armyOne.unitHold()
     armyTwo.unitHold()
@@ -175,29 +175,30 @@ $^f:: ; CTRL + F
 return
 
 ;----------------------------------------BUILDERS
-$z:: unitMiddleware.unitMoveOrBuild() return ; Z
-$x:: unitMiddleware.unitMoveOrBuild() return ; X
-$+x:: unitMiddleware.unitAttack() return ; SHIFT + X
-$^x:: unitMiddleware.unitHold() return ; CTRL + X
-$!x:: unitMiddleware.bindOneOrMany() return ; ALT + X
-$^!x:: unitMiddleware.bindManyToMany() return ; CTRL + ALT + X
+
+$z:: core.unitMoveOrBuild() return ; Z
+$x:: core.unitMoveOrBuild() return ; X
+$+x:: core.unitAttack() return ; SHIFT + X
+$^x:: core.unitHold() return ; CTRL + X
+$!x:: core.bindOneOrMany() return ; ALT + X
+$^!x:: core.bindManyToMany() return ; CTRL + ALT + X
 
 ;----------------------------------------BUILDINGS
 
 $c::
-    unitMiddleware.unitMoveOrBuild()
+    core.unitMoveOrBuild()
 
     If (!builderMode.getBuilderModeState()) {
         buildings.toggleBuildings()
     }
 return ; C
 $!c:: 
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
     buildings.bindOneOrMany() 
 return ; ALT + C
 
 $v::
-    unitMiddleware.unitMoveOrBuild()
+    core.unitMoveOrBuild()
 return ; C
 
 ;----------------------------------------GUI
@@ -209,16 +210,16 @@ return
 ;----------------------------------------GLOBALS
 
 $Space:: 
-    unitMiddleware.centerCameraOnUnit()
+    core.centerCameraOnUnit()
 Return
 
 ~LButton:: ; LEFT CLICK
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
     builderMode.endBuilding()
 Return
 
 ~+LButton:: ; LEFT CLICK
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
     builderMode.endBuilding()
 Return
 
@@ -231,12 +232,12 @@ Return
 Return
 
 $`::
-    isUnitSelect := unitMiddleware._recordHotkey("x")
+    isUnitSelect := core._recordHotkey("x")
     builderMode.toggleBuildingMode(isUnitSelect)
 return ; Z
 
 ~Esc::
-    unitMiddleware.resetHotkeyState()
+    core.resetHotkeyState()
     builderMode.endBuilding()
 return
 

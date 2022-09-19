@@ -1,10 +1,9 @@
-Class UnitMiddleware {
+Class Core {
     __New(units, builderMode) {
         this.units := units
         this.builderMode := builderMode
         this.lastHotkey := false
         this.numericModeOn := false
-        this.afterBuilderMode := false
         ;                  heroOne heroTwo heroThree false armyOne armyTwo armyThree false false builders false false
         this.keyboard := [ "q",    "w",    "e",      "r",  "a",    "s",    "d",      "f",  "z",  "x",     "c",  "v"]
     }
