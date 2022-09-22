@@ -1,21 +1,20 @@
-#Include, ./src/services/unit.ahk
-#Include, ./src/services/builderMode.ahk
-#Include, ./src/services/buildings.ahk
+
 
 Class Core {
     __New(units, builderMode) {
+        this.a := "aaa"
         this.units := units
         this.builderMode := builderMode
         this.lastHotkey := false
         this.numericModeOn := false
         ;                  heroOne heroTwo heroThree false armyOne armyTwo armyThree false false builders false false
-        this.keyboard := [ "q",    "w",    "e",      "r",  "a",    "s",    "d",      "f",  "z",  "x",     "c",  "v"]
+        this.mainKeys := [ "q",    "w",    "e",      "r",  "a",    "s",    "d",      "f",  "z",  "x",     "c",  "v"]
     }
 
     _findIndex() {
         unitIndex := 0
 
-        For index, arrayKeyboardButton in this.keyboard {
+        For index, arrayKeyboardButton in this.mainKeys {
             If (this.lastHotkey = arrayKeyboardButton) {
                 unitIndex := index
             }
@@ -45,6 +44,7 @@ Class Core {
 
         If (isHotKeyChanged) {
             this.lastHotkey := thisHotkey
+            displayLastHotkey(thisHotkey)
         }
 
         isUnitSelect := this.numericModeOn ? thisHotkey : isHotKeyChanged
@@ -121,19 +121,3 @@ Class Core {
         }
     }
 }
-
-heroOne := new Unit(heroOneData)
-heroTwo := new Unit(heroTwoData)
-heroThree := new Unit(heroThreeData)
-
-armyOne := new Unit(armyOneData)
-armyTwo := new Unit(armyTwoData)
-armyThree := new Unit(armyThreeData)
-
-builders := new Unit(buildersData)
-builderMode := new BuilderMode(buildersData)
-buildings := new Buildings(buildingsData)
-;          Q        W        E          R      A        S        D          F      Z      X         C      V
-units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
-
-global core := new Core(units, builderMode)

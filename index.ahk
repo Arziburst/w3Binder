@@ -1,17 +1,37 @@
-;----------------------------------------LIBS
+#Include, ./src/tools/index.ahk
 
-#Include, ./node_modules/array.ahk/export.ahk
+#Include, ./src/services/webapp.ahk
+#Include, ./src/services/unit.ahk
+#Include, ./src/services/builderMode.ahk
+#Include, ./src/services/buildings.ahk
 
-;----------------------------------------IMPORTS
-
-#Include, ./src/data/undead.ahk
-; #Include, ./src/data/horde.ahk
-; #Include, ./src/data/nigthElf.ahk
-; #Include, ./src/data/alliance.ahk
-
-#Include, ./src/gui/Main.ahk
+#Include, ./src/view/index.ahk
 
 #Include, ./src/core.ahk
+
+unitsJSONUrl := "./src/data/undead.json"
+; unitsJSONUrl := "./src/data/horde.json"
+; unitsJSONUrl := "./src/data/nigthElf.json"
+; unitsJSONUrl := "./src/data/alliance.json"
+
+FileRead,unitsJSON,%unitsJSONUrl%
+unitData := jsonToObject(unitsJSON)
+
+heroOne := new Unit(unitData.heroOneData)
+heroTwo := new Unit(unitData.heroTwoData)
+heroThree := new Unit(unitData.heroThreeData)
+
+armyOne := new Unit(unitData.armyOneData)
+armyTwo := new Unit(unitData.armyTwoData)
+armyThree := new Unit(unitData.armyThreeData)
+
+builders := new Unit(unitData.buildersData)
+builderMode := new BuilderMode(unitData.buildersData)
+buildings := new Buildings(unitData.buildingsData)
+
+;          Q        W        E          R      A        S        D          F      Z      X         C      V
+units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
+global core := new Core(units, builderMode)
 
 ;----------------------------------------NUMERIC MANAGER
 
@@ -34,7 +54,7 @@ $!6:: core.useItem(6) return ; ALT + 6
 
 ; ----------------------------------------FIRST HERO
 
-$q:: core.unitMoveOrBuild() return
+$q:: core.unitMoveOrBuild() return ; Q
 $+q:: core.unitAttack() return ; SHIFT + Q
 $^q:: core.unitHold() return ; CTRL + Q
 $!q:: core.bindOneOrMany() return ; ALT + Q
@@ -59,17 +79,18 @@ $^!e:: core.bindManyToMany() return ; CTRL + ALT + E
 ; ----------------------------------------HERO COMBOS
 
 $r:: ; R
+    core._recordHotkey("r")
+
     If (!builderMode.getBuilderModeState()) {
         heroOne.unitMove()
         heroTwo.unitMove()
         heroThree.unitMove()
     }
 
-    core.unitMoveOrBuild()
 return
 
 $+r:: ; SHIFT + R
-    core.resetHotkeyState()
+    core._recordHotkey("r")
 
     heroOne.unitAttack()
     heroTwo.unitAttack()
@@ -77,7 +98,7 @@ $+r:: ; SHIFT + R
 return
 
 $^r:: ; CTRL + R
-    core.resetHotkeyState()
+    core._recordHotkey("r")
 
     heroOne.unitHold()
     heroTwo.unitHold()
@@ -85,7 +106,7 @@ $^r:: ; CTRL + R
 return
 
 $t:: ; T
-    core.resetHotkeyState()
+    core._recordHotkey("t")
 
     heroOne.useComboSpell()
     heroTwo.useComboSpell()
@@ -93,7 +114,7 @@ $t:: ; T
 return
 
 $+t:: ; SHIFT + T
-    core.resetHotkeyState()
+    core._recordHotkey("t")
 
     heroOne.heroAutoLvlUp()
     heroTwo.heroAutoLvlUp()
@@ -152,9 +173,10 @@ $^f:: ; CTRL + F
     armyThree.unitHold()
 return
 
+$z:: core.unitMoveOrBuild() return ; Z
+
 ;----------------------------------------BUILDERS
 
-$z:: core.unitMoveOrBuild() return ; Z
 $x:: core.unitMoveOrBuild() return ; X
 $+x:: core.unitAttack() return ; SHIFT + X
 $^x:: core.unitHold() return ; CTRL + X
