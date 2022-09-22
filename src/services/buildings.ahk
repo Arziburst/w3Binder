@@ -1,5 +1,5 @@
 class Buildings {
-    __New(options) {
+    __New() {
         this.selectedKeyBind := false
         this.buildingsBinds := [ 7, 8, 9 ]
     }
@@ -13,8 +13,8 @@ class Buildings {
     }
 
     _nextStep() {
-        indexOfSelectedKeyBind := this._ArrayIndexOf(this.buildingsBinds, this.selectedKeyBind)
-        nextKeyIndex := indexOfSelectedKeyBind + 1
+        indexOfselectedKeyBind := this._ArrayIndexOf(this.buildingsBinds, this.selectedKeyBind)
+        nextKeyIndex := indexOfselectedKeyBind + 1
 
         if (nextKeyIndex > this.buildingsBinds.Length()) {
             nextKeyIndex := 1

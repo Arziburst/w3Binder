@@ -3,10 +3,10 @@
 #Include, ./src/services/webapp.ahk
 #Include, ./src/services/unit.ahk
 #Include, ./src/services/builderMode.ahk
-#Include, ./src/services/buildings.ahk
 
 #Include, ./src/view/index.ahk
 
+#Include, ./src/services/buildings.ahk
 #Include, ./src/core.ahk
 
 selectFractionAhk(fractionIndex) {
@@ -28,7 +28,7 @@ selectFractionAhk(fractionIndex) {
 
     builders := new Unit(data.buildersData)
     builderMode := new BuilderMode(data.buildersData)
-
+    
     ;          Q        W        E          R      A        S        D          F      Z      X         C      V
     units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
     core := new Core(units, builderMode)
@@ -90,18 +90,17 @@ $^!e:: core.bindManyToMany() return ; CTRL + ALT + E
 ; ----------------------------------------HERO COMBOS
 
 $r:: ; R
-    core._recordHotkey("r")
+    core.unitMoveOrBuild()
 
     If (!builderMode.getBuilderModeState()) {
         units[1].unitMove()
         units[2].unitMove()
         units[3].unitMove()
     }
-
 return
 
 $+r:: ; SHIFT + R
-    core._recordHotkey("r")
+    core.resetHotkeyState()
 
     units[1].unitAttack()
     units[2].unitAttack()
@@ -109,7 +108,7 @@ $+r:: ; SHIFT + R
 return
 
 $^r:: ; CTRL + R
-    core._recordHotkey("r")
+    core.resetHotkeyState()
 
     units[1].unitHold()
     units[2].unitHold()
@@ -117,7 +116,7 @@ $^r:: ; CTRL + R
 return
 
 $t:: ; T
-    core._recordHotkey("t")
+    core.resetHotkeyState()
 
     units[1].useComboSpell()
     units[2].useComboSpell()
@@ -125,7 +124,7 @@ $t:: ; T
 return
 
 $+t:: ; SHIFT + T
-    core._recordHotkey("t")
+    core.resetHotkeyState()
 
     units[1].heroAutoLvlUp()
     units[2].heroAutoLvlUp()
@@ -159,29 +158,29 @@ $^!d:: core.bindManyToMany() return ; CTRL + ALT + D
 ;----------------------------------------ARMYS COMBOS
 
 $f:: ; F
+    core.unitMoveOrBuild()
+
     If (!builderMode.getBuilderModeState()) {
-        units[4].unitMove()
         units[5].unitMove()
         units[6].unitMove()
+        units[7].unitMove()
     }
-
-    core.unitMoveOrBuild()
 return
 
 $+f:: ; SHIFT + F
     core.resetHotkeyState()
 
-    units[4].unitAttack()
     units[5].unitAttack()
     units[6].unitAttack()
+    units[7].unitAttack()
 return
 
 $^f:: ; CTRL + F
     core.resetHotkeyState()
 
-    units[4].unitHold()
     units[5].unitHold()
     units[6].unitHold()
+    units[7].unitHold()
 return
 
 $z:: core.unitMoveOrBuild() return ; Z
@@ -197,9 +196,9 @@ $^!x:: core.bindManyToMany() return ; CTRL + ALT + X
 ;----------------------------------------BUILDINGS
 
 $c::
+    core.unitMoveOrBuild()
+
     If (!builderMode.getBuilderModeState()) {
-        core.unitMoveOrBuild()
-    } Else {
         buildings.toggleBuildings() 
     }
 return ; C

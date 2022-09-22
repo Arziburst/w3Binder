@@ -8,7 +8,6 @@ displayLastHotkey(newValue := "No bind") {
 }
 
 ; From Js
-
 selectFraction(newFraction) {
 	result := selectFractionAhk(newFraction)
 
