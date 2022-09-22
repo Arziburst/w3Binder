@@ -1,0 +1,106 @@
+{
+    "heroOneData": {
+        "bindKey": 1,
+        "spells": [
+            "b",
+            "w",
+            "r",
+            "t"
+        ],
+        "upgradePriority": [
+            "w",
+            "r",
+            "t",
+            "b"
+        ],
+        "combo": false
+    },
+     "heroTwoData": {
+        "bindKey": 2,
+        "spells": [
+            "t",
+            "c",
+            "b",
+            "v"
+        ],
+        "upgradePriority": [
+            "t",
+            "b",
+            "v",
+            "c"
+        ],
+        "combo": { "key": "t", "isClick": true }
+    },
+    "heroThreeData": {
+        "bindKey": 3,
+        "spells": [
+            "t",
+            "d",
+            "v",
+            "r"
+        ],
+        "upgradePriority": [
+            "r",
+            "t",
+            "d",
+            "v"
+        ],
+        "combo": { "key": "t", "isClick": true }
+    },
+     "armyOneData": {
+         "bindKey": 4,
+         "spells": [
+            "e",
+            "c",
+            false,
+            false
+        ]
+    },
+     "armyTwoData": {
+         "bindKey": 5,
+         "spells": [
+            "e",
+            "d",
+            "f",
+            false
+        ]
+    },
+    "armyThreeData": {
+        "bindKey": 6,
+        "spells": [
+            "w",
+            "i",
+            "o",
+            false
+        ]
+    },
+    "buildingsData": {
+        "buildingsBinds": [
+            7,
+            8,
+            9
+        ]
+    },
+    "buildersData": {
+        "bindKey": 0,
+        "spells": [
+            false,
+            "c",
+            false,
+            false
+        ],
+        "buildings": [
+            "h",
+            "b",
+            "l",
+            "s",
+            "f",
+            "a",
+            "r",
+            "w",
+            "t",
+            "g",
+            "v"
+        ]
+    }
+}

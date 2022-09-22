@@ -9,29 +9,40 @@
 
 #Include, ./src/core.ahk
 
-unitsJSONUrl := "./src/data/undead.json"
-; unitsJSONUrl := "./src/data/horde.json"
-; unitsJSONUrl := "./src/data/nigthElf.json"
-; unitsJSONUrl := "./src/data/alliance.json"
+selectFractionAhk(fractionIndex) {
+    fractions := ["horde", "alliance", "nightElf", "undead"]
+    template := "./src/data/fraction.json"
+    selectedFraction := fractions[fractionIndex]
+    unitsJSONUrl := StrReplace(template, "fraction", selectedFraction)
 
-FileRead,unitsJSON,%unitsJSONUrl%
-unitData := jsonToObject(unitsJSON)
+    FileRead,unitsJSON,%unitsJSONUrl%
+    data := jsonToObject(unitsJSON)
 
-heroOne := new Unit(unitData.heroOneData)
-heroTwo := new Unit(unitData.heroTwoData)
-heroThree := new Unit(unitData.heroThreeData)
+    heroOne := new Unit(data.heroOneData)
+    heroTwo := new Unit(data.heroTwoData)
+    heroThree := new Unit(data.heroThreeData)
 
-armyOne := new Unit(unitData.armyOneData)
-armyTwo := new Unit(unitData.armyTwoData)
-armyThree := new Unit(unitData.armyThreeData)
+    armyOne := new Unit(data.armyOneData)
+    armyTwo := new Unit(data.armyTwoData)
+    armyThree := new Unit(data.armyThreeData)
 
-builders := new Unit(unitData.buildersData)
-builderMode := new BuilderMode(unitData.buildersData)
-buildings := new Buildings(unitData.buildingsData)
+    builders := new Unit(data.buildersData)
+    builderMode := new BuilderMode(data.buildersData)
 
-;          Q        W        E          R      A        S        D          F      Z      X         C      V
-units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
-global core := new Core(units, builderMode)
+    ;          Q        W        E          R      A        S        D          F      Z      X         C      V
+    units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
+    core := new Core(units, builderMode)
+
+    return [ core, units, builderMode ]
+}
+
+buildings := new Buildings()
+
+result := selectFractionAhk(1)
+
+global core := result[1]
+global units := result[2]
+global builderMode := result[3]
 
 ;----------------------------------------NUMERIC MANAGER
 
@@ -82,9 +93,9 @@ $r:: ; R
     core._recordHotkey("r")
 
     If (!builderMode.getBuilderModeState()) {
-        heroOne.unitMove()
-        heroTwo.unitMove()
-        heroThree.unitMove()
+        units[1].unitMove()
+        units[2].unitMove()
+        units[3].unitMove()
     }
 
 return
@@ -92,33 +103,33 @@ return
 $+r:: ; SHIFT + R
     core._recordHotkey("r")
 
-    heroOne.unitAttack()
-    heroTwo.unitAttack()
-    heroThree.unitAttack()
+    units[1].unitAttack()
+    units[2].unitAttack()
+    units[3].unitAttack()
 return
 
 $^r:: ; CTRL + R
     core._recordHotkey("r")
 
-    heroOne.unitHold()
-    heroTwo.unitHold()
-    heroThree.unitHold()
+    units[1].unitHold()
+    units[2].unitHold()
+    units[3].unitHold()
 return
 
 $t:: ; T
     core._recordHotkey("t")
 
-    heroOne.useComboSpell()
-    heroTwo.useComboSpell()
-    heroThree.useComboSpell()
+    units[1].useComboSpell()
+    units[2].useComboSpell()
+    units[3].useComboSpell()
 return
 
 $+t:: ; SHIFT + T
     core._recordHotkey("t")
 
-    heroOne.heroAutoLvlUp()
-    heroTwo.heroAutoLvlUp()
-    heroThree.heroAutoLvlUp()
+    units[1].heroAutoLvlUp()
+    units[2].heroAutoLvlUp()
+    units[3].heroAutoLvlUp()
 return
 
 ;----------------------------------------ARMY ONE
@@ -149,9 +160,9 @@ $^!d:: core.bindManyToMany() return ; CTRL + ALT + D
 
 $f:: ; F
     If (!builderMode.getBuilderModeState()) {
-        armyOne.unitMove()
-        armyTwo.unitMove()
-        armyThree.unitMove()
+        units[4].unitMove()
+        units[5].unitMove()
+        units[6].unitMove()
     }
 
     core.unitMoveOrBuild()
@@ -160,17 +171,17 @@ return
 $+f:: ; SHIFT + F
     core.resetHotkeyState()
 
-    armyOne.unitAttack()
-    armyTwo.unitAttack()
-    armyThree.unitAttack()
+    units[4].unitAttack()
+    units[5].unitAttack()
+    units[6].unitAttack()
 return
 
 $^f:: ; CTRL + F
     core.resetHotkeyState()
 
-    armyOne.unitHold()
-    armyTwo.unitHold()
-    armyThree.unitHold()
+    units[4].unitHold()
+    units[5].unitHold()
+    units[6].unitHold()
 return
 
 $z:: core.unitMoveOrBuild() return ; Z
@@ -186,10 +197,10 @@ $^!x:: core.bindManyToMany() return ; CTRL + ALT + X
 ;----------------------------------------BUILDINGS
 
 $c::
-    core.unitMoveOrBuild()
-
     If (!builderMode.getBuilderModeState()) {
-        buildings.toggleBuildings()
+        core.unitMoveOrBuild()
+    } Else {
+        buildings.toggleBuildings() 
     }
 return ; C
 $!c:: 

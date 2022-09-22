@@ -1,13 +1,4 @@
-﻿app_call(args) {
-	MsgBox %args%
-	if InStr(args,"msgbox/hello") {
-		MsgBox Hello world!
-	}
-}
-
-app_page(NewURL) {
-	wb := getDOM()
-}
+﻿; To Js
 
 displayLastHotkey(newValue := "No bind") {
 	wb := getDOM()
@@ -16,18 +7,12 @@ displayLastHotkey(newValue := "No bind") {
 	lastHotkeyNode.innerHTML := newValue
 }
 
-; Functions to be called from the html/js source
+; From Js
 
-Hello() {
-	MsgBox Hello from JS_AHK :)
-}
+selectFraction(newFraction) {
+	result := selectFractionAhk(newFraction)
 
-RunMyJSFunction() {
-	window := getWindow()
-	window.my_js_and_ahk_function(3, 3)
-}
-; RunMyJSFunction()5h
-
-ahkToJs(a,b) {
-	return a * b
+	global core := result[1]
+	global units := result[2]
+	global builderMode := result[3]
 }

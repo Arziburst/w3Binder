@@ -1,40 +1,115 @@
 {
     "heroOneData": {
         "bindKey": 1,
-        "spells": [ "c", "e", "u", "d" ],
-        "upgradePriority": ["c", "u", "d", "e"],
-        "combo": { "key": "c", "isClick": true }
+        "spells": [
+            "c",
+            "e",
+            "u",
+            "d"
+        ],
+        "upgradePriority": [
+            "c",
+            "u",
+            "d",
+            "e"
+        ],
+        "combo": {
+            "key": "c",
+            "isClick": true
+        }
     },
-     "heroTwoData": {
+    "heroTwoData": {
         "bindKey": 2,
-        "spells": [ "n", "f", "r", "d" ],
-        "upgradePriority": ["n", "f", "d", "r"],
-        "combo": { "key": "n", "isClick": true }
+        "spells": [
+            "n",
+            "f",
+            "r",
+            "d"
+        ],
+        "upgradePriority": [
+            "n",
+            "f",
+            "d",
+            "r"
+        ],
+        "combo": {
+            "key": "n",
+            "isClick": true
+        }
     },
     "heroThreeData": {
         "bindKey": 3,
-        "spells": [ "c", "e", "v", "n" ],
-        "upgradePriority": ["n", "c", "v", "e"],
-        "combo": { "key": "c", "isClick": true }
+        "spells": [
+            "c",
+            "e",
+            "v",
+            "n"
+        ],
+        "upgradePriority": [
+            "n",
+            "c",
+            "v",
+            "e"
+        ],
+        "combo": {
+            "key": "c",
+            "isClick": true
+        }
     },
-     "armyOneData": {
-         "bindKey": 4,
-         "spells": [ "d", "o", false, "b" ]
+    "armyOneData": {
+        "bindKey": 4,
+        "spells": [
+            "d",
+            "o",
+            false,
+            "b"
+        ]
     },
-     "armyTwoData": {
-         "bindKey": 5,
-         "spells": [ "r", "u", "c", false ]
+    "armyTwoData": {
+        "bindKey": 5,
+        "spells": [
+            "r",
+            "u",
+            "c",
+            false
+        ]
     },
     "armyThreeData": {
         "bindKey": 6,
-        "spells": [ "c", "n", "o", false ]
+        "spells": [
+            "c",
+            "n",
+            "o",
+            false
+        ]
     },
     "buildingsData": {
-        "buildingsBinds": [ 7, 8, 9 ]
+        "buildingsBinds": [
+            7,
+            8,
+            9
+        ]
     },
     "buildersData": {
         "bindKey": 0,
-        "spells": [ false, "u", false, "c" ],
-        "buildings": [ "n", "c", "g", "v", "z", "a", "t", "h", "s", "b", "r" ]
+        "spells": [
+            false,
+            "u",
+            false,
+            "c"
+        ],
+        "buildings": [
+            "n",
+            "c",
+            "g",
+            "v",
+            "z",
+            "a",
+            "t",
+            "h",
+            "s",
+            "b",
+            "r"
+        ]
     }
 }

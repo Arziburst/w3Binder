@@ -1,7 +1,7 @@
 class Buildings {
     __New(options) {
         this.selectedKeyBind := false
-        this.buildingsBinds := options.buildingsBinds
+        this.buildingsBinds := [ 7, 8, 9 ]
     }
 
     _ArrayIndexOf(arr, item) {
