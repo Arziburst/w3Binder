@@ -10,7 +10,7 @@ displayLastHotkey(newValue := "No bind") {
 ; From Js
 selectFraction(newFraction) {
 	result := selectFractionAhk(newFraction)
-
+	MsgBox, %newFraction%
 	global core := result[1]
 	global units := result[2]
 	global builderMode := result[3]

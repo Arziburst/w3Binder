@@ -1,8 +1,5 @@
-
-
 Class Core {
     __New(units, builderMode) {
-        this.a := "aaa"
         this.units := units
         this.builderMode := builderMode
         this.lastHotkey := false

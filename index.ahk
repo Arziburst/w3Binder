@@ -1,17 +1,16 @@
-#Include, ./src/tools/index.ahk
+#Include, ./ahk/tools/index.ahk
 
-#Include, ./src/services/webapp.ahk
-#Include, ./src/services/unit.ahk
-#Include, ./src/services/builderMode.ahk
+#Include, ./ahk/services/webapp.ahk
+#Include, ./ahk/services/unit.ahk
+#Include, ./ahk/services/builderMode.ahk
+#Include, ./ahk/services/buildings.ahk
 
-#Include, ./src/view/index.ahk
-
-#Include, ./src/services/buildings.ahk
-#Include, ./src/core.ahk
+#Include, ./ahk/ahkJs.ahk
+#Include, ./ahk/core.ahk
 
 selectFractionAhk(fractionIndex) {
     fractions := ["horde", "alliance", "nightElf", "undead"]
-    template := "./src/data/fraction.json"
+    template := "./ahk/data/fraction.json"
     selectedFraction := fractions[fractionIndex]
     unitsJSONUrl := StrReplace(template, "fraction", selectedFraction)
 

@@ -1,27 +1,94 @@
 {
-  "name": "w3binder",
-  "version": "1.2.0",
-  "description": "AHK script for change w3 binds",
-  "main": "index.ahk",
-  "scripts": {
-    "start": "index.ahk"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Arziburst/w3Binder.git"
-  },
-  "keywords": [
-    "autohotkey",
-    "warcraft3",
-    "reforged"
-  ],
-  "author": "arziburst@gmail.com",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Arziburst/w3Binder/issues"
-  },
-  "homepage": "https://github.com/Arziburst/w3Binder#readme",
-  "dependencies": {
-    "array.ahk": "^0.1.8"
-  }
+    "name": "w3binder",
+    "version": "1.2.0",
+    "description": "AHK script for change w3 binds",
+    "author": "arziburst@gmail.com",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Arziburst/w3Binder.git"
+    },
+    "keywords": [
+        "autohotkey",
+        "warcraft3",
+        "reforged"
+    ],
+    "scripts": {
+        "start": "index.ahk",
+        "dev": "cross-env-shell NODE_ENV=development ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/start\"",
+        "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
+        "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
+        "serve": "serve \"./build\" -s",
+        "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",
+        "clean": "rm -rf node_modules"
+    },
+    "devDependencies": {
+        "@squoosh/lib": "^0.4.0",
+        "@types/app-root-path": "^1.2.4",
+        "@types/imagemin-mozjpeg": "^8.0.1",
+        "@types/imagemin-svgo": "^10.0.1",
+        "@types/mini-css-extract-plugin": "^2.5.1",
+        "@types/node": "^17.0.41",
+        "@types/react-dev-utils": "^9.0.11",
+        "@types/terser-webpack-plugin": "^5.2.0",
+        "@types/ttf2woff2": "^2.0.0",
+        "@types/webpack-bundle-analyzer": "^4.4.1",
+        "@types/webpack-dev-server": "^4.7.2",
+        "@types/webpack-hot-middleware": "^2.25.6",
+        "@types/webpack-manifest-plugin": "^3.0.5",
+        "@types/webpack-merge": "^5.0.0",
+        "@types/webpackbar": "^4.0.3",
+        "@types/workbox-webpack-plugin": "^5.1.8",
+        "@typescript-eslint/eslint-plugin": "^5.27.1",
+        "@typescript-eslint/parser": "^5.27.1",
+        "app-root-path": "3.0.0",
+        "babel-eslint": "^10.1.0",
+        "burst-generate-files": "^0.9.10",
+        "clean-webpack-plugin": "^4.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.1",
+        "css-minimizer-webpack-plugin": "^4.0.0",
+        "detect-port-alt": "1.1.6",
+        "dotenv": "^16.0.1",
+        "eslint": "^8.17.0",
+        "eslint-plugin-babel": "^5.3.1",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jest": "^26.5.3",
+        "eslint-plugin-react": "^7.30.0",
+        "eslint-plugin-react-hooks": "^4.5.0",
+        "fontmin-webpack": "^4.0.0",
+        "handlebars-loader": "^1.7.2",
+        "html-minimizer-webpack-plugin": "^4.0.0",
+        "html-webpack-plugin": "^5.5.0",
+        "image-minimizer-webpack-plugin": "^3.2.3",
+        "imagemin": "^8.0.1",
+        "imagemin-gifsicle": "^7.0.0",
+        "imagemin-mozjpeg": "^10.0.0",
+        "imagemin-pngquant": "^9.0.2",
+        "imagemin-svgo": "^10.0.1",
+        "inquirer": "^8.2.4",
+        "mini-css-extract-plugin": "^2.6.0",
+        "react-dev-utils": "^12.0.1",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.52.3",
+        "sass-loader": "^13.0.0",
+        "serve": "^13.0.2",
+        "source-map-loader": "^3.0.1",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.3.0",
+        "ts-node": "^10.8.1",
+        "typescript": "^4.7.3",
+        "webpack": "^5.73.0",
+        "webpack-bundle-analyzer": "^4.5.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.9.2",
+        "webpack-merge": "^5.8.0",
+        "webpackbar": "^5.0.2"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "ie 11",
+            "not dead"
+        ]
+    }
 }

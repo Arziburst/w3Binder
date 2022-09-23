@@ -12,7 +12,7 @@ __Webapp_height := 480
 __Webapp_protocol := "app"
 __Webapp_protocol_call := "app_call"
 __Webapp_NavComplete_call := "app_page"
-__Webapp_html_url := getFileFullPath("src/view/index.html")
+__Webapp_html_url := getFileFullPath("ahk/view/index.html")
 
 Gui __Webapp_Name:New
 Gui __Webapp_Name:Margin, 0, 0
