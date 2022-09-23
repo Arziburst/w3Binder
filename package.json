@@ -8,6 +8,7 @@
         "url": "git+https://github.com/Arziburst/w3Binder.git"
     },
     "keywords": [
+        "typescript",
         "autohotkey",
         "warcraft3",
         "reforged"
@@ -17,7 +18,7 @@
         "dev": "cross-env-shell NODE_ENV=development ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/start\"",
         "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
-        "serve": "serve \"./build\" -s",
+        "serve": "serve \"./ahk/view\" -s",
         "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",
         "clean": "rm -rf node_modules"
     },
