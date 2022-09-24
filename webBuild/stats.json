@@ -1,10 +1,10 @@
 {
   "hash": "07ac8",
   "version": "5.74.0",
-  "time": 2101,
-  "builtAt": 1663965238820,
+  "time": 2022,
+  "builtAt": 1664024566840,
   "publicPath": "./",
-  "outputPath": "C:\\Users\\arzib\\Desktop\\w3binder\\ahk\\view",
+  "outputPath": "C:\\Users\\arzib\\Desktop\\w3binder\\webBuild",
   "assetsByChunkName": {
     "main": [
       "main.45d7f.css",
@@ -3730,10 +3730,10 @@
       "name": "HtmlWebpackCompiler",
       "hash": "039d6",
       "version": "5.74.0",
-      "time": 1237,
-      "builtAt": 1663965237993,
+      "time": 1219,
+      "builtAt": 1664024566069,
       "publicPath": "",
-      "outputPath": "C:\\Users\\arzib\\Desktop\\w3binder\\ahk\\view",
+      "outputPath": "C:\\Users\\arzib\\Desktop\\w3binder\\webBuild",
       "assetsByChunkName": {},
       "assets": [],
       "chunks": [

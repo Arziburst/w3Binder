@@ -8,7 +8,7 @@ export const PORT = 3000;
 // Paths
 export { PROJECT_ROOT };
 export const SOURCE_DIRECTORY = resolve(PROJECT_ROOT, './src');
-export const BUILD_DIRECTORY = resolve(PROJECT_ROOT, './ahk/view');
+export const BUILD_DIRECTORY = resolve(PROJECT_ROOT, './webBuild');
 export const nodeModulePath = (nodeModuleName: string) => resolve(PROJECT_ROOT, `./node_modules/${nodeModuleName}`);
 
 // App

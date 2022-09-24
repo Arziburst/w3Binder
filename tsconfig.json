@@ -27,6 +27,6 @@
         "typeRoots": [ "node_modules/@types", "src/init/@types" ],
     },
     "include": [ "src/**/*" ],
-    "exclude": [ "build" ]
+    "exclude": [ "webBuild" ]
 }
   

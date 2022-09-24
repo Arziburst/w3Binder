@@ -1,6 +1,7 @@
-#Include, ./ahk/tools/index.ahk
 
-#Include, ./ahk/services/webapp.ahk
+#Include, ./scripts/webapp/index.ahk
+
+#Include, ./ahk/tools/index.ahk
 #Include, ./ahk/services/unit.ahk
 #Include, ./ahk/services/builderMode.ahk
 #Include, ./ahk/services/buildings.ahk
