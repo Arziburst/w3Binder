@@ -1,5 +1,4 @@
 // reExportComponentMarker
+export * from './Races';
 export * from './Header';
-export * from './Hero';
-export * from './Unit';
 

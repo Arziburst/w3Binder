@@ -28,7 +28,7 @@ selectFractionAhk(fractionIndex) {
 
     builders := new Unit(data.buildersData)
     builderMode := new BuilderMode(data.buildersData)
-    
+
     ;          Q        W        E          R      A        S        D          F      Z      X         C      V
     units := [ heroOne, heroTwo, heroThree, false, armyOne, armyTwo, armyThree, false, false, builders, false, false ]
     core := new Core(units, builderMode)
