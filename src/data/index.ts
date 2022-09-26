@@ -1,11 +1,11 @@
 // unitImportJsonMarker
+import Dreadlord from './Dreadlord.json';
 import CryptLord from './CryptLord.json';
 import Lich from './Lich.json';
 
 export const units = [
     // unitJsonMarker
+    Dreadlord,
     CryptLord,
     Lich,
 ];
-
-console.log('🚀 ~ file: index.ts ~ line 8 ~ units', units);
