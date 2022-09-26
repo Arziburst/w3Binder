@@ -1,1 +1,1 @@
-import __unitName__(camelCase) from './__unitName__(camelCase).json';
+import __unitName__(pascalCase) from './__unitName__(pascalCase).json';

@@ -1,0 +1,14 @@
+{
+    "unitName": "Crypt Lord",
+    "unitImgUrl": "",
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": "",
+            "isClick": "",
+            "isAura": ""
+        }
+    ],
+    "type": "",
+    "isBuilding": ""
+}
