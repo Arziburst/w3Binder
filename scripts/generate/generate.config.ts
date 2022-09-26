@@ -3,6 +3,28 @@ import pkg from 'app-root-path';
 
 CLIGen(pkg.path, [
     {
+        name:      'unitData',
+        templates: [
+            {
+                stringsReplacers: '__unitName__',
+                pathToTemplate:   './scripts/generate/unitData',
+                outputPath:       './src/data',
+                markers:          [
+                    {
+                        pattern:        '// unitImportJsonMarker',
+                        pathToMarker:   './src/data/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
+                    },
+                    {
+                        pattern:        '// unitJsonMarker',
+                        pathToMarker:   './src/data/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name:      'Component',
         templates: [
             {

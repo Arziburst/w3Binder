@@ -1,0 +1,1 @@
+import __unitName__(camelCase) from './__unitName__(camelCase).json';

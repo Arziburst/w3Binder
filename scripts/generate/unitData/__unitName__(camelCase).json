@@ -1,0 +1,14 @@
+{
+    "unitName": "__unitName__(noCase)",
+    "unitImgUrl": "",
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": "",
+            "isClick": "",
+            "isAura": ""
+        }
+    ],
+    "type": "",
+    "isBuilding": ""
+}

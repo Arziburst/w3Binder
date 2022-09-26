@@ -1,5 +1,10 @@
 import '@babel/polyfill';
 
+// Data
+import { units } from './data/index';
+
+console.log('🚀units', units);
+
 // Init
 import './index.scss';
 import './init/redux';

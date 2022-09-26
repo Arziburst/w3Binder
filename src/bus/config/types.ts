@@ -11,11 +11,13 @@ type Spell = {
     key: string
     isClick: boolean
     isAura: boolean
+    spellImgUrl: string
 }
 
 type Unit = {
     unitName: string,
     spells: Array<Spell>
+    unitImgUrl: string
     type: Human | Orc | Undead | NightElf | Neutral
     isBuilding: boolean
 } | false
