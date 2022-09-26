@@ -1,10 +1,23 @@
 // Core
 import { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
 
+type Human = 'human'
+type Orc = 'orc'
+type Undead = 'undead'
+type NightElf = 'nightElf'
+type Neutral = 'neutral'
+
+type Spell = {
+    key: string
+    isClick: boolean
+    isAura: boolean
+}
+
 type Unit = {
-    bindKey: number,
-    untiName: string,
-    spells: Array<string>
+    unitName: string,
+    spells: Array<Spell>
+    type: Human | Orc | Undead | NightElf | Neutral
+    isBuilding: boolean
 } | false
 
 export type ConfigState = {

@@ -1,0 +1,9 @@
+.button {
+    &-- {
+        &reset_styles {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}

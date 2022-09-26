@@ -1,3 +1,23 @@
 .header {
-    
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    background-image: url("../../assets/images/background_wood.jpg");
+    background-size: cover;
+
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30px;
+    width: 30px;
+
+    & span {
+        content: "";
+        height: 5px;
+        width: 100%;
+        background-color: #ff6a00;
+    }
 }
