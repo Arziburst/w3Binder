@@ -91,6 +91,28 @@ CLIGen(pkg.path, [
         ],
     },
     {
+        name:      'unitData Neutral',
+        templates: [
+            {
+                stringsReplacers: '__unitName__',
+                pathToTemplate:   './scripts/generate/unitData',
+                outputPath:       './src/data/units/neutral',
+                markers:          [
+                    {
+                        pattern:        '// unitImportJsonMarker',
+                        pathToMarker:   './src/data/units/neutral/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
+                    },
+                    {
+                        pattern:        '// unitJsonMarker',
+                        pathToMarker:   './src/data/units/neutral/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name:      'Component',
         templates: [
             {
