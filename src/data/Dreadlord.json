@@ -1,0 +1,14 @@
+{
+    "unitName": "Dreadlord",
+    "unitImgUrl": "",
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": "",
+            "isClick": "",
+            "isAura": ""
+        }
+    ],
+    "type": "",
+    "isBuilding": ""
+}

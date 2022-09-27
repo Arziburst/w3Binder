@@ -14,25 +14,27 @@ type Spell = {
     spellImgUrl: string
 }
 
-type Unit = {
+export type Unit = {
     unitName: string,
-    spells: Array<Spell>
     unitImgUrl: string
+    spells: Array<Spell>
     type: Human | Orc | Undead | NightElf | Neutral
     isBuilding: boolean
-} | false
+}
+
+type ConfigUnit = Unit | false
 
 export type ConfigState = {
-    q: Unit,
-    w: Unit,
-    e: Unit,
-    a: Unit,
-    s: Unit,
-    d: Unit,
-    z: Unit,
-    x: Unit,
-    c: Unit,
-    b: Unit
+    q: ConfigUnit,
+    w: ConfigUnit,
+    e: ConfigUnit,
+    a: ConfigUnit,
+    s: ConfigUnit,
+    d: ConfigUnit,
+    z: ConfigUnit,
+    x: ConfigUnit,
+    c: ConfigUnit,
+    b: ConfigUnit
 }
 
 // Contracts

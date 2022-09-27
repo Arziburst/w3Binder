@@ -1,0 +1,14 @@
+{
+    "unitName": "Far Seer",
+    "unitImgUrl": "",
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": "",
+            "isClick": true,
+            "isAura": true
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}

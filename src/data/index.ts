@@ -1,9 +1,17 @@
-// all heroes
-export * from './heroes';
-import { heroes } from './heroes';
 
-// all units
-export * from './units';
-import { units } from './units';
+// unitImportJsonMarker
+import FarSeer from './FarSeer.json';
+import Dreadlord from './Dreadlord.json';
+import CryptLord from './CryptLord.json';
+import Lich from './Lich.json';
 
-export const allData = [ heroes, units ];
+// Types
+// import { Unit } from '../bus/config/types'; // todo remove any[]
+
+export const units: any[] = [
+    // unitJsonMarker
+    FarSeer,
+    Dreadlord,
+    CryptLord,
+    Lich,
+];

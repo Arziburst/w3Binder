@@ -1,4 +1,5 @@
 // Core
+import { searchAndAutoComplete } from '../../pages';
 import './index.scss';
 
 const template = require('../../pages/selectConfigForButton/index.handlebars');
@@ -56,9 +57,9 @@ window.addEventListener('load', () => {
 
     buttons.forEach((button: any) => {
         button.element.addEventListener('click', () => {
-            console.log('click');
-
             main.innerHTML = template();
+
+            searchAndAutoComplete();
         });
     });
 });

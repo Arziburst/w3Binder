@@ -1,1 +1,1 @@
-export * from './selectConfigForButton';
+export * from './SelectConfigForButton';
