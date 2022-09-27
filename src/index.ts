@@ -10,8 +10,9 @@ import './index.scss';
 import './init/redux';
 
 // View
-import './components';
 import './elements';
+import './components';
+import './pages';
 
 // Images
 import './assets/images/icon_race_human.png';

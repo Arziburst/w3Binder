@@ -3,21 +3,87 @@ import pkg from 'app-root-path';
 
 CLIGen(pkg.path, [
     {
-        name:      'unitData',
+        name:      'unitData Human',
         templates: [
             {
                 stringsReplacers: '__unitName__',
                 pathToTemplate:   './scripts/generate/unitData',
-                outputPath:       './src/data',
+                outputPath:       './src/data/units/human',
                 markers:          [
                     {
                         pattern:        '// unitImportJsonMarker',
-                        pathToMarker:   './src/data/index.ts',
+                        pathToMarker:   './src/data/units/human/index.ts',
                         markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
                     },
                     {
                         pattern:        '// unitJsonMarker',
-                        pathToMarker:   './src/data/index.ts',
+                        pathToMarker:   './src/data/units/human/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name:      'unitData Orc',
+        templates: [
+            {
+                stringsReplacers: '__unitName__',
+                pathToTemplate:   './scripts/generate/unitData',
+                outputPath:       './src/data/units/orc',
+                markers:          [
+                    {
+                        pattern:        '// unitImportJsonMarker',
+                        pathToMarker:   './src/data/units/orc/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
+                    },
+                    {
+                        pattern:        '// unitJsonMarker',
+                        pathToMarker:   './src/data/units/orc/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name:      'unitData Undead',
+        templates: [
+            {
+                stringsReplacers: '__unitName__',
+                pathToTemplate:   './scripts/generate/unitData',
+                outputPath:       './src/data/units/undead',
+                markers:          [
+                    {
+                        pattern:        '// unitImportJsonMarker',
+                        pathToMarker:   './src/data/units/undead/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
+                    },
+                    {
+                        pattern:        '// unitJsonMarker',
+                        pathToMarker:   './src/data/units/undead/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        name:      'unitData Night Elf',
+        templates: [
+            {
+                stringsReplacers: '__unitName__',
+                pathToTemplate:   './scripts/generate/unitData',
+                outputPath:       './src/data/units/nightElf',
+                markers:          [
+                    {
+                        pattern:        '// unitImportJsonMarker',
+                        pathToMarker:   './src/data/units/nightElf/index.ts',
+                        markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
+                    },
+                    {
+                        pattern:        '// unitJsonMarker',
+                        pathToMarker:   './src/data/units/nightElf/index.ts',
                         markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
                     },
                 ],

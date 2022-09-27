@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 
+{{!--
+
 <head>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-</head>
+</head> --}}
+
+{{> ./pages/head}}
 
 <body>
     {{> ./components/Header/index }}
-    {{> ./components/Races/index }}
-    <section class="main">
-    </section>
+    <main id="main" class="main">
+        {{> ./components/Races/index }}
+        {{> ./components/Buttons/index }}
+    </main>
     <a target="_blank" href="https://github.com/Arziburst/TJS_frontend/blob/master/source/api/gallery.ts">link</a>
-    <div id="testData"></div>
 </body>
 
 </html>

@@ -1,11 +1,5 @@
-// unitImportJsonMarker
-import Dreadlord from './Dreadlord.json';
-import CryptLord from './CryptLord.json';
-import Lich from './Lich.json';
+// all units
+export * from './heroes';
+import { allHeroes } from './heroes';
 
-export const units = [
-    // unitJsonMarker
-    Dreadlord,
-    CryptLord,
-    Lich,
-];
+export const allData = [ allHeroes ];

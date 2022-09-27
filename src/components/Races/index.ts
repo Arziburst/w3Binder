@@ -4,9 +4,6 @@ import './index.scss';
 // Bus
 import { reduxConfig } from '../../bus/config';
 
-// Configs
-import { configHuman, configOrc, configUndead, configNightElf } from './configs';
-
 // Types
 type SelectRace = {
     event: Event
@@ -31,43 +28,60 @@ const selectRace = ({ event, selectedConfig }: SelectRace) => {
 window.addEventListener('load', () => {
     const selectHuman: any =  document.querySelector('#selectHuman');
     const selectOrc: any =  document.querySelector('#selectOrc');
+    const selectUndead: any =  document.querySelector('#selectUndead');
+    const selectNightElf: any =  document.querySelector('#selectNightElf');
 
-    if (!(selectHuman && selectOrc)) {
+    if (!(selectHuman && selectOrc && selectUndead && selectNightElf)) {
         return;
     }
 
 
     let activeRace = '';
-    const activeStyle = 'transform: scale(1.4);';
+    const activeStyle = 'box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);';
 
     const resetAllActiveRaces = () => {
-        [ selectHuman, selectOrc ].forEach((el) => {
-            el.style = 'transform: scale(1);';
+        [ selectHuman, selectOrc, selectUndead, selectNightElf ].forEach((el) => {
+            el.style = 'box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);';
         });
     };
 
     // Human
-    selectHuman.addEventListener('click', (event: any) => {
-        selectRace({ event, selectedConfig: configHuman });
-        resetAllActiveRaces();
+    selectHuman.addEventListener('click', (event: Event) => {
+        selectRace({ event, selectedConfig: {}});
+        // resetAllActiveRaces();
         activeRace = 'human';
         if (activeRace === 'human') {
-            selectHuman.style = activeStyle;
+            // selectHuman.style = activeStyle;
         }
     });
 
     // Orc
-    selectOrc.addEventListener('click', (event: any) => {
-        selectRace({ event, selectedConfig: configOrc });
+    selectOrc.addEventListener('click', (event: Event) => {
+        selectRace({ event, selectedConfig: {}});
+        // resetAllActiveRaces();
+        activeRace = 'orc';
+        if (activeRace === 'orc') {
+            // selectOrc.style = activeStyle;
+        }
     });
 
     // Undead
-    document.querySelector('#selectUndead')?.addEventListener('click', (event) => {
-        selectRace({ event, selectedConfig: configUndead });
+    selectUndead.addEventListener('click', (event: Event) => {
+        selectRace({ event, selectedConfig: {}});
+        // resetAllActiveRaces();
+        activeRace = 'undead';
+        if (activeRace === 'undead') {
+            // selectUndead.style = activeStyle;
+        }
     });
 
     // Night elf
-    document.querySelector('#selectNightElf')?.addEventListener('click', (event) => {
-        selectRace({ event, selectedConfig: configNightElf });
+    selectNightElf.addEventListener('click', (event: Event) => {
+        selectRace({ event, selectedConfig: {}});
+        // resetAllActiveRaces();
+        activeRace = 'nightElt';
+        if (activeRace === 'nightElt') {
+            // selectNightElf.style = activeStyle;
+        }
     });
 });

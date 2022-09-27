@@ -25,6 +25,7 @@ type Unit = {
 export type ConfigState = {
     q: Unit,
     w: Unit,
+    e: Unit,
     a: Unit,
     s: Unit,
     d: Unit,

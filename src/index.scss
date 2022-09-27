@@ -2,14 +2,25 @@
 
 body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url('./assets/images/map.jpg');
     background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main {
-    width: 100%;
-    height: 100%;
+    padding: 20px;
 }
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
 
+    &-- {
+        &center {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
