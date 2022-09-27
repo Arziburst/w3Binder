@@ -1,5 +1,9 @@
-// all units
+// all heroes
 export * from './heroes';
-import { allHeroes } from './heroes';
+import { heroes } from './heroes';
 
-export const allData = [ allHeroes ];
+// all units
+export * from './units';
+import { units } from './units';
+
+export const allData = [ heroes, units ];

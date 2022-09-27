@@ -1,0 +1,14 @@
+{
+    "unitName": "Grunt",
+    "unitImgUrl": "",
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": "",
+            "isClick": "",
+            "isAura": ""
+        }
+    ],
+    "type": "",
+    "isBuilding": ""
+}
