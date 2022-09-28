@@ -1,0 +1,24 @@
+{
+   "races": [
+        "human",
+        "orc",
+        "undead",
+        "nightElf",
+        "neutral"
+    ],
+    "hotKeys": [
+        "q",
+        "w",
+        "e",
+        "r",
+        "a",
+        "s",
+        "d",
+        "f",
+        "z",
+        "x",
+        "c",
+        "v",
+        "b"
+    ]
+}

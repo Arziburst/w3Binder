@@ -1,11 +1,12 @@
 global delay := 35
 
 class Unit {
-    __New(options) {
+    __New(options, isAutoMove) {
         this.bindKey := options.bindKey
         this.spells := options.spells
-        this.upgradePriority := options.upgradePriority
-        this.combo := options.combo
+        this.isAutoMove := isAutoMove
+        ; this.upgradePriority := options.upgradePriority
+        ; this.combo := options.combo
         this.items := [ "Numpad7", "Numpad8", "Numpad4", "Numpad5", "Numpad1", "Numpad2" ]
     }
 
@@ -33,13 +34,18 @@ class Unit {
 
     unitMove(isUnitSelect := true) {
         this.unitSelect(isUnitSelect)
-        Send, {Click, Right}
+
+        If (this.isAutoMove == "true") {
+            Send, {Click, Right}
+        }
     }
 
     unitAttack(isUnitSelect := true) {
         this.unitSelect(isUnitSelect)
         Send, a
-        Send, {Click}
+        If (this.isAutoMove == "true") {
+            Send, {Click, Right}
+        }
     }
 
     unitHold(isUnitSelect := true) {
@@ -47,40 +53,40 @@ class Unit {
         Send, h
     }
 
-    useComboSpell() {
-        If (!this.combo) {
-            return
-        }
+    ; useComboSpell() {
+    ;     If (!this.combo) {
+    ;         return
+    ;     }
 
-        this.unitSelect()
-        Send, % this.combo.key
+    ;     this.unitSelect()
+    ;     Send, % this.combo.key
 
-        if (this.combo.isClick) {
-            Send, {Click}
-        }
-    }
+    ;     if (this.combo.isClick) {
+    ;         Send, {Click}
+    ;     }
+    ; }
 
-    heroAutoLvlUp() {
-        this.unitSelect()
+    ; heroAutoLvlUp() {
+    ;     this.unitSelect()
 
-        For K, SpellButton in this.upgradePriority {
-            Send, o
-            Send, %SpellButton%
-        }
+    ;     For K, SpellButton in this.upgradePriority {
+    ;         Send, o
+    ;         Send, %SpellButton%
+    ;     }
 
-        Send, {Esc}
-        Sleep, %delay%
-    }
+    ;     Send, {Esc}
+    ;     Sleep, %delay%
+    ; }
     
-    heroLvlUp(numericKey) {
-        spellButton := this.spells[numericKey]
+    skillLvlUp(numericKey) {
+        spellObject := this.spells[numericKey]
 
-        If (!spellButton) {
+        If (!spellObject) {
             return
         }
 
         Send, o
-        Send, %spellButton%
+        Send, % spellObject.key
         Send, {Esc}
         Sleep, %delay%
     }
@@ -97,13 +103,13 @@ class Unit {
     }
 
     useSpell(numericKey) {
-        spellButton := this.spells[numericKey]
+        spellObject := this.spells[numericKey]
 
-        If (!spellButton) {
+        If (!spellObject) {
             return
         }
 
-        Send, %spellButton%
+        Send, % spellObject.key
         Sleep, %delay%
     }
 

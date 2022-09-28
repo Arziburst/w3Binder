@@ -1,9 +1,10 @@
 class BuilderMode {
-    __New(options) {
+    __New(bindKey, buildings) {
         this.builderMode := false
         this.afterBuilderMode := false
-        this.bindKey := options.bindKey
-        this.buildings := options.buildings
+        this.bindKey := bindKey
+        this.buildings := buildings
+        MsgBox, % this.buildings.Length()
         this.keyboard := [ "q", "w", "e", "r", "a", "s", "d", "f", "z", "x", "c", "v"]
     }
 

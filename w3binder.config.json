@@ -1,53 +1,249 @@
 {
+    "isAutoMove": true,
     "q": {
-        "untiName": "test",
         "bindKey": 1,
-        "spells": []
+        "unitName": "Dreadlord",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "e",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "u",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": true
+            },
+            {
+                "key": "d",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "undead",
+        "isBuilding": false
     },
     "w": {
-        "untiName": "test",
         "bindKey": 2,
-        "spells": []
+        "unitName": "Lich",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "n",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "f",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "r",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "d",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "undead",
+        "isBuilding": false
     },
     "e": {
-        "untiName": "test",
         "bindKey": 3,
-        "spells": []
+        "unitName": "3",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "e",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "v",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": true
+            },
+            {
+                "key": "n",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "orc",
+        "isBuilding": false
     },
+    "r": false,
     "a": {
-        "untiName": "test",
         "bindKey": 4,
-        "spells": []
+        "unitName": "armyA",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "d",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "o",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            false,
+            {
+                "key": "b",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "undead",
+        "isBuilding": false
     },
     "s": {
-        "untiName": "test",
         "bindKey": 5,
-        "spells": []
+        "unitName": "armyS",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "r",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "u",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            false
+        ],
+        "type": "undead",
+        "isBuilding": false
     },
     "d": {
-        "untiName": "test",
         "bindKey": 6,
-        "spells": []
+        "unitName": "armyD",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "n",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "o",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            false
+        ],
+        "type": "undead",
+        "isBuilding": false
     },
+    "f": false,
     "z": {
-        "untiName": "test",
         "bindKey": 7,
-        "spells": []
+        "unitName": "armyZ",
+        "unitImgUrl": false,
+        "spells": false,
+        "type": "undead",
+        "isBuilding": false
     },
     "x": {
-        "untiName": "test",
         "bindKey": 8,
-        "spells": []
+        "unitName": "armyX",
+        "unitImgUrl": false,
+        "spells": false,
+        "type": "undead",
+        "isBuilding": false
     },
     "c": {
-        "untiName": "test",
         "bindKey": 9,
-        "spells": []
+        "unitName": "armyC",
+        "unitImgUrl": false,
+        "spells": false,
+        "type": "undead",
+        "isBuilding": false
     },
+    "v": false,
     "b": {
-        "untiName": "test",
         "bindKey": 0,
-        "spells": [],
-        "buildings": []
+        "buldings": [
+            "n",
+            "c",
+            "g",
+            "v",
+            "z",
+            "a",
+            "t",
+            "h",
+            "s",
+            "b",
+            "r"
+        ],
+        "unitName": "buildB",
+        "unitImgUrl": false,
+        "spells": [
+            false,
+            {
+                "key": "u",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": false
+            },
+            false,
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "undead",
+        "isBuilding": false
     }
 }

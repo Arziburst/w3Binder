@@ -4,8 +4,7 @@ Class Core {
         this.builderMode := builderMode
         this.lastHotkey := false
         this.numericModeOn := false
-        ;                  heroOne heroTwo heroThree false armyOne armyTwo armyThree false false builders false false
-        this.mainKeys := [ "q",    "w",    "e",      "r",  "a",    "s",    "d",      "f",  "z",  "x",     "c",  "v"]
+        this.mainKeys := [ "q", "w", "e", "r", "a", "s", "d", "f", "z", "x", "c", "v", "b"]
     }
 
     _findIndex() {
@@ -65,7 +64,7 @@ Class Core {
         isUnitSelect := this._recordHotkey()
         this._getActualUnit().unitMove(isUnitSelect)
     }
-    
+
     unitMoveOrBuild() {
         If (builderMode.getBuilderModeState()) {
             builderMode.build(this._getThisHotKey())
@@ -78,7 +77,7 @@ Class Core {
             }
         }
     }
-    
+
     unitAttack() {
         isUnitSelect := this._recordHotkey()
         this._getActualUnit().unitAttack(isUnitSelect)
@@ -99,9 +98,9 @@ Class Core {
         this._getActualUnit().useItem(numericKey)
     }
 
-    heroLvlUp(numericKey) {
+    skillLvlUp(numericKey) {
         this.numericModeOn := true
-        this._getActualUnit().heroLvlUp(numericKey)
+        this._getActualUnit().skillLvlUp(numericKey)
     }
 
     centerCameraOnUnit() {

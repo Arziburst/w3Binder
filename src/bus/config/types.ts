@@ -18,6 +18,7 @@ type Spell = {
 }
 
 export type Unit = {
+    bindKey: number
     unitName: string,
     unitImgUrl: string
     spells: Array<Spell>

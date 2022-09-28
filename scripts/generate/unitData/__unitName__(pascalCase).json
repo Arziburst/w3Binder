@@ -1,14 +1,14 @@
 {
     "unitName": "__unitName__(noCase)",
-    "unitImgUrl": "",
+    "unitImgUrl": false,
     "spells": [
         {
             "key": "",
-            "spellImgUrl": "",
-            "isClick": "",
-            "isAura": ""
+            "spellImgUrl": false,
+            "isClick": true,
+            "isAura": false
         }
     ],
     "type": "",
-    "isBuilding": ""
+    "isBuilding": false
 }

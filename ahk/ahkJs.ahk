@@ -8,10 +8,12 @@ displayLastHotkey(newValue := "No bind") {
 }
 
 ; From Js
-selectFraction(newFraction) {
-	result := selectFractionAhk(newFraction)
-	MsgBox, %newFraction%
-	global core := result[1]
-	global units := result[2]
-	global builderMode := result[3]
+setConfigFromJS(reduxConfig := false) {
+	; javascript write redux to json and pass to ahk
+	; ahk write json to file system as w3binder.config.json
+	; ahk reed config file and set new bids
+
+	If (reduxConfig) {
+		setConfig(reduxConfig)
+	}
 }
