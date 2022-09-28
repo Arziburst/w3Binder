@@ -4,7 +4,6 @@ class BuilderMode {
         this.afterBuilderMode := false
         this.bindKey := bindKey
         this.buildings := buildings
-        MsgBox, % this.buildings.Length()
         this.keyboard := [ "q", "w", "e", "r", "a", "s", "d", "f", "z", "x", "c", "v"]
     }
 
