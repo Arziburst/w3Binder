@@ -1,0 +1,9 @@
+.selectConfigForButton {
+    min-width: 1px;
+
+    &_button {
+        height: 100px;
+        width: 200px;
+        border: 2px solid black;
+    }
+}

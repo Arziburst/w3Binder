@@ -12,20 +12,17 @@ type SelectRace = {
 
 const selectRace = ({ event, selectedConfig }: SelectRace) => {
     event.preventDefault();
-    const { setConfig } = reduxConfig();
+    // const { setConfig } = reduxConfig();
 
-    setConfig(selectedConfig); //! todo payload
 
     const { config } = reduxConfig();
 
     alert(JSON.stringify(config));
-
-    // inner for test config
-    // document.querySelector<any>('#testData').innerHTML = JSON.stringify(config);
 };
 
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
+export const racesAddEventListenerOnIcons = () => { // todo on icons
     const selectHuman: any =  document.querySelector('#selectHuman');
     const selectOrc: any =  document.querySelector('#selectOrc');
     const selectUndead: any =  document.querySelector('#selectUndead');
@@ -84,4 +81,4 @@ window.addEventListener('load', () => {
             // selectNightElf.style = activeStyle;
         }
     });
-});
+};

@@ -7,7 +7,7 @@ import * as types from './types';
 // Reducers
 import * as reducers from './reducers';
 
-const initialState: types.ConfigState = {
+export const initialState: types.ConfigState = {
     q: false,
     w: false,
     e: false,

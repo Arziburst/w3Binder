@@ -1,6 +1,9 @@
 // Core
 import { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
 
+// State
+import { initialState } from './slice';
+
 type Human = 'human'
 type Orc = 'orc'
 type Undead = 'undead'
@@ -39,3 +42,6 @@ export type ConfigState = {
 
 // Contracts
 export type BaseContact<T = any> = CaseReducer<ConfigState, PayloadAction<T>>
+
+export type BindButtons = keyof typeof initialState;
+export type OptionsConfig = { type: BindButtons, value: Unit };
