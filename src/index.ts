@@ -1,17 +1,12 @@
 import '@babel/polyfill';
 
-// Data
-import { units } from './data/index';
-
-console.log('🚀units', units);
-
 // Init
 import './index.scss';
 import './init/redux';
 
 // View
-import './components';
 import './elements';
+import './components';
 
 // Images
 import './assets/images/icon_race_human.png';
