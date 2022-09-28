@@ -1,5 +1,10 @@
-// Core
+// Bus
+import { reduxConfig } from '../../bus/config';
+
+// Components
 import { searchAndAutoComplete } from '..';
+
+// Styles
 import './index.scss';
 
 const templateSelectConfigForButton = require('../../components/selectConfigForButton/index.handlebars');
@@ -17,6 +22,8 @@ export const bindButtonsAddEventListener = () => {
     const buttonX = document.querySelector('#buttonX');
     const buttonC = document.querySelector('#buttonC');
 
+    const buttonSaveConfig = document.querySelector('#buttonSaveConfig');
+
     if (!(
         main
         && buttonQ
@@ -28,46 +35,50 @@ export const bindButtonsAddEventListener = () => {
         && buttonZ
         && buttonX
         && buttonC
+        && buttonSaveConfig
     )) {
         console.log('no such document.querySelector main && buttonQ && buttonW ...');
-        console.log(buttonQ);
 
         return;
     }
 
     const buttons = [
         {
-            element: buttonQ,
-            text:    'q',
+            element:    buttonQ,
+            bindButton: 'q',
         },
         {
-            element: buttonW,
-            text:    'w',
+            element:    buttonW,
+            bindButton: 'w',
         },
         {
-            element: buttonE,
-            text:    'e',
+            element:    buttonE,
+            bindButton: 'e',
         },
         {
-            element: buttonA,
-            text:    'a',
+            element:    buttonA,
+            bindButton: 'a',
         },
         {
-            element: buttonS,
-            text:    's',
+            element:    buttonS,
+            bindButton: 's',
         },
         {
-            element: buttonD,
-            text:    'd',
+            element:    buttonD,
+            bindButton: 'd',
         },
     ];
 
     buttons.forEach((objectButton: any) => {
         objectButton.element.addEventListener('click', () => {
-            console.log('text');
             main.innerHTML = templateSelectConfigForButton();
 
-            searchAndAutoComplete(objectButton.text);
+            searchAndAutoComplete(objectButton.bindButton);
         });
+    });
+
+    buttonSaveConfig.addEventListener('click', () => {
+        const { config } = reduxConfig();
+        alert(JSON.stringify(config));
     });
 };

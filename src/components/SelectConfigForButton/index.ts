@@ -22,16 +22,17 @@ import { bindButtonsAddEventListener } from '../BindButtons';
 
 export const searchAndAutoComplete = (bindButton: BindButtons) => {
     const main = document.querySelector('#main');
+    const buttonBack = document.querySelector('#buttonBack');
     const inputSearch = document.querySelector('#inputSearch');
     const contentAfterSearch = document.querySelector('#contentAfterSearch');
 
-    if (!(main && contentAfterSearch && inputSearch)) {
+    if (!(main && buttonBack && contentAfterSearch && inputSearch)) {
         console.log('no such document.querySelector');
 
         return;
     }
 
-    const variable = (value: string, units: Unit[], contentAfterSearch: any) => {
+    const addButtonsWithUnit = (value: string, units: Unit[], contentAfterSearch: any) => {
         if (value.length > 0) {
             const foundUnits: Unit[] = searchUnits({ input: value, units });
 
@@ -51,14 +52,9 @@ export const searchAndAutoComplete = (bindButton: BindButtons) => {
                     const { setConfig } = reduxConfig();
                     setConfig({ type: bindButton, value: objectUnit });
 
-                    main.innerHTML = `${templateRaces()}${templateBindButtons()}`;
+                    const { config } = reduxConfig();
+                    main.innerHTML = `${templateRaces()}${templateBindButtons({ config })}`;
                     bindButtonsAddEventListener();
-
-                    // const { config } = reduxConfig();
-                    // contentAfterSearch.innerHTML = JSON.stringify(config);
-
-
-                    //! todo main
                 });
             });
 
@@ -69,15 +65,21 @@ export const searchAndAutoComplete = (bindButton: BindButtons) => {
         contentAfterSearch.innerHTML = templateCategories();
     };
 
+    buttonBack.addEventListener('click', () => {
+        const { config } = reduxConfig();
+        main.innerHTML = `${templateRaces()}${templateBindButtons({ config })}`;
+        bindButtonsAddEventListener();
+    });
+
     inputSearch.addEventListener('input', (event: any) => {
-        variable(event.target.value, units, contentAfterSearch);
+        addButtonsWithUnit(event.target.value, units, contentAfterSearch);
     });
 
     autoComplete({
         inp:                inputSearch,
         arr:                units.map((objectUnit) => objectUnit.unitName),
         selectItemCallback: (value: string) => {
-            variable(value, units, contentAfterSearch);
+            addButtonsWithUnit(value, units, contentAfterSearch);
         },
     });
 };

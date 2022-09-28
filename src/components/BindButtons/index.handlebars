@@ -1,36 +1,23 @@
 <section class="buttons row--center">
     <div>
         <div>
-            <button id="buttonQ" class="buttons__button button--reset_styles">
-                <p>Q</p>
-            </button>
-            <button id="buttonW" class="buttons__button button--reset_styles">
-                <p>W</p>
-            </button>
-            <button id="buttonE" class="buttons__button button--reset_styles">
-                <p>E</p>
-            </button>
+            {{> ./button.handlebars text="Q" name=config.q.unitName}}
+            {{> ./button.handlebars text="W" name=config.w.unitName}}
+            {{> ./button.handlebars text="E" name=config.e.unitName}}
         </div>
         <div>
-            <button id="buttonA" class="buttons__button button--reset_styles">
-                a
-            </button>
-            <button id="buttonS" class="buttons__button button--reset_styles">
-                s
-            </button>
-            <button id="buttonD" class="buttons__button button--reset_styles">
-                d
-            </button>
+            {{> ./button.handlebars text="A" name=config.A.unitName}}
+            {{> ./button.handlebars text="S" name=config.s.unitName}}
+            {{> ./button.handlebars text="D" name=config.d.unitName}}
         </div>
         <div>
-            <button id="buttonZ" class="buttons__button button--reset_styles">
-                z
-            </button>
-            <button id="buttonX" class="buttons__button button--reset_styles">
-                x
-            </button>
-            <button id="buttonC" class="buttons__button button--reset_styles">
-                c
+            {{> ./button.handlebars text="Z" name=config.z.unitName}}
+            {{> ./button.handlebars text="X" name=config.x.unitName}}
+            {{> ./button.handlebars text="C" name=config.c.unitName}}
+        </div>
+        <div>
+            <button id="buttonSaveConfig">
+                save config
             </button>
         </div>
     </div>

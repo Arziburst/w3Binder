@@ -1,3 +1,8 @@
-<button id="buttonQ" class="buttons__button button--reset_styles">
-    <p>Q</p>
+<button id="button{{text}}" class="buttons__button button--reset_styles">
+
+    {{#if name}}
+    <p>{{name}}</p>
+    {{/if}}
+
+    <p>{{text}}</p>
 </button>
