@@ -14,3 +14,9 @@ declare module 'fontmin-webpack' {
         skippedFilesRegex: RegExp | null
     }
 }
+
+declare global {
+    interface Window {
+        setConfig: (ConfigJSONFromAhk: string) => void;
+    }
+}

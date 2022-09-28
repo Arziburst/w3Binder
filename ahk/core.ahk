@@ -40,7 +40,6 @@ Class Core {
 
         If (isHotKeyChanged) {
             this.lastHotkey := thisHotkey
-            displayLastHotkey(thisHotkey)
         }
 
         isUnitSelect := this.numericModeOn ? thisHotkey : isHotKeyChanged

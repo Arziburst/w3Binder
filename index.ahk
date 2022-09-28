@@ -1,50 +1,13 @@
 #Include, ./scripts/webapp/index.ahk
-
 #Include, ./ahk/tools/index.ahk
 #Include, ./ahk/services/unit.ahk
 #Include, ./ahk/services/builderMode.ahk
-
-#Include, ./ahk/ahkJs.ahk
 #Include, ./ahk/core.ahk
+#Include, ./ahk/ahkJs.ahk
 
-setConfig(newReduxJsonconfig := false) {
-    If (newReduxJsonconfig) {
-        ; FileWrite,newReduxJsonconfig,cofigJson,./w3binder.config.json
-    }
+setConfig()
+setConfigToJs()
 
-    FileRead,cofigJson,./w3binder.config.json
-    
-    config := jsonToObject(cofigJson)
-
-    isAutoMove := config.isAutoMove
-
-    q := new Unit(config.q, isAutoMove)
-    w := new Unit(config.w, isAutoMove)
-    e := new Unit(config.e, isAutoMove)
-    r := new Unit(config.r, isAutoMove)
-    a := new Unit(config.a, isAutoMove)
-    s := new Unit(config.s, isAutoMove)
-    d := new Unit(config.d, isAutoMove)
-    f := new Unit(config.f, isAutoMove)
-    z := new Unit(config.z, isAutoMove)
-    x := new Unit(config.x, isAutoMove)
-    c := new Unit(config.c, isAutoMove)
-    v := new Unit(config.v, isAutoMove)
-    b := new Unit(config.b, isAutoMove)
-
-    builderMode := new BuilderMode(config.b.bindKey, config.b.buldings)
-
-    units := [ q, w, e, r, a, s, d, f, z, x, c, v, b ]
-
-    core := new Core(units, builderMode)
-
-    return [ core, builderMode ]
-}
-
-result := setConfig()
-
-global core := result[1]
-global builderMode := result[2]
 ;----------------------------------------NUMERIC MANAGER
 
 $1:: core.useSpell(1) return ; 1

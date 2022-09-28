@@ -14,9 +14,10 @@
         "reforged"
     ],
     "scripts": {
-        "start": "index.ahk",
+        "ahkDev": "index.ahk",
         "dev": "cross-env-shell NODE_ENV=development ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/start\"",
         "build": "cross-env-shell NODE_ENV=production ts-node -P \"./tsconfig.webpack.json\" \"./scripts/webpack/build\"",
+        "start": "npm run build && npm run ahkDev",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./webBuild\" -s",
         "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate/generate.config.ts\"",

@@ -29,16 +29,20 @@ export type Unit = {
 type ConfigUnit = Unit | false
 
 export type ConfigState = {
+    isAutoMove: boolean
     q: ConfigUnit,
     w: ConfigUnit,
     e: ConfigUnit,
+    r: false
     a: ConfigUnit,
     s: ConfigUnit,
     d: ConfigUnit,
+    f: false
     z: ConfigUnit,
     x: ConfigUnit,
     c: ConfigUnit,
-    b: ConfigUnit
+    v: false
+    b: Unit & { buldings: Array<string> } | false
 }
 
 // Contracts

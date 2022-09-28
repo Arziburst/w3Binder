@@ -8,16 +8,20 @@ import * as types from './types';
 import * as reducers from './reducers';
 
 export const initialState: types.ConfigState = {
-    q: false,
-    w: false,
-    e: false,
-    a: false,
-    s: false,
-    d: false,
-    z: false,
-    x: false,
-    c: false,
-    b: false,
+    isAutoMove: true,
+    q:          false,
+    w:          false,
+    e:          false,
+    r:          false,
+    a:          false,
+    s:          false,
+    d:          false,
+    f:          false,
+    z:          false,
+    x:          false,
+    c:          false,
+    v:          false,
+    b:          false,
 };
 
 export const configSlice = createSlice<types.ConfigState, typeof reducers>({
