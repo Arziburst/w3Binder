@@ -15,10 +15,9 @@ type Spell = {
     isClick: boolean
     isAura: boolean
     spellImgUrl: string | boolean
-}
+} | boolean
 
 export type Unit = {
-    bindKey: number
     unitName: string,
     unitImgUrl: string | boolean
     spells: Array<Spell>
@@ -26,7 +25,9 @@ export type Unit = {
     isBuilding: boolean
 }
 
-type ConfigUnit = Unit | false
+export type FullUnit = Unit & { bindKey: number }
+
+type ConfigUnit = FullUnit | false
 
 export type ConfigState = {
     isAutoMove: boolean
@@ -42,7 +43,7 @@ export type ConfigState = {
     x: ConfigUnit,
     c: ConfigUnit,
     v: false
-    b: Unit & { buldings: Array<string> } | false
+    b: FullUnit & { buldings: Array<string> } | false
 }
 
 // Contracts
