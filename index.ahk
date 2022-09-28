@@ -233,7 +233,7 @@ Return
 Return
 
 $`::
-    isUnitSelect := core._recordHotkey("x")
+    isUnitSelect := core._recordHotkey("b")
     builderMode.toggleBuildingMode(isUnitSelect)
 return ; Z
 
