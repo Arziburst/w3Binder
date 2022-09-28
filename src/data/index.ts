@@ -1,17 +1,11 @@
 
 // unitImportJsonMarker
-import FarSeer from './FarSeer.json';
-import Dreadlord from './Dreadlord.json';
-import CryptLord from './CryptLord.json';
-import Lich from './Lich.json';
+import Acolyte from './Acolyte.json';
 
 // Types
-// import { Unit } from '../bus/config/types'; // todo remove any[]
+import { Unit } from '../bus/config/types'; // todo remove any[]
 
-export const units: any[] = [
+export const units: Array<Omit<Unit, 'bindKey'>> = [
     // unitJsonMarker
-    FarSeer,
-    Dreadlord,
-    CryptLord,
-    Lich,
+    Acolyte,
 ];

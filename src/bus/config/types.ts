@@ -14,15 +14,15 @@ type Spell = {
     key: string
     isClick: boolean
     isAura: boolean
-    spellImgUrl: string
+    spellImgUrl: string | boolean
 }
 
 export type Unit = {
     bindKey: number
     unitName: string,
-    unitImgUrl: string
+    unitImgUrl: string | boolean
     spells: Array<Spell>
-    type: Human | Orc | Undead | NightElf | Neutral
+    type: Human | Orc | Undead | NightElf | Neutral | string
     isBuilding: boolean
 }
 
