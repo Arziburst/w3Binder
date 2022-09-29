@@ -1,45 +1,11 @@
 {
     "isAutoMove": true,
     "q": {
-        "bindKey": 1,
-        "unitName": "Dreadlord",
+        "unitName": "Far Seer",
         "unitImgUrl": false,
         "spells": [
             {
                 "key": "c",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            },
-            {
-                "key": "e",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            },
-            {
-                "key": "u",
-                "spellImgUrl": false,
-                "isClick": false,
-                "isAura": true
-            },
-            {
-                "key": "d",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            }
-        ],
-        "type": "undead",
-        "isBuilding": false
-    },
-    "w": {
-        "bindKey": 2,
-        "unitName": "Lich",
-        "unitImgUrl": false,
-        "spells": [
-            {
-                "key": "n",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
@@ -47,32 +13,11 @@
             {
                 "key": "f",
                 "spellImgUrl": false,
-                "isClick": true,
+                "isClick": false,
                 "isAura": false
             },
             {
-                "key": "r",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            },
-            {
-                "key": "d",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            }
-        ],
-        "type": "undead",
-        "isBuilding": false
-    },
-    "e": {
-        "bindKey": 3,
-        "unitName": "3",
-        "unitImgUrl": false,
-        "spells": [
-            {
-                "key": "c",
+                "key": "t",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
@@ -82,83 +27,147 @@
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
+            }
+        ],
+        "type": "orc",
+        "isBuilding": false,
+        "bindKey": 1
+    },
+    "w": {
+        "unitName": "Far Seer",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
             },
             {
-                "key": "v",
+                "key": "f",
                 "spellImgUrl": false,
                 "isClick": false,
-                "isAura": true
+                "isAura": false
             },
             {
-                "key": "n",
+                "key": "t",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "e",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
             }
         ],
         "type": "orc",
-        "isBuilding": false
+        "isBuilding": false,
+        "bindKey": 2
     },
-    "r": false,
-    "a": {
-        "bindKey": 4,
-        "unitName": "armyA",
+    "e": {
+        "unitName": "Far Seer",
         "unitImgUrl": false,
         "spells": [
             {
-                "key": "d",
+                "key": "c",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
             },
             {
-                "key": "o",
+                "key": "f",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": false
+            },
+            {
+                "key": "t",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
             },
-            false,
             {
-                "key": "b",
+                "key": "e",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
             }
         ],
-        "type": "undead",
-        "isBuilding": false
+        "type": "orc",
+        "isBuilding": false,
+        "bindKey": 3
+    },
+    "r": false,
+    "a": {
+        "unitName": "Far Seer",
+        "unitImgUrl": false,
+        "spells": [
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "f",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": false
+            },
+            {
+                "key": "t",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "e",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "orc",
+        "isBuilding": false,
+        "bindKey": 4
     },
     "s": {
-        "bindKey": 5,
-        "unitName": "armyS",
+        "unitName": "Far Seer",
         "unitImgUrl": false,
         "spells": [
-            {
-                "key": "r",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            },
-            {
-                "key": "u",
-                "spellImgUrl": false,
-                "isClick": true,
-                "isAura": false
-            },
             {
                 "key": "c",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
             },
-            false
+            {
+                "key": "f",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": false
+            },
+            {
+                "key": "t",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "e",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
         ],
-        "type": "undead",
-        "isBuilding": false
+        "type": "orc",
+        "isBuilding": false,
+        "bindKey": 5
     },
     "d": {
-        "bindKey": 6,
-        "unitName": "armyD",
+        "unitName": "Far Seer",
         "unitImgUrl": false,
         "spells": [
             {
@@ -168,21 +177,27 @@
                 "isAura": false
             },
             {
-                "key": "n",
+                "key": "f",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": false
+            },
+            {
+                "key": "t",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
             },
             {
-                "key": "o",
+                "key": "e",
                 "spellImgUrl": false,
                 "isClick": true,
                 "isAura": false
-            },
-            false
+            }
         ],
-        "type": "undead",
-        "isBuilding": false
+        "type": "orc",
+        "isBuilding": false,
+        "bindKey": 6
     },
     "f": false,
     "z": {
@@ -211,21 +226,19 @@
     },
     "v": false,
     "b": {
-        "bindKey": 0,
-        "buldings": [
-            "n",
-            "c",
-            "g",
-            "v",
-            "z",
-            "a",
-            "t",
+        "buildings": [
             "h",
-            "s",
             "b",
-            "r"
+            "m",
+            "w",
+            "o",
+            "a",
+            "s",
+            "e",
+            "t",
+            "v"
         ],
-        "unitName": "buildB",
+        "unitName": "Builders Orc",
         "unitImgUrl": false,
         "spells": [
             false,
@@ -243,7 +256,8 @@
                 "isAura": false
             }
         ],
-        "type": "undead",
-        "isBuilding": false
+        "type": "orc",
+        "isBuilding": false,
+        "bindKey": 0
     }
 }

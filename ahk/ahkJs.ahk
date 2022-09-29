@@ -1,19 +1,22 @@
 ﻿; To Js
 setConfigToJs() {
-	window := getWindow()
+    window := getWindow()
 
-	FileRead,cofigJson,./w3binder.config.json
+    FileRead,cofigJson,./w3binder.config.json
 
-	window.setConfig(cofigJson)
+    window.setConfig(cofigJson)
 }
 
 setConfig(newReduxJsonconfig := false) {
     If (newReduxJsonconfig) {
+        file := FileOpen("./w3binder.config.json", "w") 
+        file.write(newReduxJsonconfig)
+        file.close()
         ; FileWrite,newReduxJsonconfig,cofigJson,./w3binder.config.json
     }
 
     FileRead,cofigJson,./w3binder.config.json
-    
+
     config := jsonToObject(cofigJson)
 
     isAutoMove := config.isAutoMove
@@ -44,11 +47,11 @@ setConfig(newReduxJsonconfig := false) {
 
 ; From Js
 setConfigFromJS(reduxConfig := false) {
-	; javascript write redux to json and pass to ahk
-	; ahk write json to file system as w3binder.config.json
-	; ahk reed config file and set new bids
+    ; javascript write redux to json and pass to ahk
+    ; ahk write json to file system as w3binder.config.json
+    ; ahk reed config file and set new bids
 
-	If (reduxConfig) {
-		setConfig(reduxConfig)
-	}
+    If (reduxConfig) {
+        setConfig(reduxConfig)
+    }
 }

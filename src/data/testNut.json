@@ -1,0 +1,22 @@
+{
+    "unitName": "testNut",
+    "unitImgUrl": false,
+    "spells": [
+        false,
+        {
+            "key": "u",
+            "spellImgUrl": false,
+            "isClick": false,
+            "isAura": false
+        },
+        false,
+        {
+            "key": "c",
+            "spellImgUrl": false,
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "neutral",
+    "isBuilding": false
+}

@@ -1,0 +1,34 @@
+{
+    "buildings": [
+        "h",
+        "b",
+        "m",
+        "w",
+        "o",
+        "a",
+        "s",
+        "e",
+        "t",
+        "v"
+    ],
+    "unitName": "Builders Orc",
+    "unitImgUrl": false,
+    "spells": [
+        false,
+        {
+            "key": "u",
+            "spellImgUrl": false,
+            "isClick": false,
+            "isAura": false
+        },
+        false,
+        {
+            "key": "c",
+            "spellImgUrl": false,
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}

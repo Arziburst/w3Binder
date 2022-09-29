@@ -1,0 +1,14 @@
+{
+    "unitName": "Headhunter",
+    "unitImgUrl": false,
+    "spells": [
+        {
+            "key": "b",
+            "spellImgUrl": false,
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}
