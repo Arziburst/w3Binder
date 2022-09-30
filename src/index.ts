@@ -1,7 +1,6 @@
 import '@babel/polyfill';
 
 // Init
-import './index.scss';
 import './init/redux';
 
 // View
@@ -14,42 +13,47 @@ import { reduxConfig } from './bus/config';
 import { reduxSelectRace } from './bus/client/selectedRace';
 
 // Images
+// import './assets/images/big_metal_border.png';
+import './assets/images/border_iron.png';
+import './assets/images/background_wood.jpg';
+
 import './assets/images/icon_race_human.png';
 import './assets/images/icon_race_orc.png';
 import './assets/images/icon_race_undead.png';
 import './assets/images/icon_race_nightElf.png';
-import './assets/images/border_iron.png';
-import './assets/images/background_wood.jpg';
 
 // Pages
 import { createMainPage } from './pages';
+
+// Styles
+import './index.scss';
+
+// Types
 import { Neutral } from './bus/config/types';
 
-// Window
 const setConfig = (ConfigJSONFromAhk: string) => {
-    const parsedConfig: any = JSON.parse(ConfigJSONFromAhk);
+    if (ConfigJSONFromAhk) {
+        const parsedConfig: any = JSON.parse(ConfigJSONFromAhk);
+        reduxConfig().setSavedClientConfig(parsedConfig);
 
-    reduxConfig().setSavedClientConfig(parsedConfig);
+        const arr = new Set();
+        const neutral: Neutral = 'neutral';
 
-    const arr = new Set();
-    const neutral: Neutral = 'neutral';
+        Object.values(parsedConfig).forEach((obj: any) => (typeof obj.type === 'string' && obj.type !== neutral) && arr.add(obj.type));
 
-    Object.values(parsedConfig).forEach((obj: any) => (typeof obj.type === 'string' && obj.type !== neutral) && arr.add(obj.type));
-
-    if (arr.size === 1) {
-        reduxSelectRace().setRace(arr.values().next().value);
+        if (arr.size === 1) {
+            reduxSelectRace().setRace(arr.values().next().value);
+        }
     }
 
     createMainPage();
 };
-
 window.setConfig = setConfig;
 
+
 const { NODE_ENV } = process.env;
-
-
 if (NODE_ENV === 'development') {
-    reduxConfig().setSavedClientConfig({
+    const fakeData: any = JSON.stringify({
         isAutoMove: true,
         q:          {
             bindKey:    1,
@@ -298,5 +302,20 @@ if (NODE_ENV === 'development') {
             isBuilding: false,
         },
     });
+
+    if (fakeData) {
+        const parsedConfig: any = JSON.parse(fakeData);
+        reduxConfig().setSavedClientConfig(parsedConfig);
+
+        const arr = new Set();
+        const neutral: Neutral = 'neutral';
+
+        Object.values(parsedConfig).forEach((obj: any) => (typeof obj.type === 'string' && obj.type !== neutral) && arr.add(obj.type));
+
+        if (arr.size === 1) {
+            reduxSelectRace().setRace(arr.values().next().value);
+        }
+    }
+
     createMainPage();
 }

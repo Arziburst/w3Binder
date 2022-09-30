@@ -17,7 +17,7 @@ const selectRace = (selectedConfig: Builder) => {
 };
 
 
-export const racesAddEventListenerOnIcons = () => { // todo on icons
+export const racesAddEventListenerOnIcons = () => {
     const selectHuman = document.querySelector('#selectHuman');
     const selectOrc = document.querySelector('#selectOrc');
     const selectUndead = document.querySelector('#selectUndead');
@@ -39,11 +39,13 @@ export const racesAddEventListenerOnIcons = () => { // todo on icons
         HTMLElement.addEventListener('click', () => {
             selectRace(builders.find((obj) => obj.type === race) as Builder);
             resetAllActiveRaces();
-            if (reduxSelectRace().race as any === race) {
+            const raceState = reduxSelectRace().race;
+            if (typeof raceState === 'string' && raceState === race) {
                 HTMLElement.classList.add(`races--active_${race}`);
             }
         });
-        if (reduxSelectRace().race as any === race) {
+        const raceState = reduxSelectRace().race;
+        if (typeof raceState === 'string' && raceState === race) {
             HTMLElement.classList.add(`races--active_${race}`);
         }
     };

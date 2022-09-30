@@ -53,4 +53,7 @@ export type ConfigState = {
 export type BaseContact<T = any> = CaseReducer<ConfigState, PayloadAction<T>>
 
 export type BindButtons = keyof typeof initialState;
-export type OptionsConfig = { type: BindButtons, value: FullUnit | FullUnit & { buildings: Array<string | boolean> } };
+export type OptionsConfig = {
+    type: BindButtons,
+    value: FullUnit | FullUnit & { buildings: Array<string | boolean> } | boolean
+};

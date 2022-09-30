@@ -1,10 +1,14 @@
+// Core
+import lodash from 'lodash';
+
 // Bus
+import { reduxToggles } from '../../bus/client/toggles';
 import { reduxConfig } from '../../bus/config';
+import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
 
 // Utils
 import {
     searchUnits,
-    autoComplete,
     makeIdButtonUnit,
     filterRace,
 } from '../../utils';
@@ -12,25 +16,27 @@ import {
 // Data
 import { units } from '../../data/index';
 
+// Templates
+const templateRaces = require('../../components/Races/index.handlebars');
+const templateBindButtons = require('../../components/BindButtons/index.handlebars');
+const templateButtonUnit = require('../../components//ButtonUnit/index.handlebars');
+
 // Components
 import {
     racesAddEventListenerOnIcons,
     bindButtonsAddEventListener,
     categories,
+    autoComplete,
 } from '../../components';
 
-// Templates
-const templateRaces = require('../../components/Races/index.handlebars');
-const templateBindButtons = require('../../components/BindButtons/index.handlebars');
-
-const templateButtonUnit = require('../../components//ButtonUnit/index.handlebars');
+// Event
+import { buttonBackToCategoriesEventClick } from '../../components/Categories/event';
 
 // Styles
 import './index.scss';
 
 // Types
 import { Neutral, Unit } from '../../bus/config/types';
-import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
 
 export const addButtonsWithUnit = (value: string, units: Unit[]) => {
     const main = document.querySelector('#main');
@@ -45,8 +51,9 @@ export const addButtonsWithUnit = (value: string, units: Unit[]) => {
 
         contentAfterSearch.innerHTML = `${foundUnits.map((objectUnit) => templateButtonUnit(
             {
-                id:   makeIdButtonUnit(objectUnit.unitName),
-                body: objectUnit.unitName,
+                id:         makeIdButtonUnit(objectUnit.unitName),
+                unitName:   objectUnit.unitName,
+                unitImgUrl: objectUnit.unitImgUrl,
             },
         )).join('')}`;
 
@@ -73,8 +80,9 @@ export const addButtonsWithUnit = (value: string, units: Unit[]) => {
 
     contentAfterSearch.innerHTML = `${units.map((objectUnit) => templateButtonUnit(
         {
-            id:   makeIdButtonUnit(objectUnit.unitName),
-            body: objectUnit.unitName,
+            id:         makeIdButtonUnit(objectUnit.unitName),
+            unitName:   objectUnit.unitName,
+            unitImgUrl: objectUnit.unitImgUrl,
         },
     )).join('')}`;
 
@@ -97,14 +105,38 @@ export const addButtonsWithUnit = (value: string, units: Unit[]) => {
     });
 };
 
-export const inputSearchGlobal = (event: Event | any) => {
-    console.log('inputSearch GLOBAL');
+export const buttonBackToMainPageEventClick = () => {
+    const main = document.querySelector('#main');
+    if (!main) {
+        console.log('no such document.querySelector > buttonBackEventClick');
+
+        return;
+    }
+    const { config } = reduxConfig();
+    main.innerHTML = `${templateRaces()}${templateBindButtons({ config })}`;
+    racesAddEventListenerOnIcons();
+    bindButtonsAddEventListener();
+};
+
+export const inputSearchGlobal = lodash.debounce((event: Event | any) => {
+    const { togglesRedux, setToggleAction } = reduxToggles();
+
+    if (togglesRedux.isUserStartedSearchingAndInputIsEmpty === false && event.target.value.length === 0) {
+        const buttonBack = document.querySelector('#buttonBack');
+        if (!buttonBack) {
+            return;
+        }
+        console.log('isUserStartedSearchingAndInputIsEmpty');
+        buttonBack.addEventListener('click', buttonBackToCategoriesEventClick);
+        setToggleAction({ type: 'isUserStartedSearchingAndInputIsEmpty', value: true });
+    }
+
     addButtonsWithUnit(event.target.value, filterRace({
         data:                      units,
         filter:                    ({ unit, race }) =>  unit.type === race,
         filterIfNoDataAfterFilter: ({ unit }) =>  typeof unit.type === 'string',
     }));
-};
+}, 300);
 
 export const selectConfigForButton = () => {
     const main = document.querySelector('#main');
@@ -121,12 +153,7 @@ export const selectConfigForButton = () => {
     }
 
     // back to MAIN page
-    buttonBack.addEventListener('click', () => {
-        const { config } = reduxConfig();
-        main.innerHTML = `${templateRaces()}${templateBindButtons({ config })}`;
-        racesAddEventListenerOnIcons();
-        bindButtonsAddEventListener();
-    });
+    buttonBack.addEventListener('click', buttonBackToMainPageEventClick);
 
     // InputSearch Global
     inputSearch.addEventListener('input', inputSearchGlobal);

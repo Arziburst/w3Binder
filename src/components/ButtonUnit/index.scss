@@ -1,3 +1,6 @@
 .buttonUnit {
-    min-width: 1px;
+    &__img {
+        height: 64px;
+        width: 64px;
+    }    
 }

@@ -6,10 +6,10 @@ const templateRaces = require('../../components/Races/index.handlebars');
 const templateBindButtons = require('../../components/BindButtons/index.handlebars');
 
 // Components
-import { bindButtonsAddEventListener, racesAddEventListenerOnIcons } from '../../components';
-
-// Styles
-import './index.scss';
+import {
+    bindButtonsAddEventListener,
+    racesAddEventListenerOnIcons,
+} from '../../components';
 
 export const createMainPage = () => {
     const main = document.querySelector('#main');

@@ -6,6 +6,7 @@ const templateButtonUnit = require('../ButtonUnit/index.handlebars');
 const templateRaces = require('../Races/index.handlebars');
 const templateBindButtons = require('../BindButtons/index.handlebars');
 
+
 // Utils
 import { filterRace, makeIdButtonUnit } from '../../utils';
 
@@ -20,8 +21,14 @@ import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
 import { racesAddEventListenerOnIcons } from '../Races';
 import { bindButtonsAddEventListener } from '../BindButtons';
 
+// Events
+import { buttonBackToMainPageEventClick } from '../../pages';
+import { buttonBackToCategoriesEventClick } from './event';
+
+
 export const categories = () => {
-    const inputSearch = document.querySelector('#inputSearch');
+    const buttonBack = document.querySelector('#buttonBack');
+    const inputSearch: Element | any = document.querySelector('#inputSearch');
 
     const contentAfterSearch = document.querySelector('#contentAfterSearch');
 
@@ -33,7 +40,8 @@ export const categories = () => {
     const neutral: Neutral = 'neutral';
 
     if (!(
-        inputSearch
+        buttonBack
+        && inputSearch
         && contentAfterSearch
         && categoryUnitsRace
         && categoryUnitsNeutral
@@ -51,19 +59,24 @@ export const categories = () => {
 
             return;
         }
-        inputSearch.removeEventListener('input', inputSearchGlobal);
 
+        // buttonBack
+        buttonBack.removeEventListener('click', buttonBackToMainPageEventClick);
+        buttonBack.addEventListener('click', buttonBackToCategoriesEventClick);
+
+        // inputSearch
+        inputSearch.removeEventListener('input', inputSearchGlobal);
         inputSearch.addEventListener('input', (event: Event | any) => {
             addButtonsWithUnit(event.target.value, data);
         });
 
         contentAfterSearch.innerHTML = `${data.map((objectUnit: any) => templateButtonUnit({
-            id:   makeIdButtonUnit(objectUnit.unitName),
-            body: objectUnit.unitName,
+            id:         makeIdButtonUnit(objectUnit.unitName),
+            unitName:   objectUnit.unitName,
+            unitImgUrl: objectUnit.unitImgUrl,
         })).join('')}`;
 
         data.forEach((objectUnit: any) => {
-            console.log('text');
             const buttonQS = document.querySelector(`#${makeIdButtonUnit(objectUnit.unitName)}`);
             buttonQS && buttonQS.addEventListener('click', () => {
                 const { setConfig } = reduxConfig();

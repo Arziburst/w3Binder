@@ -1,10 +1,27 @@
-.buttons {
-    &__ {
-        &button {
-            height: 100px;
-            width: 100px;
-            border: 2px solid red;
-            border-radius: 5px;
+.bind_buttons {
+    &_wrapper {
+        padding: 20px;
+        background-color: #202020;
+        position: relative;
+    }
+
+    
+    &_button {
+        position: relative;
+        height: 100px;
+        width: 100px;
+    
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__font {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            transform: translate(-50%, -50%);
         }
     }
 }
