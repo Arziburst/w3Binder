@@ -1,0 +1,14 @@
+{
+    "unitName": "orc home",
+    "unitImgUrl": false,
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": false,
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "orc",
+    "isBuilding": true
+}

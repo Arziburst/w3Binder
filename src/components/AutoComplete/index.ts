@@ -1,3 +1,6 @@
+// Styles
+import './index.scss';
+
 // Types
 type AutoComplete = {
     inp: any

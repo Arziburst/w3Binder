@@ -1,0 +1,14 @@
+{
+    "unitName": "Headhunter",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/42/BTNHeadhunter.png/revision/latest?cb=20110523182155",
+    "spells": [
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}

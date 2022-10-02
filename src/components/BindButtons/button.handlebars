@@ -1,8 +1,8 @@
-<button id="button{{text}}" class="buttons__button button--reset_styles">
+<button id="button{{id}}" class="bind_buttons_button box--small_border button--reset_styles">
 
-    {{#if name}}
-    <p>{{name}}</p>
+    {{#if unitName}}
+    <img class="bind_buttons_button__img" src={{unitImgUrl}} alt="Image {{unitName}}">
     {{/if}}
 
-    <p>{{text}}</p>
+    <p class="bind_buttons_button__font font--color_primary">{{id}}</p>
 </button>

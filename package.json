@@ -28,6 +28,7 @@
         "@types/app-root-path": "^1.2.4",
         "@types/imagemin-mozjpeg": "^8.0.1",
         "@types/imagemin-svgo": "^10.0.1",
+        "@types/lodash": "^4.14.186",
         "@types/mini-css-extract-plugin": "^2.5.1",
         "@types/node": "^17.0.41",
         "@types/react-dev-utils": "^9.0.11",

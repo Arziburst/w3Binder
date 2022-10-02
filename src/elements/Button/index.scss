@@ -1,9 +1,23 @@
 .button {
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+    
     &-- {
         &reset_styles {
+            padding: 0px;
+            margin: 0px;
             background-color: transparent;
             border: none;
             cursor: pointer;
+        }
+        
+        &small_padding {
+            padding: 5px 15px;
         }
     }
 }

@@ -1,0 +1,32 @@
+{
+    "unitName": "Far Seer",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/63/BTNHeroFarseer.png/revision/latest?cb=20090112005324",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/ee/BTNChainLightning.png/revision/latest?cb=20090111223436",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNFarSight.png/revision/latest?cb=20090112003639",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/56/BTNSpiritWolf.png/revision/latest?cb=20090112021703",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNEarthquake.png/revision/latest?cb=20090112001121",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}

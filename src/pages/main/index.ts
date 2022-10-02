@@ -2,16 +2,19 @@
 import { reduxConfig } from '../../bus/config';
 
 // Templates
-const templateRaces = require('../Races/index.handlebars');
-const templateBindButtons = require('../BindButtons/index.handlebars');
+const templateRaces = require('../../components/Races/index.handlebars');
+const templateBindButtons = require('../../components/BindButtons/index.handlebars');
 
 // Components
-import { bindButtonsAddEventListener } from '../BindButtons';
+import {
+    bindButtonsAddEventListener,
+    racesAddEventListenerOnIcons,
+} from '../../components';
 
 // Styles
 import './index.scss';
 
-window.addEventListener('load', () => {
+export const createMainPage = () => {
     const main = document.querySelector('#main');
 
     if (!main) {
@@ -23,7 +26,6 @@ window.addEventListener('load', () => {
     const { config } = reduxConfig();
 
     main.innerHTML = `${templateRaces()}${templateBindButtons({ config })}`;
+    racesAddEventListenerOnIcons();
     bindButtonsAddEventListener();
-
-    console.log();
-});
+};

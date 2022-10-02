@@ -8,7 +8,7 @@ type Human = 'human'
 type Orc = 'orc'
 type Undead = 'undead'
 type NightElf = 'nightElf'
-type Neutral = 'neutral'
+export type Neutral = 'neutral'
 
 type Spell = {
     key: string
@@ -20,9 +20,10 @@ type Spell = {
 export type Unit = {
     unitName: string,
     unitImgUrl: string | boolean
-    spells: Array<Spell>
+    spells: Array<Spell> | boolean
     type: Human | Orc | Undead | NightElf | Neutral | string
     isBuilding: boolean
+    buildings?: string[]
 }
 
 export type FullUnit = Unit & { bindKey: number }
@@ -43,11 +44,14 @@ export type ConfigState = {
     x: ConfigUnit,
     c: ConfigUnit,
     v: false
-    b: FullUnit & { buldings: Array<string> } | false
+    b: FullUnit & { buildings: Array<string | boolean> } | false
 }
 
 // Contracts
 export type BaseContact<T = any> = CaseReducer<ConfigState, PayloadAction<T>>
 
 export type BindButtons = keyof typeof initialState;
-export type OptionsConfig = { type: BindButtons, value: Unit };
+export type OptionsConfig = {
+    type: BindButtons,
+    value: FullUnit | FullUnit & { buildings: Array<string | boolean> } | boolean
+};

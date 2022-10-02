@@ -1,0 +1,19 @@
+{
+    "unitName": "Peon",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f6/BTNPeon.png/revision/latest?cb=20090112015218",
+    "spells": false,
+    "type": "orc",
+    "isBuilding": false,
+    "buildings": [
+        "h",
+        "b",
+        "m",
+        "w",
+        "o",
+        "a",
+        "s",
+        "e",
+        "t",
+        "v"
+    ]
+}

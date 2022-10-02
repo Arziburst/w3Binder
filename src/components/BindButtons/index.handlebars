@@ -1,24 +1,34 @@
-<section class="buttons row--center">
-    <div>
-        <div>
-            {{> ./button.handlebars text="Q" name=config.q.unitName}}
-            {{> ./button.handlebars text="W" name=config.w.unitName}}
-            {{> ./button.handlebars text="E" name=config.e.unitName}}
-        </div>
-        <div>
-            {{> ./button.handlebars text="A" name=config.A.unitName}}
-            {{> ./button.handlebars text="S" name=config.s.unitName}}
-            {{> ./button.handlebars text="D" name=config.d.unitName}}
-        </div>
-        <div>
-            {{> ./button.handlebars text="Z" name=config.z.unitName}}
-            {{> ./button.handlebars text="X" name=config.x.unitName}}
-            {{> ./button.handlebars text="C" name=config.c.unitName}}
-        </div>
-        <div>
-            <button id="buttonSaveConfig">
-                save config
-            </button>
+<section class="bind_buttons row--center">
+    <div class="box--big_border">
+        <div class="box--padding_primary box--bg_secondary box--relative">
+            <div class="row">
+                {{> ./button.handlebars id="Q" unitName=config.q.unitName unitImgUrl=config.q.unitImgUrl}}
+                {{> ./button.handlebars id="W" unitName=config.w.unitName unitImgUrl=config.w.unitImgUrl}}
+                {{> ./button.handlebars id="E" unitName=config.e.unitName unitImgUrl=config.e.unitImgUrl}}
+                {{> ./button.handlebars id="R" unitName=config.r.unitName unitImgUrl=config.r.unitImgUrl}}
+            </div>
+            <div class="row">
+                {{> ./button.handlebars id="A" unitName=config.a.unitName unitImgUrl=config.a.unitImgUrl}}
+                {{> ./button.handlebars id="S" unitName=config.s.unitName unitImgUrl=config.s.unitImgUrl}}
+                {{> ./button.handlebars id="D" unitName=config.d.unitName unitImgUrl=config.d.unitImgUrl}}
+                {{> ./button.handlebars id="F" unitName=config.f.unitName unitImgUrl=config.f.unitImgUrl}}
+            </div>
+            <div class="row">
+                {{> ./button.handlebars id="Z" unitName=config.z.unitName unitImgUrl=config.z.unitImgUrl}}
+                {{> ./button.handlebars id="X" unitName=config.x.unitName unitImgUrl=config.x.unitImgUrl}}
+                {{> ./button.handlebars id="C" unitName=config.c.unitName unitImgUrl=config.c.unitImgUrl}}
+                {{> ./button.handlebars id="V" unitName=config.v.unitName unitImgUrl=config.v.unitImgUrl}}
+            </div>
+            <div class="row row--align_items">
+                <h2 class="font--color_primary">Auto Move</h2>
+                {{> ../../elements/Toggler/index.handlebars id="buttonIsAutoMove" class="box--small_border"}}
+            </div>
+            <div>
+                <button id="buttonSaveConfig"
+                    class="button button--small_padding box--small_border button--reset_styles font--color_primary">
+                    Save your config
+                </button>
+            </div>
         </div>
     </div>
 </section>

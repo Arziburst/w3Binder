@@ -12,6 +12,9 @@ export const setConfig: types.BaseContact = (state, action: PayloadAction<types.
     ...state,
     [ action.payload.type ]: action.payload.value,
 });
+export const setSavedClientConfig: types.BaseContact = (
+    state, action: PayloadAction<types.ConfigState>,
+) => action.payload;
 
 
 export const resetConfig = () => initialState;

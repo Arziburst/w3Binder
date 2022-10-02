@@ -1,6 +1,6 @@
 {
     "unitName": "Acolyte",
-    "unitImgUrl": false,
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/53/BTNAcolyte.png/revision/latest?cb=20210516213617",
     "spells": [
         false,
         {
@@ -13,10 +13,23 @@
         {
             "key": "c",
             "spellImgUrl": false,
-            "isClick": false,
+            "isClick": true,
             "isAura": false
         }
     ],
     "type": "undead",
-    "isBuilding": false
+    "isBuilding": false,
+    "buildings": [
+        "n",
+        "c",
+        "g",
+        "v",
+        "z",
+        "a",
+        "t",
+        "h",
+        "s",
+        "b",
+        "r"
+    ]
 }

@@ -1,84 +1,64 @@
-// Styles
-import './index.scss';
+// Data
+import { units } from '../../data';
 
 // Bus
 import { reduxConfig } from '../../bus/config';
+import { reduxSelectRace } from '../../bus/client/selectedRace';
+
+// Styles
+import './index.scss';
 
 // Types
-type SelectRace = {
-    event: Event
-    selectedConfig: object
-};
+import { filterRace } from '../../utils';
 
-const selectRace = ({ event, selectedConfig }: SelectRace) => {
-    event.preventDefault();
-    // const { setConfig } = reduxConfig();
-
-
-    const { config } = reduxConfig();
-
-    alert(JSON.stringify(config));
-};
-
-
-// window.addEventListener('load', () => {
-export const racesAddEventListenerOnIcons = () => { // todo on icons
-    const selectHuman: any =  document.querySelector('#selectHuman');
-    const selectOrc: any =  document.querySelector('#selectOrc');
-    const selectUndead: any =  document.querySelector('#selectUndead');
-    const selectNightElf: any =  document.querySelector('#selectNightElf');
+export const racesAddEventListenerOnIcons = () => {
+    const selectHuman = document.querySelector('#selectHuman');
+    const selectOrc = document.querySelector('#selectOrc');
+    const selectUndead = document.querySelector('#selectUndead');
+    const selectNightElf = document.querySelector('#selectNightElf');
 
     if (!(selectHuman && selectOrc && selectUndead && selectNightElf)) {
         return;
     }
 
-
-    let activeRace = '';
-    const activeStyle = 'box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.5);';
-
     const resetAllActiveRaces = () => {
         [ selectHuman, selectOrc, selectUndead, selectNightElf ].forEach((el) => {
-            el.style = 'box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);';
+            [ 'human', 'orc', 'undead', 'nightElf' ].forEach((str) => {
+                el.classList.remove(`races--active_${str}`);
+            });
         });
     };
 
-    // Human
-    selectHuman.addEventListener('click', (event: Event) => {
-        selectRace({ event, selectedConfig: {}});
-        // resetAllActiveRaces();
-        activeRace = 'human';
-        if (activeRace === 'human') {
-            // selectHuman.style = activeStyle;
-        }
-    });
+    const addEventClick = (HTMLElement: Element, raceClick: string) => {
+        HTMLElement.addEventListener('click', () => {
+            reduxSelectRace().setRace(raceClick);
 
-    // Orc
-    selectOrc.addEventListener('click', (event: Event) => {
-        selectRace({ event, selectedConfig: {}});
-        // resetAllActiveRaces();
-        activeRace = 'orc';
-        if (activeRace === 'orc') {
-            // selectOrc.style = activeStyle;
-        }
-    });
+            const buildersCurrentRace = filterRace({
+                data:   units,
+                filter: ({ unit, race }) => unit.type === race && Array.isArray(unit.buildings),
+            });
 
-    // Undead
-    selectUndead.addEventListener('click', (event: Event) => {
-        selectRace({ event, selectedConfig: {}});
-        // resetAllActiveRaces();
-        activeRace = 'undead';
-        if (activeRace === 'undead') {
-            // selectUndead.style = activeStyle;
-        }
-    });
+            reduxConfig().setConfig({ type: 'b', value: { ...buildersCurrentRace[ 0 ], bindKey: 0 }});
 
-    // Night elf
-    selectNightElf.addEventListener('click', (event: Event) => {
-        selectRace({ event, selectedConfig: {}});
-        // resetAllActiveRaces();
-        activeRace = 'nightElt';
-        if (activeRace === 'nightElt') {
-            // selectNightElf.style = activeStyle;
+            resetAllActiveRaces();
+            const raceState = reduxSelectRace().race;
+
+            if (typeof raceState === 'string' && raceState === raceClick) {
+                HTMLElement.classList.add(`races--active_${raceClick}`);
+            }
+        });
+
+        const raceState = reduxSelectRace().race;
+        if (typeof raceState === 'string' && raceState === raceClick) {
+            HTMLElement.classList.add(`races--active_${raceClick}`);
         }
-    });
+    };
+
+    addEventClick(selectHuman, 'human');
+
+    addEventClick(selectOrc, 'orc');
+
+    addEventClick(selectUndead, 'undead');
+
+    addEventClick(selectNightElf, 'nightElf');
 };

@@ -1,0 +1,32 @@
+{
+    "unitName": "Shadow Hunter",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/5a/BTNShadowHunter.png/revision/latest?cb=20090112040540",
+    "spells": [
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNHealingWave.png/revision/latest?cb=20090112033621",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "x",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/24/BTNHex.png/revision/latest?cb=20090112033717",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNSerpentWard.png/revision/latest?cb=20090112040529",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "v",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNBigBadVoodooSpell.png/revision/latest?cb=20090111201159",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}
