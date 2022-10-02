@@ -1,0 +1,20 @@
+{
+    "unitName": "Peasant",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNPeasant.png/revision/latest?cb=20090112015133",
+    "spells": false,
+    "type": "human",
+    "isBuilding": false,
+    "buildings": [
+        "h",
+        "b",
+        "l",
+        "s",
+        "f",
+        "a",
+        "r",
+        "w",
+        "t",
+        "g",
+        "v"
+    ]
+}

@@ -11,6 +11,9 @@ import {
     racesAddEventListenerOnIcons,
 } from '../../components';
 
+// Styles
+import './index.scss';
+
 export const createMainPage = () => {
     const main = document.querySelector('#main');
 

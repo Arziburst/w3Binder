@@ -1,5 +1,5 @@
 // Data
-import { builders } from '../../data';
+import { units } from '../../data';
 
 // Bus
 import { reduxConfig } from '../../bus/config';
@@ -9,13 +9,7 @@ import { reduxSelectRace } from '../../bus/client/selectedRace';
 import './index.scss';
 
 // Types
-import { Builder } from '../../bus/config/types';
-
-const selectRace = (selectedConfig: Builder) => {
-    reduxSelectRace().setRace(selectedConfig.type);
-    reduxConfig().setConfig({ type: 'b', value: { ...selectedConfig, bindKey: 0 }});
-};
-
+import { filterRace } from '../../utils';
 
 export const racesAddEventListenerOnIcons = () => {
     const selectHuman = document.querySelector('#selectHuman');
@@ -35,18 +29,28 @@ export const racesAddEventListenerOnIcons = () => {
         });
     };
 
-    const addEventClick = (HTMLElement: Element, race: string) => {
+    const addEventClick = (HTMLElement: Element, raceClick: string) => {
         HTMLElement.addEventListener('click', () => {
-            selectRace(builders.find((obj) => obj.type === race) as Builder);
+            reduxSelectRace().setRace(raceClick);
+
+            const buildersCurrentRace = filterRace({
+                data:   units,
+                filter: ({ unit, race }) => unit.type === race && Array.isArray(unit.buildings),
+            });
+
+            reduxConfig().setConfig({ type: 'b', value: { ...buildersCurrentRace[ 0 ], bindKey: 0 }});
+
             resetAllActiveRaces();
             const raceState = reduxSelectRace().race;
-            if (typeof raceState === 'string' && raceState === race) {
-                HTMLElement.classList.add(`races--active_${race}`);
+
+            if (typeof raceState === 'string' && raceState === raceClick) {
+                HTMLElement.classList.add(`races--active_${raceClick}`);
             }
         });
+
         const raceState = reduxSelectRace().race;
-        if (typeof raceState === 'string' && raceState === race) {
-            HTMLElement.classList.add(`races--active_${race}`);
+        if (typeof raceState === 'string' && raceState === raceClick) {
+            HTMLElement.classList.add(`races--active_${raceClick}`);
         }
     };
 

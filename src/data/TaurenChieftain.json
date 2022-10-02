@@ -1,0 +1,32 @@
+{
+    "unitName": "Tauren Chieftain",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8d/BTNHeroTaurenChieftain.png/revision/latest?cb=20090112005419",
+    "spells": [
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNShockWave.png/revision/latest?cb=20090112021117",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNWarStomp.png/revision/latest?cb=20090112023315",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/37/PASBTNCommand.png/revision/latest?cb=20090513192842",
+            "isClick": false,
+            "isAura": true
+        },
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/0a/PASBTNReincarnation.png/revision/latest?cb=20090513193342",
+            "isClick": false,
+            "isAura": true
+        }
+    ],
+    "type": "orc",
+    "isBuilding": false
+}

@@ -23,12 +23,10 @@ export type Unit = {
     spells: Array<Spell> | boolean
     type: Human | Orc | Undead | NightElf | Neutral | string
     isBuilding: boolean
+    buildings?: string[]
 }
 
-export type Builder = Unit & { buildings: Array<string | boolean> }
-
 export type FullUnit = Unit & { bindKey: number }
-
 
 type ConfigUnit = FullUnit | false
 

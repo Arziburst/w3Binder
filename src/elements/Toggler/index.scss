@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: transparent;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -36,7 +36,7 @@
 }
 
 input:checked + .toggler__slider {
-  background-color: #2196F3;
+  background-color: rgb(76, 90, 157);
 }
 
 input:checked + .toggler__slider:before {

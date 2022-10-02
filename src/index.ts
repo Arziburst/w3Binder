@@ -13,7 +13,6 @@ import { reduxConfig } from './bus/config';
 import { reduxSelectRace } from './bus/client/selectedRace';
 
 // Images
-// import './assets/images/big_metal_border.png';
 import './assets/images/border_iron.png';
 import './assets/images/background_wood.jpg';
 

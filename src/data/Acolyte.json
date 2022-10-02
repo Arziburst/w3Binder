@@ -13,10 +13,23 @@
         {
             "key": "c",
             "spellImgUrl": false,
-            "isClick": false,
+            "isClick": true,
             "isAura": false
         }
     ],
     "type": "undead",
-    "isBuilding": false
+    "isBuilding": false,
+    "buildings": [
+        "n",
+        "c",
+        "g",
+        "v",
+        "z",
+        "a",
+        "t",
+        "h",
+        "s",
+        "b",
+        "r"
+    ]
 }
