@@ -73,6 +73,7 @@ body {
     &--small_border {
         border: 6px solid #000;
         border-image: url("./assets/images/small_metal_border.png") 6 repeat;
+        border-image-repeat: stretch;
     }
     &--smooth {
         border-radius: 5px;
