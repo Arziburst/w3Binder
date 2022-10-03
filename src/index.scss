@@ -31,6 +31,9 @@ body {
 }
 
 .box {
+    &--flex {
+        display: flex;
+    }
     &--relative {
         position: relative;
     }

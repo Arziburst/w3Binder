@@ -1,13 +1,19 @@
 .bind_buttons {
     &_button {
-        position: relative;
-        height: 100px;
-        width: 100px;
-    
+        height: 100%;
+        width: 100%;
+        display: flex;
+
+
+        &_wrapper {
+            height: 100px;
+            width: 100px;
+        }
+
         &__img {
-            object-fit: cover;
             width: 100%;
             height: 100%;
+            opacity: 0.5;
         }
 
         &__font {
@@ -15,6 +21,23 @@
             bottom: 5px;
             right: 10px;
             transform: translate(-50%, -50%);
+        }
+        &__two_img {
+            height: 100%;
+            width: 50%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        &__three_img {
+            height: 100%;
+            width: 33.33%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        &--hover:hover .bind_buttons_button__img {
+            opacity: 1;
         }
     }
 }

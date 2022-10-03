@@ -21,6 +21,36 @@ type Buttons = Array<{
 // eslint-disable-next-line init-declarations
 declare const AHK: any;
 
+const groupUnitsInOneButton = ({ button, units }: { button: Element | null, units: Array<any> }) => {
+    if (button) {
+        const filteredUnits = units.filter((unit) => unit !== false);
+
+        const key = '<p class="bind_buttons_button__font font--color_primary">R</p>';
+
+        if (filteredUnits.length === 1 && filteredUnits[ 0 ]) {
+            button.innerHTML = `<img class="bind_buttons_button__img" src="${filteredUnits[ 0 ].unitImgUrl}" alt="Image ${filteredUnits[ 0 ].unitName}">${key}`;
+        }
+        if (filteredUnits.length === 2) {
+            button.innerHTML = filteredUnits.map((unit) => {
+                if (unit) {
+                    return `<span class="bind_buttons_button__img bind_buttons_button__two_img" style="background-image: url(${unit.unitImgUrl});"></span>`;
+                }
+
+                return '';
+            }).join('') + key;
+        }
+        if (filteredUnits.length === 3) {
+            button.innerHTML = filteredUnits.map((unit) => {
+                if (unit) {
+                    return `<span class="bind_buttons_button__img bind_buttons_button__three_img" style="background-image: url(${unit.unitImgUrl});"></span>`;
+                }
+
+                return '';
+            }).join('') + key;
+        }
+    }
+};
+
 export const bindButtonsAddEventListener = () => {
     const main = document.querySelector('#main');
     const bindButtons = document.querySelector('#bindButtons');
@@ -55,6 +85,11 @@ export const bindButtonsAddEventListener = () => {
             key:     'e',
             bindKey: 3,
         },
+        // {
+        //     element: document.querySelector('#buttonR'),
+        //     key:     'r',
+        //     bindKey: 13, // todo false ????
+        // },
         {
             element: document.querySelector('#buttonA'),
             key:     'a',
@@ -87,11 +122,16 @@ export const bindButtonsAddEventListener = () => {
         },
     ];
 
+    const config = reduxConfig().config;
+    groupUnitsInOneButton({ button: document.querySelector('#buttonR'), units: [ config.q, config.w, config.e ]});
+    groupUnitsInOneButton({ button: document.querySelector('#buttonF'), units: [ config.a, config.s, config.d ]});
+    groupUnitsInOneButton({ button: document.querySelector('#buttonV'), units: [ config.z, config.x, config.c ]});
+
+
     buttons.forEach((objectButton) => {
         const key: any = objectButton.key;
 
         objectButton.element && objectButton.element.addEventListener('click', () => {
-            console.log('text');
             main.innerHTML = templateSelectConfigForButton();
 
             reduxSelectBindButton().setSelectBindButton({ key: key, bindKey: objectButton.bindKey });
