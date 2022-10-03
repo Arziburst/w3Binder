@@ -103,3 +103,24 @@ export const autoComplete = ({ inp, arr, selectItemCallback }: AutoComplete) => 
         }
     });
 };
+
+
+// autoComplete
+// autoComplete({ // todo autoComplete
+//     inp: inputSearch,
+
+//     arr: filterRace({
+//         data:   units,
+//         filter: ({ unit, race }) =>  unit.type === race || unit.type === neutral,
+//     }).map((objectUnit) => objectUnit.unitName),
+
+//     selectItemCallback: (value: string) => {
+//         addButtonsWithUnit(
+//             value,
+//             filterRace({
+//                 data:   units,
+//                 filter: ({ unit, race }) =>  unit.type === race || unit.type === neutral,
+//             }),
+//         );
+//     },
+// });

@@ -5,6 +5,10 @@ import { units } from '../../data';
 import { reduxConfig } from '../../bus/config';
 import { reduxSelectRace } from '../../bus/client/selectedRace';
 
+// Templates
+const templateBindButtons = require('../BindButtons/index.handlebars');
+
+
 // Styles
 import './index.scss';
 
@@ -32,6 +36,14 @@ export const racesAddEventListenerOnIcons = () => {
 
     const addEventClick = (HTMLElement: Element, raceClick: Unit['race']) => {
         HTMLElement.addEventListener('click', () => {
+            const bindButtons = document.querySelector('#bindButtons');
+
+            if (!bindButtons) {
+                console.log('document.querySelector("#bindButtons");');
+
+                return;
+            }
+
             reduxSelectRace().setRace(raceClick);
 
             const buildersCurrentRace = filterRace({
@@ -40,6 +52,8 @@ export const racesAddEventListenerOnIcons = () => {
             });
 
             reduxConfig().setConfig({ type: 'b', value: { ...buildersCurrentRace[ 0 ], bindKey: 0 }});
+
+            bindButtons.innerHTML = `${templateBindButtons({ config: reduxConfig().config })}`;
 
             resetAllActiveRaces();
             const raceState = reduxSelectRace().race;
