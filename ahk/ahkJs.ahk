@@ -1,9 +1,7 @@
 ﻿; To Js
 setConfigToJs() {
     window := getWindow()
-
     FileRead,cofigJson,./w3binder.config.json
-
     window.setConfig(cofigJson)
 }
 
@@ -12,7 +10,6 @@ setConfig(newReduxJsonconfig := false) {
         file := FileOpen("./w3binder.config.json", "w") 
         file.write(newReduxJsonconfig)
         file.close()
-        ; FileWrite,newReduxJsonconfig,cofigJson,./w3binder.config.json
     }
 
     FileRead,cofigJson,./w3binder.config.json
@@ -35,7 +32,7 @@ setConfig(newReduxJsonconfig := false) {
     v := new Unit(config.v, isAutoMove)
     b := new Unit(config.b, isAutoMove)
 
-    builderMode := new BuilderMode(config.b.bindKey, config.b.buldings)
+    builderMode := new BuilderMode(config.b.bindKey, config.b.buildings)
 
     units := [ q, w, e, r, a, s, d, f, z, x, c, v, b ]
 
@@ -47,10 +44,6 @@ setConfig(newReduxJsonconfig := false) {
 
 ; From Js
 setConfigFromJS(reduxConfig := false) {
-    ; javascript write redux to json and pass to ahk
-    ; ahk write json to file system as w3binder.config.json
-    ; ahk reed config file and set new bids
-
     If (reduxConfig) {
         setConfig(reduxConfig)
     }

@@ -1,1 +1,193 @@
-{"isAutoMove":true,"b":{"unitName":"Peon","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/f/f6/BTNPeon.png/revision/latest?cb=20090112015218","spells":false,"type":"army","race":"orc","buildings":["h","b","m","w","o","a","s","e","t","v"],"bindKey":0},"q":{"unitName":"Far Seer","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/b/b5/BTNHeroFarseer-Reforged.png/revision/latest?cb=20210508062303","spells":[{"key":"c","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/e/ee/BTNChainLightning.png/revision/latest?cb=20090111223436","isClick":true,"isAura":false},{"key":"f","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNFarSight.png/revision/latest?cb=20090112003639","isClick":true,"isAura":false},{"key":"t","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/5/56/BTNSpiritWolf.png/revision/latest?cb=20090112021703","isClick":false,"isAura":false},{"key":"e","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNEarthquake.png/revision/latest?cb=20090112001121","isClick":true,"isAura":false}],"type":"hero","race":"orc","bindKey":1},"w":{"unitName":"Shadow Hunter","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNShadowHunter-Reforged.png/revision/latest?cb=20210516044259","spells":[{"key":"e","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNHealingWave.png/revision/latest?cb=20090112033621","isClick":true,"isAura":false},{"key":"x","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/2/24/BTNHex.png/revision/latest?cb=20090112033717","isClick":true,"isAura":false},{"key":"w","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNSerpentWard.png/revision/latest?cb=20090112040529","isClick":true,"isAura":false},{"key":"v","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNBigBadVoodooSpell.png/revision/latest?cb=20090111201159","isClick":true,"isAura":false}],"type":"hero","race":"orc","bindKey":2},"e":{"unitName":"Tauren Chieftain","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/8/8d/BTNHeroTaurenChieftain.png/revision/latest?cb=20090112005419","spells":[{"key":"w","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNShockWave.png/revision/latest?cb=20090112021117","isClick":true,"isAura":false},{"key":"t","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNWarStomp.png/revision/latest?cb=20090112023315","isClick":false,"isAura":false},{"key":"e","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/3/37/PASBTNCommand.png/revision/latest?cb=20090513192842","isClick":false,"isAura":true},{"key":"r","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/0/0a/PASBTNReincarnation.png/revision/latest?cb=20090513193342","isClick":false,"isAura":true}],"type":"hero","race":"orc","bindKey":3},"a":{"unitName":"Grunt","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800","spells":false,"type":"army","race":"orc","bindKey":4},"s":{"unitName":"Headhunter","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/4/42/BTNHeadhunter.png/revision/latest?cb=20110523182155","spells":[{"key":"b","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559","isClick":false,"isAura":false}],"type":"army","race":"orc","bindKey":5},"d":false,"z":{"unitName":"Headhunter","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/4/42/BTNHeadhunter.png/revision/latest?cb=20110523182155","spells":[{"key":"b","spellImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559","isClick":false,"isAura":false}],"type":"army","race":"orc","bindKey":7},"x":{"unitName":"Grunt","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800","spells":false,"type":"army","race":"orc","bindKey":8},"c":{"unitName":"Grunt","unitImgUrl":"https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800","spells":false,"type":"army","race":"orc","bindKey":9}}
+{
+    "isAutoMove": true,
+    "b": {
+        "unitName": "Acolyte",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/53/BTNAcolyte.png/revision/latest?cb=20210516213617",
+        "spells": [
+            false,
+            {
+                "key": "u",
+                "spellImgUrl": false,
+                "isClick": false,
+                "isAura": false
+            },
+            false,
+            {
+                "key": "c",
+                "spellImgUrl": false,
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "army",
+        "race": "undead",
+        "buildings": [
+            "n",
+            "c",
+            "g",
+            "v",
+            "z",
+            "a",
+            "t",
+            "h",
+            "s",
+            "b",
+            "r"
+        ],
+        "bindKey": 0
+    },
+    "q": {
+        "unitName": "Far Seer",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b5/BTNHeroFarseer-Reforged.png/revision/latest?cb=20210508062303",
+        "spells": [
+            {
+                "key": "c",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/ee/BTNChainLightning.png/revision/latest?cb=20090111223436",
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "f",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNFarSight.png/revision/latest?cb=20090112003639",
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "t",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/56/BTNSpiritWolf.png/revision/latest?cb=20090112021703",
+                "isClick": false,
+                "isAura": false
+            },
+            {
+                "key": "e",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNEarthquake.png/revision/latest?cb=20090112001121",
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "hero",
+        "race": "orc",
+        "bindKey": 1
+    },
+    "w": {
+        "unitName": "Shadow Hunter",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNShadowHunter-Reforged.png/revision/latest?cb=20210516044259",
+        "spells": [
+            {
+                "key": "e",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNHealingWave.png/revision/latest?cb=20090112033621",
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "x",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/24/BTNHex.png/revision/latest?cb=20090112033717",
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "w",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNSerpentWard.png/revision/latest?cb=20090112040529",
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "v",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNBigBadVoodooSpell.png/revision/latest?cb=20090111201159",
+                "isClick": true,
+                "isAura": false
+            }
+        ],
+        "type": "hero",
+        "race": "orc",
+        "bindKey": 2
+    },
+    "e": {
+        "unitName": "Tauren Chieftain",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8d/BTNHeroTaurenChieftain.png/revision/latest?cb=20090112005419",
+        "spells": [
+            {
+                "key": "w",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNShockWave.png/revision/latest?cb=20090112021117",
+                "isClick": true,
+                "isAura": false
+            },
+            {
+                "key": "t",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNWarStomp.png/revision/latest?cb=20090112023315",
+                "isClick": false,
+                "isAura": false
+            },
+            {
+                "key": "e",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/37/PASBTNCommand.png/revision/latest?cb=20090513192842",
+                "isClick": false,
+                "isAura": true
+            },
+            {
+                "key": "r",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/0a/PASBTNReincarnation.png/revision/latest?cb=20090513193342",
+                "isClick": false,
+                "isAura": true
+            }
+        ],
+        "type": "hero",
+        "race": "orc",
+        "bindKey": 3
+    },
+    "a": {
+        "unitName": "Grunt",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800",
+        "spells": false,
+        "type": "army",
+        "race": "orc",
+        "bindKey": 4
+    },
+    "s": {
+        "unitName": "Headhunter",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/42/BTNHeadhunter.png/revision/latest?cb=20110523182155",
+        "spells": [
+            {
+                "key": "b",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559",
+                "isClick": false,
+                "isAura": false
+            }
+        ],
+        "type": "army",
+        "race": "orc",
+        "bindKey": 5
+    },
+    "d": false,
+    "z": {
+        "unitName": "Headhunter",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/42/BTNHeadhunter.png/revision/latest?cb=20110523182155",
+        "spells": [
+            {
+                "key": "b",
+                "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559",
+                "isClick": false,
+                "isAura": false
+            }
+        ],
+        "type": "army",
+        "race": "orc",
+        "bindKey": 7
+    },
+    "x": {
+        "unitName": "Grunt",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800",
+        "spells": false,
+        "type": "army",
+        "race": "orc",
+        "bindKey": 8
+    },
+    "c": {
+        "unitName": "Grunt",
+        "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800",
+        "spells": false,
+        "type": "army",
+        "race": "orc",
+        "bindKey": 9
+    }
+}
