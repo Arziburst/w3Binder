@@ -21,11 +21,13 @@ type Buttons = Array<{
 // eslint-disable-next-line init-declarations
 declare const AHK: any;
 
-const groupUnitsInOneButton = ({ button, units }: { button: Element | null, units: Array<any> }) => {
+const groupUnitsInOneButton = (
+    { button, units, text }: { button: Element | null, units: Array<any>, text: string },
+) => {
     if (button) {
         const filteredUnits = units.filter((unit) => unit !== false);
 
-        const key = '<p class="bind_buttons_button__font font--color_primary">R</p>';
+        const key = `<p class="bind_buttons_button__font font--color_primary">${text.toUpperCase()}</p>`;
 
         if (filteredUnits.length === 1 && filteredUnits[ 0 ]) {
             button.innerHTML = `<img class="bind_buttons_button__img" src="${filteredUnits[ 0 ].unitImgUrl}" alt="Image ${filteredUnits[ 0 ].unitName}">${key}`;
@@ -123,9 +125,9 @@ export const bindButtonsAddEventListener = () => {
     ];
 
     const config = reduxConfig().config;
-    groupUnitsInOneButton({ button: document.querySelector('#buttonR'), units: [ config.q, config.w, config.e ]});
-    groupUnitsInOneButton({ button: document.querySelector('#buttonF'), units: [ config.a, config.s, config.d ]});
-    groupUnitsInOneButton({ button: document.querySelector('#buttonV'), units: [ config.z, config.x, config.c ]});
+    groupUnitsInOneButton({ button: document.querySelector('#buttonR'), units: [ config.q, config.w, config.e ], text: 'r' });
+    groupUnitsInOneButton({ button: document.querySelector('#buttonF'), units: [ config.a, config.s, config.d ], text: 'f' });
+    groupUnitsInOneButton({ button: document.querySelector('#buttonV'), units: [ config.z, config.x, config.c ], text: 'v' });
 
 
     buttons.forEach((objectButton) => {
