@@ -5,8 +5,6 @@ class Unit {
         this.bindKey := options.bindKey
         this.spells := options.spells
         this.isAutoMove := isAutoMove
-        ; this.upgradePriority := options.upgradePriority
-        ; this.combo := options.combo
         this.items := [ "Numpad7", "Numpad8", "Numpad4", "Numpad5", "Numpad1", "Numpad2" ]
     }
 
@@ -42,9 +40,11 @@ class Unit {
 
     unitAttack(isUnitSelect := true) {
         this.unitSelect(isUnitSelect)
+
         Send, a
+
         If (this.isAutoMove == "true") {
-            Send, {Click, Right}
+            Send, {Click, Left}
         }
     }
 
@@ -53,31 +53,6 @@ class Unit {
         Send, h
     }
 
-    ; useComboSpell() {
-    ;     If (!this.combo) {
-    ;         return
-    ;     }
-
-    ;     this.unitSelect()
-    ;     Send, % this.combo.key
-
-    ;     if (this.combo.isClick) {
-    ;         Send, {Click}
-    ;     }
-    ; }
-
-    ; heroAutoLvlUp() {
-    ;     this.unitSelect()
-
-    ;     For K, SpellButton in this.upgradePriority {
-    ;         Send, o
-    ;         Send, %SpellButton%
-    ;     }
-
-    ;     Send, {Esc}
-    ;     Sleep, %delay%
-    ; }
-    
     skillLvlUp(numericKey) {
         spellObject := this.spells[numericKey]
 

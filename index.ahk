@@ -45,46 +45,9 @@ setConfigToJs()
     $!e:: core.bindOneOrMany() return ; ALT + E
     $^!e:: core.bindManyToMany() return ; CTRL + ALT + E
 
-    $r:: ; R
-        ; If (!builderMode.getBuilderModeState()) {
-        ;     units[1].unitMove()
-        ;     units[2].unitMove()
-        ;     units[3].unitMove()
-        ; }
-        core.unitMoveOrBuild()
-    return
-
-    ; $+r:: ; SHIFT + R
-    ;     core.resetHotkeyState()
-
-    ;     units[1].unitAttack()
-    ;     units[2].unitAttack()
-    ;     units[3].unitAttack()
-    ; return
-
-    ; $^r:: ; CTRL + R
-    ;     core.resetHotkeyState()
-
-    ;     units[1].unitHold()
-    ;     units[2].unitHold()
-    ;     units[3].unitHold()
-    ; return
-
-    ; $t:: ; T
-    ;     core.resetHotkeyState()
-
-    ;     units[1].useComboSpell()
-    ;     units[2].useComboSpell()
-    ;     units[3].useComboSpell()
-    ; return
-
-    ; $+t:: ; SHIFT + T
-    ;     core.resetHotkeyState()
-
-    ;     units[1].heroAutoLvlUp()
-    ;     units[2].heroAutoLvlUp()
-    ;     units[3].heroAutoLvlUp()
-    ; return
+    $r:: core.teamMoveOrBuild() return ; R
+    $+r:: core.teamAttack() return ; SHIFT + R
+    $^r:: core.teamHold() return ; CTRL + R
 
     $a:: core.unitMoveOrBuild() return ; A
     $+a:: core.unitAttack() return ; SHIFT + A
@@ -104,31 +67,9 @@ setConfigToJs()
     $!d:: core.bindOneOrMany() return ; ALT + D
     $^!d:: core.bindManyToMany() return ; CTRL + ALT + D
 
-    $f:: ; F
-        core.unitMoveOrBuild()
-
-        ; If (!builderMode.getBuilderModeState()) {
-        ;     units[5].unitMove()
-        ;     units[6].unitMove()
-        ;     units[7].unitMove()
-        ; }
-    return
-
-    ; $+f:: ; SHIFT + F
-    ;     core.resetHotkeyState()
-
-    ;     units[5].unitAttack()
-    ;     units[6].unitAttack()
-    ;     units[7].unitAttack()
-    ; return
-
-    ; $^f:: ; CTRL + F
-    ;     core.resetHotkeyState()
-
-    ;     units[5].unitHold()
-    ;     units[6].unitHold()
-    ;     units[7].unitHold()
-    ; return
+    $f:: core.teamMoveOrBuild() return ; F
+    $+f:: core.teamAttack() return ; SHIFT + F
+    $^f:: core.teamHold() return ; CTRL + F
 
     $z:: core.unitMoveOrBuild() return ; Z
     $+z:: core.unitAttack() return ; SHIFT + Z
@@ -148,9 +89,9 @@ setConfigToJs()
     $!c:: core.bindOneOrMany() return ; ALT + C
     $^!c:: core.bindManyToMany() return ; CTRL + ALT + C
 
-    $v::
-        core.unitMoveOrBuild()
-    return ; C
+    $v:: core.teamMoveOrBuild() return ; V
+    $+v:: core.teamAttack() return ; SHIFT + V
+    $^v:: core.teamHold() return ; CTRL + V
 
     $b:: core.unitMoveOrBuild() return ; B
     $+b:: core.unitAttack() return ; SHIFT + B
@@ -170,11 +111,10 @@ return
 
 $Space:: 
     core.centerCameraOnUnit()
-    Send, 111
 Return
 
 ~LButton:: ; LEFT CLICK
-    core.resetHotkeyState() 111111
+    core.resetHotkeyState()
     builderMode.endBuilding()
 Return
 
