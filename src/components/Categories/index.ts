@@ -14,7 +14,7 @@ import { filterRace, makeIdButtonUnit } from '../../utils';
 import './index.scss';
 
 // Types
-import { Neutral } from '../../bus/config/types';
+import { Army, Building, Hero, Neutral, Unit } from '../../bus/config/types';
 import { addButtonsWithUnit, inputSearchGlobal } from '../../pages';
 import { reduxConfig } from '../../bus/config';
 import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
@@ -38,6 +38,9 @@ export const categories = () => {
     const categoryBuildingNeutral = document.querySelector('#categoryBuildingNeutral');
 
     const neutral: Neutral = 'neutral';
+    const hero: Hero = 'hero';
+    const army: Army = 'army';
+    const building: Building = 'building';
 
     if (!(
         buttonBack
@@ -76,7 +79,7 @@ export const categories = () => {
             unitImgUrl: objectUnit.unitImgUrl,
         })).join('')}`;
 
-        data.forEach((objectUnit: any) => {
+        data.forEach((objectUnit: Unit) => {
             const buttonQS = document.querySelector(`#${makeIdButtonUnit(objectUnit.unitName)}`);
             buttonQS && buttonQS.addEventListener('click', () => {
                 const { setConfig } = reduxConfig();
@@ -98,16 +101,18 @@ export const categories = () => {
     // Units
     categoryUnitsRace.addEventListener('click', () => {
         innerHTMLCategory(filterRace({
-            data:                      units,
-            filter:                    ({ unit, race }) => unit.type === race && unit.isBuilding === false,
-            filterIfNoDataAfterFilter: ({ unit }) => unit.isBuilding === false,
+            data:   units,
+            filter: ({ unit, race }) => unit.race === race && (
+                unit.type === hero || unit.type === army),
+            filterIfNoDataAfterFilter: ({ unit }) => unit.race !== neutral && (
+                unit.type === hero || unit.type === army),
         }));
     });
     categoryUnitsNeutral.addEventListener('click', () => {
         innerHTMLCategory(filterRace({
-            data:                      units,
-            filter:                    ({ unit }) => unit.type === neutral && unit.isBuilding === false,
-            filterIfNoDataAfterFilter: ({ unit }) => unit.isBuilding === false,
+            data:   units,
+            filter: ({ unit }) => unit.race === neutral && (
+                unit.type === hero || unit.type === army),
         }));
     });
 
@@ -115,15 +120,14 @@ export const categories = () => {
     categoryBuildingRace.addEventListener('click', () => {
         innerHTMLCategory(filterRace({
             data:                      units,
-            filter:                    ({ unit, race }) => unit.type === race && unit.isBuilding === true,
-            filterIfNoDataAfterFilter: ({ unit }) => unit.isBuilding === true,
+            filter:                    ({ unit, race }) => unit.race === race && unit.type === building,
+            filterIfNoDataAfterFilter: ({ unit }) => unit.race !== neutral && unit.type === building,
         }));
     });
     categoryBuildingNeutral.addEventListener('click', () => {
         innerHTMLCategory(filterRace({
-            data:                      units,
-            filter:                    ({ unit }) => unit.type === neutral && unit.isBuilding === true,
-            filterIfNoDataAfterFilter: ({ unit }) => unit.isBuilding === true,
+            data:   units,
+            filter: ({ unit }) => unit.race === neutral && unit.type === building,
         }));
     });
 };

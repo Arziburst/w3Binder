@@ -9,6 +9,6 @@
             "isAura": false
         }
     ],
-    "type": "orc",
-    "isBuilding": true
+    "type": "building",
+    "race": "orc"
 }

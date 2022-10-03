@@ -4,7 +4,7 @@ import { reduxSelectRace } from '../bus/client/selectedRace';
 // Types
 import { Unit } from '../bus/config/types';
 
-type TypeFilter = ({ unit, race }:{ unit: Unit, race: string}) => boolean
+type TypeFilter = ({ unit, race }:{ unit: Unit, race: Unit['race']}) => boolean
 
 type Types = {
     data: Array<Unit>
@@ -17,7 +17,7 @@ export const filterRace = ({ data, filter, filterIfNoDataAfterFilter }: Types) =
 
     const result = data.filter((unit) => filter({ unit, race }));
 
-    if (!race && filterIfNoDataAfterFilter && result.length === 0) {
+    if (filterIfNoDataAfterFilter && result.length === 0) {
         return data.filter((unit) => filterIfNoDataAfterFilter({ unit, race }));
     }
 

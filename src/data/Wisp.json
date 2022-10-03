@@ -2,8 +2,8 @@
     "unitName": "Wisp",
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a8/BTNWisp.png/revision/latest?cb=20090112023517",
     "spells": false,
-    "type": "nightElf",
-    "isBuilding": false,
+    "type": "army",
+    "race": "nightElf",
     "buildings": [
         "t",
         "r",

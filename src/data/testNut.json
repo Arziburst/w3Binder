@@ -17,6 +17,6 @@
             "isAura": false
         }
     ],
-    "type": "neutral",
-    "isBuilding": false
+    "type": "hero",
+    "race": "neutral"
 }

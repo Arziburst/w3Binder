@@ -4,6 +4,10 @@ import { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
 // State
 import { initialState } from './slice';
 
+export type Hero = 'hero'
+export type Army = 'army'
+export type Building = 'building'
+
 type Human = 'human'
 type Orc = 'orc'
 type Undead = 'undead'
@@ -21,9 +25,10 @@ export type Unit = {
     unitName: string,
     unitImgUrl: string | boolean
     spells: Array<Spell> | boolean
-    type: Human | Orc | Undead | NightElf | Neutral | string
-    isBuilding: boolean
-    buildings?: string[]
+    type: Hero | Army | Building | string
+    race: Human | Orc | Undead | NightElf | Neutral | string
+    buildings?: Array<string | boolean>
+
 }
 
 export type FullUnit = Unit & { bindKey: number }

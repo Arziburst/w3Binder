@@ -2,6 +2,6 @@
     "unitName": "Grunt",
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800",
     "spells": false,
-    "type": "orc",
-    "isBuilding": false
+    "type": "army",
+    "race": "orc"
 }

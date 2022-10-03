@@ -27,6 +27,6 @@
             "isAura": false
         }
     ],
-    "type": "orc",
-    "isBuilding": false
+    "type": "hero",
+    "race": "orc"
 }

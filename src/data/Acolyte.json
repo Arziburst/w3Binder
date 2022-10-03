@@ -17,8 +17,8 @@
             "isAura": false
         }
     ],
-    "type": "undead",
-    "isBuilding": false,
+    "type": "army",
+    "race": "undead",
     "buildings": [
         "n",
         "c",

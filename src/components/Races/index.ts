@@ -10,6 +10,7 @@ import './index.scss';
 
 // Types
 import { filterRace } from '../../utils';
+import { Unit } from '../../bus/config/types';
 
 export const racesAddEventListenerOnIcons = () => {
     const selectHuman = document.querySelector('#selectHuman');
@@ -29,13 +30,13 @@ export const racesAddEventListenerOnIcons = () => {
         });
     };
 
-    const addEventClick = (HTMLElement: Element, raceClick: string) => {
+    const addEventClick = (HTMLElement: Element, raceClick: Unit['race']) => {
         HTMLElement.addEventListener('click', () => {
             reduxSelectRace().setRace(raceClick);
 
             const buildersCurrentRace = filterRace({
                 data:   units,
-                filter: ({ unit, race }) => unit.type === race && Array.isArray(unit.buildings),
+                filter: ({ unit, race }) => unit.race === race,
             });
 
             reduxConfig().setConfig({ type: 'b', value: { ...buildersCurrentRace[ 0 ], bindKey: 0 }});

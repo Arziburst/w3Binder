@@ -2,8 +2,8 @@
     "unitName": "Peasant",
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNPeasant.png/revision/latest?cb=20090112015133",
     "spells": false,
-    "type": "human",
-    "isBuilding": false,
+    "type": "army",
+    "race": "human",
     "buildings": [
         "h",
         "b",

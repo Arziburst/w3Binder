@@ -30,19 +30,29 @@ import './index.scss';
 // Types
 import { Neutral } from './bus/config/types';
 
-const setConfig = (ConfigJSONFromAhk: string) => {
-    if (ConfigJSONFromAhk) {
-        const parsedConfig: any = JSON.parse(ConfigJSONFromAhk);
+const setCurrentRace = (data: any) => {
+    if (data) {
+        const parsedConfig: any = JSON.parse(data);
         reduxConfig().setSavedClientConfig(parsedConfig);
 
         const arr = new Set();
         const neutral: Neutral = 'neutral';
 
-        Object.values(parsedConfig).forEach((obj: any) => (typeof obj.type === 'string' && obj.type !== neutral) && arr.add(obj.type));
+        Object.values(parsedConfig).forEach((obj: any) => {
+            if (typeof obj.race === 'string' && obj.race !== neutral) {
+                arr.add(obj.race);
+            }
+        });
 
         if (arr.size === 1) {
             reduxSelectRace().setRace(arr.values().next().value);
         }
+    }
+};
+
+const setConfig = (ConfigJSONFromAhk: string) => {
+    if (ConfigJSONFromAhk) {
+        setCurrentRace(ConfigJSONFromAhk);
     }
 
     createMainPage();
@@ -52,269 +62,9 @@ window.setConfig = setConfig;
 
 const { NODE_ENV } = process.env;
 if (NODE_ENV === 'development') {
-    const fakeData: any = JSON.stringify({
-        isAutoMove: true,
-        q:          {
-            bindKey:    1,
-            unitName:   'Dreadlord',
-            unitImgUrl: false,
-            spells:     [
-                {
-                    key:         'c',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'e',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'u',
-                    spellImgUrl: false,
-                    isClick:     false,
-                    isAura:      true,
-                },
-                {
-                    key:         'd',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-        w: {
-            bindKey:    2,
-            unitName:   'Lich',
-            unitImgUrl: false,
-            spells:     [
-                {
-                    key:         'n',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'f',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'r',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'd',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-        e: {
-            bindKey:    3,
-            unitName:   '3',
-            unitImgUrl: false,
-            spells:     [
-                {
-                    key:         'c',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'e',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'v',
-                    spellImgUrl: false,
-                    isClick:     false,
-                    isAura:      true,
-                },
-                {
-                    key:         'n',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-        r: false,
-        a: {
-            bindKey:    4,
-            unitName:   'armyA',
-            unitImgUrl: false,
-            spells:     [
-                {
-                    key:         'd',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'o',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                false,
-                {
-                    key:         'b',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-        s: {
-            bindKey:    5,
-            unitName:   'armyS',
-            unitImgUrl: false,
-            spells:     [
-                {
-                    key:         'r',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'u',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'c',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                false,
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-        d: {
-            bindKey:    6,
-            unitName:   'armyD',
-            unitImgUrl: false,
-            spells:     [
-                {
-                    key:         'c',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'n',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                {
-                    key:         'o',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-                false,
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-        f: false,
-        z: {
-            bindKey:    7,
-            unitName:   'armyZ',
-            unitImgUrl: false,
-            spells:     false,
-            type:       'undead',
-            isBuilding: false,
-        },
-        x: {
-            bindKey:    8,
-            unitName:   'armyX',
-            unitImgUrl: false,
-            spells:     false,
-            type:       'undead',
-            isBuilding: false,
-        },
-        c: {
-            bindKey:    9,
-            unitName:   'armyC',
-            unitImgUrl: false,
-            spells:     false,
-            type:       'undead',
-            isBuilding: false,
-        },
-        v: false,
-        b: {
-            bindKey:   0,
-            buildings: [
-                'n',
-                'c',
-                'g',
-                'v',
-                'z',
-                'a',
-                't',
-                'h',
-                's',
-                'b',
-                'r',
-            ],
-            unitName:   'buildB',
-            unitImgUrl: false,
-            spells:     [
-                false,
-                {
-                    key:         'u',
-                    spellImgUrl: false,
-                    isClick:     false,
-                    isAura:      false,
-                },
-                false,
-                {
-                    key:         'c',
-                    spellImgUrl: false,
-                    isClick:     true,
-                    isAura:      false,
-                },
-            ],
-            type:       'undead',
-            isBuilding: false,
-        },
-    });
+    const fakeData: any = JSON.stringify({ isAutoMove: false, b: { bindKey: 0 }, q: { unitName: 'Far Seer', unitImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/6/63/BTNHeroFarseer.png/revision/latest?cb=20090112005324', spells: [{ key: 'c', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/e/ee/BTNChainLightning.png/revision/latest?cb=20090111223436', isClick: true, isAura: false }, { key: 'f', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNFarSight.png/revision/latest?cb=20090112003639', isClick: true, isAura: false }, { key: 't', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/5/56/BTNSpiritWolf.png/revision/latest?cb=20090112021703', isClick: false, isAura: false }, { key: 'e', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNEarthquake.png/revision/latest?cb=20090112001121', isClick: true, isAura: false }], type: 'hero', race: 'orc', bindKey: 1 }, w: { unitName: 'Shadow Hunter', unitImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/5/5a/BTNShadowHunter.png/revision/latest?cb=20090112040540', spells: [{ key: 'e', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNHealingWave.png/revision/latest?cb=20090112033621', isClick: true, isAura: false }, { key: 'x', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/2/24/BTNHex.png/revision/latest?cb=20090112033717', isClick: true, isAura: false }, { key: 'w', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNSerpentWard.png/revision/latest?cb=20090112040529', isClick: true, isAura: false }, { key: 'v', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNBigBadVoodooSpell.png/revision/latest?cb=20090111201159', isClick: true, isAura: false }], type: 'hero', race: 'orc', bindKey: 2 }, e: { unitName: 'Tauren Chieftain', unitImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/8/8d/BTNHeroTaurenChieftain.png/revision/latest?cb=20090112005419', spells: [{ key: 'w', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNShockWave.png/revision/latest?cb=20090112021117', isClick: true, isAura: false }, { key: 't', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNWarStomp.png/revision/latest?cb=20090112023315', isClick: false, isAura: false }, { key: 'e', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/3/37/PASBTNCommand.png/revision/latest?cb=20090513192842', isClick: false, isAura: true }, { key: 'r', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/0/0a/PASBTNReincarnation.png/revision/latest?cb=20090513193342', isClick: false, isAura: true }], type: 'hero', race: 'orc', bindKey: 3 }, a: { unitName: 'Grunt', unitImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNGrunt.png/revision/latest?cb=20090112004800', spells: false, type: 'army', race: 'orc', bindKey: 4 }, s: { unitName: 'Headhunter', unitImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/4/42/BTNHeadhunter.png/revision/latest?cb=20110523182155', spells: [{ key: 'b', spellImgUrl: 'https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559', isClick: false, isAura: false }], type: 'army', race: 'orc', bindKey: 5 }});
 
-    if (fakeData) {
-        const parsedConfig: any = JSON.parse(fakeData);
-        reduxConfig().setSavedClientConfig(parsedConfig);
-
-        const arr = new Set();
-        const neutral: Neutral = 'neutral';
-
-        Object.values(parsedConfig).forEach((obj: any) => (typeof obj.type === 'string' && obj.type !== neutral) && arr.add(obj.type));
-
-        if (arr.size === 1) {
-            reduxSelectRace().setRace(arr.values().next().value);
-        }
-    }
+    setCurrentRace(fakeData);
 
     createMainPage();
 }
