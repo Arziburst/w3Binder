@@ -8,6 +8,8 @@
 /dist/
 /webBuild/
 
+w3binder.config.json
+
 # Files
 *.log
 *.env
