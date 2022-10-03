@@ -18,3 +18,20 @@
         }
     }
 }
+
+.bind_buttons_clear_bind_button {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+
+    opacity: 0.5;
+    &:hover, &:focus {
+        opacity: 1;
+    }
+
+    &__img {
+        $color_primary: 25px;
+        height: $color_primary;
+        width: $color_primary;
+    }
+}

@@ -15,6 +15,7 @@ import './index.scss';
 // Types
 import { filterRace } from '../../utils';
 import { Unit } from '../../bus/config/types';
+import { bindButtonsAddEventListener } from '../BindButtons';
 
 export const racesAddEventListenerOnIcons = () => {
     const selectHuman = document.querySelector('#selectHuman');
@@ -61,6 +62,8 @@ export const racesAddEventListenerOnIcons = () => {
             if (typeof raceState === 'string' && raceState === raceClick) {
                 HTMLElement.classList.add(`races--active_${raceClick}`);
             }
+
+            bindButtonsAddEventListener();
         });
 
         const raceState = reduxSelectRace().race;
