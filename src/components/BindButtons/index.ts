@@ -4,7 +4,7 @@ import { reduxConfig } from '../../bus/config';
 
 // Templates
 const templateSelectConfigForButton = require('../../pages/SelectConfigForButton/index.handlebars');
-
+const templateBindButtons = require('./index.handlebars');
 // Pages
 import { selectConfigForButton } from '../../pages';
 
@@ -21,14 +21,46 @@ type Buttons = Array<{
 // eslint-disable-next-line init-declarations
 declare const AHK: any;
 
+const groupUnitsInOneButton = ({ button, units }: { button: Element | null, units: Array<any> }) => {
+    if (button) {
+        const filteredUnits = units.filter((unit) => unit !== false);
+
+        const key = '<p class="bind_buttons_button__font font--color_primary">R</p>';
+
+        if (filteredUnits.length === 1 && filteredUnits[ 0 ]) {
+            button.innerHTML = `<img class="bind_buttons_button__img" src="${filteredUnits[ 0 ].unitImgUrl}" alt="Image ${filteredUnits[ 0 ].unitName}">${key}`;
+        }
+        if (filteredUnits.length === 2) {
+            button.innerHTML = filteredUnits.map((unit) => {
+                if (unit) {
+                    return `<span class="bind_buttons_button__img bind_buttons_button__two_img" style="background-image: url(${unit.unitImgUrl});"></span>`;
+                }
+
+                return '';
+            }).join('') + key;
+        }
+        if (filteredUnits.length === 3) {
+            button.innerHTML = filteredUnits.map((unit) => {
+                if (unit) {
+                    return `<span class="bind_buttons_button__img bind_buttons_button__three_img" style="background-image: url(${unit.unitImgUrl});"></span>`;
+                }
+
+                return '';
+            }).join('') + key;
+        }
+    }
+};
+
 export const bindButtonsAddEventListener = () => {
     const main = document.querySelector('#main');
+    const bindButtons = document.querySelector('#bindButtons');
     const buttonIsAutoMove = document.querySelector('#buttonIsAutoMove');
 
     const buttonSaveConfig = document.querySelector('#buttonSaveConfig');
 
     if (!(
         main
+        && bindButtons
         && buttonSaveConfig
         && buttonIsAutoMove
     )) {
@@ -53,10 +85,10 @@ export const bindButtonsAddEventListener = () => {
             key:     'e',
             bindKey: 3,
         },
-        // { // todo
-        //     element:    document.querySelector('#buttonR'),
-        //     key: 'r',
-        //     bindKey:    0,
+        // {
+        //     element: document.querySelector('#buttonR'),
+        //     key:     'r',
+        //     bindKey: 13, // todo false ????
         // },
         {
             element: document.querySelector('#buttonA'),
@@ -73,11 +105,6 @@ export const bindButtonsAddEventListener = () => {
             key:     'd',
             bindKey: 6,
         },
-        // { // todo
-        //     element:    document.querySelector('#buttonF'),
-        //     key: 'f',
-        //     bindKey:    0,
-        // },
         {
             element: document.querySelector('#buttonZ'),
             key:     'z',
@@ -93,23 +120,38 @@ export const bindButtonsAddEventListener = () => {
             key:     'c',
             bindKey: 9,
         },
-        // { // todo
-        //     element:    document.querySelector('#buttonV'),
-        //     key: 'v',
-        //     bindKey:    0,
-        // },
     ];
 
+    const config = reduxConfig().config;
+    groupUnitsInOneButton({ button: document.querySelector('#buttonR'), units: [ config.q, config.w, config.e ]});
+    groupUnitsInOneButton({ button: document.querySelector('#buttonF'), units: [ config.a, config.s, config.d ]});
+    groupUnitsInOneButton({ button: document.querySelector('#buttonV'), units: [ config.z, config.x, config.c ]});
+
+
     buttons.forEach((objectButton) => {
+        const key: any = objectButton.key;
+
         objectButton.element && objectButton.element.addEventListener('click', () => {
             main.innerHTML = templateSelectConfigForButton();
 
-            reduxSelectBindButton().setSelectBindButton({ key: objectButton.key, bindKey: objectButton.bindKey });
+            reduxSelectBindButton().setSelectBindButton({ key: key, bindKey: objectButton.bindKey });
 
             selectConfigForButton();
         });
+        const qs = document.querySelector(`#buttonRemoveUnitFrom${objectButton.key.toUpperCase()}`);
+
+        if (!qs) {
+            return;
+        }
+
+        qs.addEventListener('click', () => {
+            reduxConfig().setConfig({ type: key, value: false });
+            bindButtons.innerHTML = `${templateBindButtons({ config: reduxConfig().config })}`;
+            bindButtonsAddEventListener();
+        });
     });
 
+    // Toggler move
     if (reduxConfig().config.isAutoMove === true) {
         buttonIsAutoMove.setAttribute('checked', 'checked');
     }
@@ -121,9 +163,9 @@ export const bindButtonsAddEventListener = () => {
 
     // Save config and send config to AHK
     buttonSaveConfig.addEventListener('click', () => {
-        const { config } = reduxConfig();
-        const stringifiedConfig = JSON.stringify(config);
+        const stringifiedConfig = JSON.stringify(reduxConfig().config);
 
         AHK('setConfigFromJS', stringifiedConfig);
+        alert('Your config was save!');
     });
 };

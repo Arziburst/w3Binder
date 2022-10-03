@@ -26,7 +26,6 @@ import {
     racesAddEventListenerOnIcons,
     bindButtonsAddEventListener,
     categories,
-    autoComplete,
 } from '../../components';
 
 // Event
@@ -36,7 +35,7 @@ import { buttonBackToCategoriesEventClick } from '../../components/Categories/ev
 import './index.scss';
 
 // Types
-import { Neutral, Unit } from '../../bus/config/types';
+import { Unit } from '../../bus/config/types';
 
 export const addButtonsWithUnit = (value: string, units: Unit[]) => {
     const main = document.querySelector('#main');
@@ -144,8 +143,6 @@ export const selectConfigForButton = () => {
     const inputSearch = document.querySelector('#inputSearch');
     const contentAfterSearch = document.querySelector('#contentAfterSearch');
 
-    const neutral: Neutral = 'neutral';
-
     if (!(main && buttonBack && inputSearch && contentAfterSearch)) {
         console.log('no such document.querySelector');
 
@@ -157,26 +154,6 @@ export const selectConfigForButton = () => {
 
     // InputSearch Global
     inputSearch.addEventListener('input', inputSearchGlobal);
-
-    // autoComplete
-    // autoComplete({ // todo autoComplete
-    //     inp: inputSearch,
-
-    //     arr: filterRace({
-    //         data:   units,
-    //         filter: ({ unit, race }) =>  unit.type === race || unit.type === neutral,
-    //     }).map((objectUnit) => objectUnit.unitName),
-
-    //     selectItemCallback: (value: string) => {
-    //         addButtonsWithUnit(
-    //             value,
-    //             filterRace({
-    //                 data:   units,
-    //                 filter: ({ unit, race }) =>  unit.type === race || unit.type === neutral,
-    //             }),
-    //         );
-    //     },
-    // });
 
     categories();
 };

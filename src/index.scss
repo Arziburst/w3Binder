@@ -24,21 +24,36 @@ body {
             display: flex;
             justify-content: center;
         }
-        &align_items {
+        &align_items_center {
             align-items: center;
+        }
+        &justify_content_space_between {
+            justify-content: space-between;
         }
     }
 }
 
 .box {
+    &--flex {
+        display: flex;
+    }
     &--relative {
         position: relative;
     }
     &--padding_primary {
         padding: 20px;
+
+        &_bottom {
+            padding-bottom: 20px;
+        }
     }
-    &--margin_bottom_primary {
-        margin-bottom: 20px;
+    &--margin_primary {
+        &_bottom {
+            margin-bottom: 20px;
+        }
+        &_right {
+            margin-right: 20px;
+        }
     }
     &--big_border {
         border: 19px solid #000;

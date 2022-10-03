@@ -1,33 +1,52 @@
-<section class="bind_buttons row--center">
+<section id="bindButtons" class="bind_buttons row--center">
     <div class="box--big_border">
         <div class="box--padding_primary box--bg_secondary box--relative">
-            <div class="row">
-                {{> ./button.handlebars id="Q" unitName=config.q.unitName unitImgUrl=config.q.unitImgUrl}}
-                {{> ./button.handlebars id="W" unitName=config.w.unitName unitImgUrl=config.w.unitImgUrl}}
-                {{> ./button.handlebars id="E" unitName=config.e.unitName unitImgUrl=config.e.unitImgUrl}}
-                {{> ./button.handlebars id="R" unitName=config.r.unitName unitImgUrl=config.r.unitImgUrl}}
+            <div class="box--padding_primary_bottom">
+                <div class="row">
+                    {{> ./button.handlebars id="Q" unitName=config.q.unitName unitImgUrl=config.q.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="W" unitName=config.w.unitName unitImgUrl=config.w.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="E" unitName=config.e.unitName unitImgUrl=config.e.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="R" }}
+                    {{> ./button.handlebars id="T" }}
+                </div>
+                <div class="row">
+                    {{> ./button.handlebars id="A" unitName=config.a.unitName unitImgUrl=config.a.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="S" unitName=config.s.unitName unitImgUrl=config.s.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="D" unitName=config.d.unitName unitImgUrl=config.d.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="F" }}
+                    {{> ./button.handlebars id="G" }}
+                </div>
+                <div class="row">
+                    {{> ./button.handlebars id="Z" unitName=config.z.unitName unitImgUrl=config.z.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="X" unitName=config.x.unitName unitImgUrl=config.x.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="C" unitName=config.c.unitName unitImgUrl=config.c.unitImgUrl
+                    class="bind_buttons_button--hover" canRemove=true }}
+                    {{> ./button.handlebars id="V" }}
+                    {{> ./button.handlebars id="B" unitName=config.b.unitName unitImgUrl=config.b.unitImgUrl }}
+                </div>
             </div>
-            <div class="row">
-                {{> ./button.handlebars id="A" unitName=config.a.unitName unitImgUrl=config.a.unitImgUrl}}
-                {{> ./button.handlebars id="S" unitName=config.s.unitName unitImgUrl=config.s.unitImgUrl}}
-                {{> ./button.handlebars id="D" unitName=config.d.unitName unitImgUrl=config.d.unitImgUrl}}
-                {{> ./button.handlebars id="F" unitName=config.f.unitName unitImgUrl=config.f.unitImgUrl}}
-            </div>
-            <div class="row">
-                {{> ./button.handlebars id="Z" unitName=config.z.unitName unitImgUrl=config.z.unitImgUrl}}
-                {{> ./button.handlebars id="X" unitName=config.x.unitName unitImgUrl=config.x.unitImgUrl}}
-                {{> ./button.handlebars id="C" unitName=config.c.unitName unitImgUrl=config.c.unitImgUrl}}
-                {{> ./button.handlebars id="V" unitName=config.v.unitName unitImgUrl=config.v.unitImgUrl}}
-            </div>
-            <div class="row row--align_items">
-                <h2 class="font--color_primary">Auto Move</h2>
-                {{> ../../elements/Toggler/index.handlebars id="buttonIsAutoMove" class="box--small_border"}}
+            <div class="row row--align_items_center row--justify_content_space_between">
+                <div class="row row--align_items_center">
+                    <h2 class="box--margin_primary_right font--color_primary">Auto Move</h2>
+                    {{> ../../elements/Toggler/index.handlebars id="buttonIsAutoMove" class="box--small_border"}}
+                </div>
+                <div>
+                    <button id="buttonSaveConfig"
+                        class="button button--small_padding box--small_border button--reset_styles font--color_primary">
+                        Save your config
+                    </button>
+                </div>
             </div>
             <div>
-                <button id="buttonSaveConfig"
-                    class="button button--small_padding box--small_border button--reset_styles font--color_primary">
-                    Save your config
-                </button>
+
             </div>
         </div>
     </div>

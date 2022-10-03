@@ -1,8 +1,19 @@
-<button id="button{{id}}" class="bind_buttons_button box--small_border button--reset_styles">
+<div class="bind_buttons_button_wrapper box--small_border box--relative {{class}}" title={{unitName}}>
+    <button id="button{{id}}" class="bind_buttons_button button--reset_styles">
 
+        {{#if unitName}}
+        <img class="bind_buttons_button__img" src={{unitImgUrl}} alt="Image {{unitName}}">
+        {{/if}}
+
+        <p class="bind_buttons_button__font font--color_primary">{{id}}</p>
+    </button>
+
+    {{#if canRemove}}
     {{#if unitName}}
-    <img class="bind_buttons_button__img" src={{unitImgUrl}} alt="Image {{unitName}}">
+    <button id="buttonRemoveUnitFrom{{id}}" class="bind_buttons_clear_bind_button button--reset_styles">
+        <img src="https://static.wikia.nocookie.net/wowpedia/images/4/4f/BTNCancel-Reforged.png/revision/latest/scale-to-width-down/64?cb=202104170608295h"
+            class="bind_buttons_clear_bind_button__img" alt="Image remove unit">
+    </button>
     {{/if}}
-
-    <p class="bind_buttons_button__font font--color_primary">{{id}}</p>
-</button>
+    {{/if}}
+</div>
