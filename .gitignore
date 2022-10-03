@@ -7,8 +7,7 @@
 /flow-coverage/
 /dist/
 /webBuild/
-
-w3binder.config.json
+/w3binder.config.json
 
 # Files
 *.log
