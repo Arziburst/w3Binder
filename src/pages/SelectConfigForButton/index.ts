@@ -1,6 +1,3 @@
-// Core
-import lodash from 'lodash';
-
 // Bus
 import { reduxToggles } from '../../bus/client/toggles';
 import { reduxConfig } from '../../bus/config';
@@ -117,7 +114,7 @@ export const buttonBackToMainPageEventClick = () => {
     bindButtonsAddEventListener();
 };
 
-export const inputSearchGlobal = lodash.debounce((event: Event | any) => {
+export const inputSearchGlobal = (event: Event | any) => {
     const { togglesRedux, setToggleAction } = reduxToggles();
 
     if (togglesRedux.isUserStartedSearchingAndInputIsEmpty === false && event.target.value.length === 0) {
@@ -135,7 +132,7 @@ export const inputSearchGlobal = lodash.debounce((event: Event | any) => {
         filter:                    ({ unit, race }) =>  unit.type === race,
         filterIfNoDataAfterFilter: ({ unit }) =>  typeof unit.type === 'string',
     }));
-}, 300);
+};
 
 export const selectConfigForButton = () => {
     const main = document.querySelector('#main');
