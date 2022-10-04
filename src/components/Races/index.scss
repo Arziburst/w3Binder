@@ -3,18 +3,34 @@
     justify-content: center;
     
     &__item {
+        & img {
+            transform: scale(0.8);
+            @media (min-width: 800px) and (min-height: 700px) {
+                transform: scale(0.9);
+            }
+            @media (min-width: 1000px) and (min-height: 800px) {
+                transform: scale(1);
+            }
+        }
+
         &:not(:last-child) {
             margin-right: 20px;
         }
 
         & {
-            transform: scale(0.8);
             opacity: 0.7;
         }
         
         &--active {
-            transform: scale(1);
             opacity: 1;
+            transform: scale(1);
+            
+            @media (min-width: 800px) and (min-height: 700px) {
+                transform: scale(1.1);
+            }
+            @media (min-width: 1000px) and (min-height: 800px) {
+                transform: scale(1.2);
+            }
         }
     }
 }

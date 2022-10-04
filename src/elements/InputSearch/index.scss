@@ -1,5 +1,12 @@
 @import '../../assets/themes/defaultTheme.scss';
 
+.input_search {
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+
+}
+
 #inputSearch {
     padding: 5px 10px;
     background-color: transparent;

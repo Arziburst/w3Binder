@@ -23,6 +23,7 @@
     background-color: transparent;
     -webkit-transition: .4s;
     transition: .4s;
+    background-color: $color_tertiary;
 }
 
 .toggler__slider:before {
@@ -33,7 +34,7 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: $color_tertiary;
+    background-color: $color_secondary;
     border: 6px solid #000;
     border-image: url("../../assets/images/small_metal_border.png") 6 repeat;
     border-image-repeat: stretch;
@@ -50,7 +51,6 @@ input:checked + .toggler__slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-    background-color: $color_secondary;
 }
 
 .toggler__slider--round {

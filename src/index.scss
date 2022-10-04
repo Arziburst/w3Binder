@@ -128,6 +128,15 @@ body {
 }
 
 .font {
+    &__text_primary {
+        font-size: 14px;
+        @media (min-width: 800px) and (min-height: 700px) {
+            font-size: 16px;
+        }
+        @media (min-width: 1000px) and (min-height: 800px) {
+            font-size: 18px;
+        }
+    }
     &--color_ {
         &primary {
             color: $color_primary;
