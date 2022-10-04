@@ -1,3 +1,7 @@
-.inputSearch {
-    min-width: 1px;
+@import '../../assets/themes/defaultTheme.scss';
+
+#inputSearch {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
 }

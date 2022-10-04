@@ -1,3 +1,12 @@
 .categories {
     min-width: 1px;
+
+    &_button {
+        height: 100px;
+        width: 200px;
+
+        &_text {
+            font-size: 14px;
+        }
+    }
 }

@@ -21,3 +21,24 @@
         }
     }
 }
+
+.common_icon_button {
+    height: 100px;
+    width: 100px;
+
+    @media (min-width: 1000px) and (min-height: 800px) {
+        $size: 120px;
+        height: $size;
+        width: $size;
+    }
+    @media (min-width: 1100px) and (min-height: 800px) {
+        $size: 130px;
+        height: $size;
+        width: $size;
+    }
+    @media (min-width: 1200px) and (min-height: 800px) {
+        $size: 140px;
+        height: $size;
+        width: $size;
+    }
+}
