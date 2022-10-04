@@ -1,8 +1,8 @@
 .toggler {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 74px;
+  height: 46px;
 }
 
 .toggler input { 
@@ -25,6 +25,7 @@
 
 .toggler__slider:before {
   position: absolute;
+  transform: translate(0%, 0%);
   content: "";
   height: 26px;
   width: 26px;
