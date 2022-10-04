@@ -29,9 +29,7 @@ export const racesAddEventListenerOnIcons = () => {
 
     const resetAllActiveRaces = () => {
         [ selectHuman, selectOrc, selectUndead, selectNightElf ].forEach((el) => {
-            [ 'human', 'orc', 'undead', 'nightElf' ].forEach((str) => {
-                el.classList.remove(`races--active_${str}`);
-            });
+            el.classList.remove('races__item--active');
         });
     };
 
@@ -60,7 +58,7 @@ export const racesAddEventListenerOnIcons = () => {
             const raceState = reduxSelectRace().race;
 
             if (typeof raceState === 'string' && raceState === raceClick) {
-                HTMLElement.classList.add(`races--active_${raceClick}`);
+                HTMLElement.classList.add('races__item--active');
             }
 
             bindButtonsAddEventListener();
@@ -68,7 +66,7 @@ export const racesAddEventListenerOnIcons = () => {
 
         const raceState = reduxSelectRace().race;
         if (typeof raceState === 'string' && raceState === raceClick) {
-            HTMLElement.classList.add(`races--active_${raceClick}`);
+            HTMLElement.classList.add('races__item--active');
         }
     };
 
