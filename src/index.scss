@@ -1,6 +1,10 @@
 @import url("./init/reset.scss");
 @import "./assets/themes/defaultTheme.scss";
 
+* {
+    box-sizing: border-box !important;
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -77,14 +81,41 @@ body {
         border-image-repeat: stretch;
     }
     &--smooth {
-        border-radius: 5px;
+        &_primary{
+            border-radius: 5px;
+        }
+        &_secondary {
+            border-radius: 10px;
+        }
     }
+
     &--circle {
         border-radius: 50%;
     }
     &--bg {
         &_secondary {
             background-color: $color_secondary;
+        }
+        &_tertiary {
+            background-color: $color_tertiary;
+            &_hover {
+                &:hover, &:focus {
+                    background-color: $color_tertiary;
+                }
+                &:active {
+                    background-color: $color_tertiary;
+                }
+            }
+        }
+    }
+    &--opacity {
+        &_hover {
+            &:hover, &:focus {
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 1;
+            }
         }
     }
 }
