@@ -1,12 +1,18 @@
 <div class="common_icon_button box--small_border box--relative {{class}}" title="{{unitName}}">
+
+    {{#if unitName}}
     <button id="button{{id}}" class="bind_buttons_button box--bg_tertiary box--opacity_hover button--reset_styles">
 
-        {{#if unitName}}
         <img class="bind_buttons_button__img" src={{unitImgUrl}} alt="Image {{unitName}}">
-        {{/if}}
 
-        <p class="bind_buttons_button__font font--color_primary">{{id}}</p>
+        {{> ./areaForText.handlebars text=id}}
     </button>
+    {{else}}
+    <button id="button{{id}}"
+        class="bind_buttons_button row--center box--bg_tertiary box--opacity_hover button--reset_styles">
+        <h1 class="bind_buttons_button__font--big font--family_primary font--color_primary">{{id}}</h1>
+    </button>
+    {{/if}}
 
     {{#if canRemove}}
     {{#if unitName}}

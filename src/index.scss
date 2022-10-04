@@ -19,6 +19,10 @@ body {
     flex-wrap: wrap;
 
     &-- {
+        &center {
+            align-items: center;
+            justify-content: center;
+        }
         &align_items_center {
             align-items: center;
         }
@@ -32,6 +36,9 @@ body {
 }
 
 .box {
+    &--full_height {
+        height: 100%;
+    }
     &--flex {
         display: flex;
     }
@@ -125,5 +132,8 @@ body {
         &primary {
             color: $color_primary;
         }
+    }
+    &--family_primary {
+        font-family: sans-serif;
     }
 }

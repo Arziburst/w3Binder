@@ -5,6 +5,8 @@ import { reduxConfig } from '../../bus/config';
 // Templates
 const templateSelectConfigForButton = require('../../pages/SelectConfigForButton/index.handlebars');
 const templateBindButtons = require('./index.handlebars');
+const templateAreaForText = require('./areaForText.handlebars');
+
 // Pages
 import { selectConfigForButton } from '../../pages';
 
@@ -27,10 +29,8 @@ const groupUnitsInOneButton = (
     if (button) {
         const filteredUnits = units.filter((unit) => unit !== false);
 
-        const key = `<p class="bind_buttons_button__font font--color_primary">${text.toUpperCase()}</p>`;
-
         if (filteredUnits.length === 1 && filteredUnits[ 0 ]) {
-            button.innerHTML = `<img class="bind_buttons_button__img" src="${filteredUnits[ 0 ].unitImgUrl}" alt="Image ${filteredUnits[ 0 ].unitName}">${key}`;
+            button.innerHTML = `<img class="bind_buttons_button__img" src="${filteredUnits[ 0 ].unitImgUrl}" alt="Image ${filteredUnits[ 0 ].unitName}">${templateAreaForText({ text: text.toUpperCase() })}`;
         }
         if (filteredUnits.length === 2) {
             button.innerHTML = filteredUnits.map((unit) => {
@@ -39,7 +39,7 @@ const groupUnitsInOneButton = (
                 }
 
                 return '';
-            }).join('') + key;
+            }).join('') + templateAreaForText({ text: text.toUpperCase() });
         }
         if (filteredUnits.length === 3) {
             button.innerHTML = filteredUnits.map((unit) => {
@@ -48,7 +48,7 @@ const groupUnitsInOneButton = (
                 }
 
                 return '';
-            }).join('') + key;
+            }).join('') + templateAreaForText({ text: text.toUpperCase() });
         }
     }
 };
