@@ -2,7 +2,7 @@
 @import "./assets/themes/defaultTheme.scss";
 
 * {
-    box-sizing: border-box !important;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,12 +19,11 @@ body {
     flex-wrap: wrap;
 
     &-- {
-        &center {
-            display: flex;
-            justify-content: center;
-        }
         &align_items_center {
             align-items: center;
+        }
+        &justify_content_center {
+            justify-content: center;
         }
         &justify_content_space_between {
             justify-content: space-between;
