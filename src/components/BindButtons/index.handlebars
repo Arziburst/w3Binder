@@ -1,6 +1,6 @@
 <section id="bindButtons" class="bind_buttons row--center">
     <div class="box--big_border">
-        <div class="box--padding_primary box--bg_secondary box--relative">
+        <div class="box--padding_primary box--bg_secondary">
             <div class="box--padding_primary_bottom">
                 <div class="row">
                     {{> ./button.handlebars id="Q" unitName=config.q.unitName unitImgUrl=config.q.unitImgUrl
@@ -33,7 +33,7 @@
                     {{> ./button.handlebars id="B" unitName=config.b.unitName unitImgUrl=config.b.unitImgUrl }}
                 </div>
             </div>
-            <div class="row row--align_items_center row--justify_content_space_between">
+            <div class="row row--align_items_center row--justify_content_space_between box--relative">
                 <div class="row row--align_items_center">
                     <h2 class="box--margin_primary_right font--color_primary">Auto Move</h2>
                     {{> ../../elements/Toggler/index.handlebars id="buttonIsAutoMove" class="box--small_border"}}
