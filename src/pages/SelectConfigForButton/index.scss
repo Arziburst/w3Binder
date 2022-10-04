@@ -1,6 +1,7 @@
 .selectConfigForButton {
     & #contentAfterSearch {
         min-height: 160px;
+        max-width: 90vw;
     }
     & #buttonBack {
         height: 100%;
