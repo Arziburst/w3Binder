@@ -1,5 +1,4 @@
 // Bus
-import { reduxToggles } from '../../bus/client/toggles';
 import { reduxConfig } from '../../bus/config';
 import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
 
@@ -17,6 +16,7 @@ import { units } from '../../data/index';
 const templateRaces = require('../../components/Races/index.handlebars');
 const templateBindButtons = require('../../components/BindButtons/index.handlebars');
 const templateButtonUnit = require('../../components//ButtonUnit/index.handlebars');
+const templateNoSuchData = require('../../components/NoSuchData/index.handlebars');
 
 // Components
 import {
@@ -32,7 +32,7 @@ import { buttonBackToCategoriesEventClick } from '../../components/Categories/ev
 import './index.scss';
 
 // Types
-import { Unit } from '../../bus/config/types';
+import { Neutral, Unit } from '../../bus/config/types';
 
 export const addButtonsWithUnit = (value: string, units: Unit[]) => {
     const main = document.querySelector('#main');
@@ -44,6 +44,12 @@ export const addButtonsWithUnit = (value: string, units: Unit[]) => {
 
     if (value.length > 0) {
         const foundUnits: Unit[] = searchUnits({ input: value, units });
+
+        if (foundUnits.length === 0) {
+            contentAfterSearch.innerHTML = `${templateNoSuchData()}`;
+
+            return;
+        }
 
         contentAfterSearch.innerHTML = `${foundUnits.map((objectUnit) => templateButtonUnit(
             {
@@ -114,23 +120,25 @@ export const buttonBackToMainPageEventClick = () => {
     bindButtonsAddEventListener();
 };
 
-export const inputSearchGlobal = (event: Event | any) => {
-    const { togglesRedux, setToggleAction } = reduxToggles();
+export const inputSearchGlobalEventInput = (event: Event | any) => {
+    const buttonBack = document.querySelector('#buttonBack');
 
-    if (togglesRedux.isUserStartedSearchingAndInputIsEmpty === false && event.target.value.length === 0) {
-        const buttonBack = document.querySelector('#buttonBack');
-        if (!buttonBack) {
-            return;
-        }
-        console.log('isUserStartedSearchingAndInputIsEmpty');
+    const neutral: Neutral = 'neutral';
+
+    if (!buttonBack) {
+        return;
+    }
+
+    if (event.target.value.length > 0) {
+        console.log('text');
+        buttonBack.removeEventListener('click', buttonBackToMainPageEventClick);
         buttonBack.addEventListener('click', buttonBackToCategoriesEventClick);
-        setToggleAction({ type: 'isUserStartedSearchingAndInputIsEmpty', value: true });
     }
 
     addButtonsWithUnit(event.target.value, filterRace({
         data:                      units,
-        filter:                    ({ unit, race }) =>  unit.type === race,
-        filterIfNoDataAfterFilter: ({ unit }) =>  typeof unit.type === 'string',
+        filter:                    ({ unit, race }) => unit.race === race || unit.race === neutral,
+        filterIfNoDataAfterFilter: ({ unit }) => typeof unit.unitName === 'string',
     }));
 };
 
@@ -150,7 +158,7 @@ export const selectConfigForButton = () => {
     buttonBack.addEventListener('click', buttonBackToMainPageEventClick);
 
     // InputSearch Global
-    inputSearch.addEventListener('input', inputSearchGlobal);
+    inputSearch.addEventListener('input', inputSearchGlobalEventInput);
 
     categories();
 };

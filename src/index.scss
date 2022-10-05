@@ -12,6 +12,10 @@ body {
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
+
+    scrollbar-base-color: $color_primary_50;
+    scrollbar-track-color: $color_tertiary;
+    scrollbar-arrow-color: $color_tertiary;
 }
 
 .row {

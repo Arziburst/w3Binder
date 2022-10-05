@@ -2,7 +2,10 @@
     & #contentAfterSearch {
         min-height: 160px;
         max-width: 90vw;
+        max-height: calc(100vh - 160px);
+        overflow-y: auto;
     }
+
     & #buttonBack {
         height: 100%;
     }

@@ -19,12 +19,6 @@
             "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8f/BTNBloodLustOff.png/revision/latest?cb=20090111221508",
             "isClick": true,
             "isAura": false
-        },
-        {
-            "key": "m",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/68/BTNShamanAdept.png/revision/latest?cb=20090112021021",
-            "isClick": false,
-            "isAura": true
         }
     ],
     "type": "army",

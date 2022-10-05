@@ -13,9 +13,6 @@ import { reduxConfig } from './bus/config';
 import { reduxSelectRace } from './bus/client/selectedRace';
 
 // Images
-import './assets/images/border_iron.png';
-import './assets/images/background_wood.jpg';
-
 import './assets/images/icon_race_human.png';
 import './assets/images/icon_race_orc.png';
 import './assets/images/icon_race_undead.png';

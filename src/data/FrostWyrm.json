@@ -1,0 +1,14 @@
+{
+    "unitName": "Frost Wyrm",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dd/BTNFrostWyrm-Reforged.png/revision/latest?cb=20210426033736",
+    "spells": [
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/06/PASBTNFreezingBreath.png/revision/latest?cb=20090513193123",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

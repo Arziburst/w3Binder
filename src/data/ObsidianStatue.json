@@ -1,0 +1,26 @@
+{
+    "unitName": "Obsidian Statue",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/40/BTNObsidianStatue-Reforged.png/revision/latest?cb=20210510110540",
+    "spells": [
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/72/BTNReplenishHealthOff.png/revision/latest?cb=20090112040017",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/76/BTNReplenishManaOff.png/revision/latest?cb=20090112040050",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f2/BTNDestroyer.png/revision/latest?cb=20090111205037",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

@@ -1,0 +1,20 @@
+{
+    "unitName": "Crypt Fiend",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/51/BTNCryptFiend-Reforged.png/revision/latest?cb=20210417065628",
+    "spells": [
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/5e/BTNWebOff.png/revision/latest?cb=20090112023348",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a4/BTNCryptFiendBurrow.png/revision/latest?cb=20090111204534",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

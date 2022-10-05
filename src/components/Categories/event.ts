@@ -5,14 +5,13 @@ const templateCategories = require('../Categories/index.handlebars');
 import { categories } from './index';
 
 // Pages
-import { buttonBackToMainPageEventClick } from '../../pages';
+import { buttonBackToMainPageEventClick, inputSearchGlobalEventInput } from '../../pages';
 
 export const buttonBackToCategoriesEventClick = () => {
     const buttonBack = document.querySelector('#buttonBack');
     const inputSearch: Element | any = document.querySelector('#inputSearch');
 
     const contentAfterSearch = document.querySelector('#contentAfterSearch');
-
 
     if (!(buttonBack && inputSearch && contentAfterSearch)) {
         return;
@@ -21,6 +20,8 @@ export const buttonBackToCategoriesEventClick = () => {
     contentAfterSearch.innerHTML = `${templateCategories()}`;
     buttonBack.removeEventListener('click', buttonBackToCategoriesEventClick);
     buttonBack.addEventListener('click', buttonBackToMainPageEventClick);
+    inputSearch.addEventListener('input', inputSearchGlobalEventInput);
     categories();
+
     inputSearch.value = '';
 };

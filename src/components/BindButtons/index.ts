@@ -87,11 +87,6 @@ export const bindButtonsAddEventListener = () => {
             key:     'e',
             bindKey: 3,
         },
-        // {
-        //     element: document.querySelector('#buttonR'),
-        //     key:     'r',
-        //     bindKey: 13, // todo false ????
-        // },
         {
             element: document.querySelector('#buttonA'),
             key:     'a',

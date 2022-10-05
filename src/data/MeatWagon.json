@@ -1,0 +1,20 @@
+{
+    "unitName": "Meat Wagon",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNMeatWagon-Reforged.png/revision/latest?cb=20210510103100",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f1/BTNUndeadLoadOff.png/revision/latest?cb=20090112022802",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fe/BTNUndeadUnLoad.png/revision/latest?cb=20090112022835",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

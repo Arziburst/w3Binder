@@ -1,0 +1,26 @@
+{
+    "unitName": "Ghoul",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c6/BTNGhoul-Reforged.png/revision/latest?cb=20210427170006",
+    "spells": [
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6a/BTNGatherGold.png/revision/latest?cb=20090112004203",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/18/BTNReturnGoods.png/revision/latest?cb=20090112020210",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNCannibalize.png/revision/latest?cb=20090111223001",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

@@ -1,0 +1,20 @@
+{
+    "unitName": "Abomination",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f7/BTNAbomination-Reforged.png/revision/latest?cb=20210415154425",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNCannibalize.png/revision/latest?cb=20090111223001",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/72/PASBTNPlagueCloud.png/revision/latest?cb=20090513193312",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

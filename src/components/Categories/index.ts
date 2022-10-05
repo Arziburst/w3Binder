@@ -1,11 +1,20 @@
 // Data
 import { units } from '../../data';
 
+// Bus
+import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
+import { reduxConfig } from '../../bus/config';
+
 // Templates
-const templateButtonUnit = require('../ButtonUnit/index.handlebars');
 const templateRaces = require('../Races/index.handlebars');
 const templateBindButtons = require('../BindButtons/index.handlebars');
 
+// Pages
+import { addButtonsWithUnit, inputSearchGlobalEventInput } from '../../pages';
+import { racesAddEventListenerOnIcons } from '../Races';
+
+// Components
+import { bindButtonsAddEventListener } from '../BindButtons';
 
 // Utils
 import { filterRace, makeIdButtonUnit } from '../../utils';
@@ -14,17 +23,17 @@ import { filterRace, makeIdButtonUnit } from '../../utils';
 import './index.scss';
 
 // Types
-import { Army, Building, Hero, Neutral, Unit } from '../../bus/config/types';
-import { addButtonsWithUnit, inputSearchGlobal } from '../../pages';
-import { reduxConfig } from '../../bus/config';
-import { reduxSelectBindButton } from '../../bus/client/selectBindButton';
-import { racesAddEventListenerOnIcons } from '../Races';
-import { bindButtonsAddEventListener } from '../BindButtons';
+import {
+    Army,
+    Building,
+    Hero,
+    Neutral,
+    Unit,
+} from '../../bus/config/types';
 
 // Events
 import { buttonBackToMainPageEventClick } from '../../pages';
 import { buttonBackToCategoriesEventClick } from './event';
-
 
 export const categories = () => {
     const buttonBack = document.querySelector('#buttonBack');
@@ -68,16 +77,20 @@ export const categories = () => {
         buttonBack.addEventListener('click', buttonBackToCategoriesEventClick);
 
         // inputSearch
-        inputSearch.removeEventListener('input', inputSearchGlobal);
-        inputSearch.addEventListener('input', (event: Event | any) => {
+        const inputCategory = (event: Event | any) => {
             addButtonsWithUnit(event.target.value, data);
-        });
+        };
+        const removeEventInput = () => {
+            inputSearch.removeEventListener('input', inputCategory);
+            buttonBack.removeEventListener('click', removeEventInput);
+        };
+        inputSearch.removeEventListener('input', inputSearchGlobalEventInput);
+        inputSearch.addEventListener('input', inputCategory);
 
-        contentAfterSearch.innerHTML = `${data.map((objectUnit: any) => templateButtonUnit({
-            id:         makeIdButtonUnit(objectUnit.unitName),
-            unitName:   objectUnit.unitName,
-            unitImgUrl: objectUnit.unitImgUrl,
-        })).join('')}`;
+        buttonBack.addEventListener('click', removeEventInput);
+
+
+        addButtonsWithUnit('', data);
 
         data.forEach((objectUnit: Unit) => {
             const buttonQS = document.querySelector(`#${makeIdButtonUnit(objectUnit.unitName)}`);

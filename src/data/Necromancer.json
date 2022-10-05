@@ -1,0 +1,26 @@
+{
+    "unitName": "Necromancer",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c7/BTNNecromancer-Reforged.png/revision/latest?cb=20210510105934",
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/9c/BTNRaiseDeadOff.png/revision/latest?cb=20090112015731",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "u",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/cc/BTNUnholyFrenzy.png/revision/latest?cb=20090112022909",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f6/BTNCripple.png/revision/latest?cb=20090111235632",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

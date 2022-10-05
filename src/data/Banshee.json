@@ -1,0 +1,26 @@
+{
+    "unitName": "Banshee",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e5/BTNBanshee-Reforged.png/revision/latest?cb=20210415233844",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNCurseOff.png/revision/latest?cb=20090112000057",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/ce/BTNAntiMagicShell.png/revision/latest?cb=20090111200925",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "o",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/06/BTNPossession.png/revision/latest?cb=20090112015443",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

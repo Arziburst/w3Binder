@@ -1,4 +1,13 @@
 // unitImportJsonMarker
+import FrostWyrm from './FrostWyrm.json';
+import ObsidianStatue from './ObsidianStatue.json';
+import MeatWagon from './MeatWagon.json';
+import Necromancer from './Necromancer.json';
+import Banshee from './Banshee.json';
+import Abomination from './Abomination.json';
+import Shade from './Shade.json';
+import CryptFiend from './CryptFiend.json';
+import Ghoul from './Ghoul.json';
 import Dreadlord from './Dreadlord.json';
 import Lich from './Lich.json';
 import DeathKnight from './DeathKnight.json';
@@ -13,13 +22,21 @@ import ShadowHunter from './ShadowHunter.json';
 import FarSeer from './FarSeer.json';
 import Headhunter from './Headhunter.json';
 import Grunt from './Grunt.json';
-import OrcHome from './OrcHome.json';
 
 // Types
 import { Unit } from '../bus/config/types';
 
 export const units: Array<Unit> = [
     // unitJsonMarker
+    FrostWyrm,
+    ObsidianStatue,
+    MeatWagon,
+    Necromancer,
+    Banshee,
+    Abomination,
+    Shade,
+    CryptFiend,
+    Ghoul,
     Dreadlord,
     Lich,
     DeathKnight,
@@ -34,5 +51,4 @@ export const units: Array<Unit> = [
     FarSeer,
     Headhunter,
     Grunt,
-    OrcHome,
 ];
