@@ -1,0 +1,32 @@
+{
+    "unitName": "Shaman",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/08/BTNShaman-Reforged.png/revision/latest?cb=20210516044612",
+    "spells": [
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/73/BTNPurge.png/revision/latest?cb=20090112015657",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "l",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/eb/BTNLightningShield.png/revision/latest?cb=20090112013759",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8f/BTNBloodLustOff.png/revision/latest?cb=20090111221508",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/68/BTNShamanAdept.png/revision/latest?cb=20090112021021",
+            "isClick": false,
+            "isAura": true
+        }
+    ],
+    "type": "army",
+    "race": "orc"
+}

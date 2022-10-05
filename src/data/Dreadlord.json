@@ -1,0 +1,32 @@
+{
+    "unitName": "Dreadlord",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/05/BTNHeroDreadLord-Reforged.png/revision/latest?cb=20210508062247",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6c/BTNCarrionSwarm.png/revision/latest?cb=20090111223036",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/14/BTNSleep.png/revision/latest?cb=20090112021235",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "v",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/89/PASBTNVampiricAura.png/revision/latest?cb=20090513193437",
+            "isClick": false,
+            "isAura": true
+        },
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/49/BTNInfernal.png/revision/latest?cb=20090112013310",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "hero",
+    "race": "undead"
+}

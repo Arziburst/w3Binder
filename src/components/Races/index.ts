@@ -47,7 +47,7 @@ export const racesAddEventListenerOnIcons = () => {
 
             const buildersCurrentRace = filterRace({
                 data:   units,
-                filter: ({ unit, race }) => unit.race === race,
+                filter: ({ unit, race }) => unit.race === race && typeof unit.buildings === 'object',
             });
 
             reduxConfig().setConfig({ type: 'b', value: { ...buildersCurrentRace[ 0 ], bindKey: 0 }});

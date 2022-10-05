@@ -1,0 +1,32 @@
+{
+    "unitName": "Lich",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c7/BTNHeroLich-Reforged.png/revision/latest?cb=20210508062320",
+    "spells": [
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/04/BTNGlacier.png/revision/latest?cb=20090112004354",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b2/BTNFrostArmorOff.png/revision/latest?cb=20090112033216",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/7a/BTNDarkRitual.png/revision/latest?cb=20090112000208",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/17/BTNDeathAndDecay.png/revision/latest?cb=20090112000303",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "hero",
+    "race": "undead"
+}
