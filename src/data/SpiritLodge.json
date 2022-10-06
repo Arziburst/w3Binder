@@ -1,0 +1,32 @@
+{
+    "unitName": "Spirit Lodge",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/33/BTNSpiritLodge-Reforged.png/revision/latest?cb=20210516054357",
+    "spells": [
+        {
+            "key": "s",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/08/BTNShaman-Reforged.png/revision/latest?cb=20210516044612",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a9/BTNWitchDoctor-Reforged.png/revision/latest?cb=20210516064723",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/db/BTNShamanAdept-Reforged.png/revision/latest?cb=20210516044616",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNWitchDoctorAdept-Reforged.png/revision/latest?cb=20210516064728",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

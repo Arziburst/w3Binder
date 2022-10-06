@@ -1,0 +1,14 @@
+{
+    "unitName": "Kodo Beast",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c6/BTNKotoBeast-Reforged.png/revision/latest?cb=20210508203620",
+    "spells": [
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c4/BTNDrum-Reforged.png/revision/latest?cb=20210425013205",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "orc"
+}

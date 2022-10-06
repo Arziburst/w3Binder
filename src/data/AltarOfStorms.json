@@ -1,0 +1,14 @@
+{
+    "unitName": "Altar Of Storms",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4a/BTNAltarOfStorms-Reforged.png/revision/latest?cb=20210415212213",
+    "spells": [
+        {
+            "key": "",
+            "spellImgUrl": "",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

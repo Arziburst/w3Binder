@@ -17,7 +17,15 @@ import Peasant from './Peasant.json';
 import Peon from './Peon.json';
 import Grunt from './Grunt.json';
 import Headhunter from './Headhunter.json';
+import Demolisher from './Demolisher.json';
 import Shaman from './Shaman.json';
+import WitchDoctor from './WitchDoctor.json';
+import Raider from './Raider.json';
+import WindRider from './WindRider.json';
+import KodoBeast from './KodoBeast.json';
+import Batrider from './Batrider.json';
+import SpiritWalker from './SpiritWalker.json';
+import Tauren from './Tauren.json';
 // Mobs Undead
 import Acolyte from './Acolyte.json';
 import Shade from './Shade.json';
@@ -33,6 +41,16 @@ import FrostWyrm from './FrostWyrm.json';
 // Mobs Night Elf
 import Wisp from './Wisp.json';
 
+// Buildings Orc
+import GreatHall from './GreatHall.json';
+import Barracks from './Barracks.json';
+import WarMill from './WarMill.json';
+import Burrow from './Burrow.json';
+import AltarOfStorms from './AltarOfStorms.json';
+import SpiritLodge from './SpiritLodge.json';
+import Beastiary from './Beastiary.json';
+import TaurenTotem from './TaurenTotem.json';
+import VoodooLounge from './VoodooLounge.json';
 // Buildings Undead
 import Necropolis from './Necropolis.json';
 import Ziggurat from './Ziggurat.json';
@@ -63,14 +81,20 @@ export const units: Array<Unit> = [
     Lich,
     Dreadlord,
     CryptLord,
-    // Heroes Night Elt
-    Wisp,
 
     // Mobs Orc
     Peon,
     Grunt,
     Headhunter,
+    Demolisher,
     Shaman,
+    WitchDoctor,
+    Raider,
+    WindRider,
+    KodoBeast,
+    Batrider,
+    SpiritWalker,
+    Tauren,
     // Mobs Undead
     Acolyte,
     Shade,
@@ -83,7 +107,19 @@ export const units: Array<Unit> = [
     Necromancer,
     ObsidianStatue,
     FrostWyrm,
+    // Mobs Night Elf
+    Wisp,
 
+    // Buildings Orc
+    GreatHall,
+    Barracks,
+    WarMill,
+    Burrow,
+    AltarOfStorms,
+    SpiritLodge,
+    Beastiary,
+    TaurenTotem,
+    VoodooLounge,
     // Buildings Undead
     Necropolis,
     Ziggurat,

@@ -1,0 +1,56 @@
+{
+    "unitName": "Beastiary",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/31/BTNBeastiary-Reforged.png/revision/latest?cb=20210415234341",
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6d/BTNRaider-Reforged.png/revision/latest?cb=20210512152938",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/76/BTNWyvernRider-Reforged.png/revision/latest?cb=20210516064851",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "k",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c6/BTNKotoBeast-Reforged.png/revision/latest?cb=20210508203620",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/83/BTNTrollBatRider-Reforged.png/revision/latest?cb=20210516061823",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "l",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/21/BTNLiquidFire-Reforged.png/revision/latest?cb=20210510102020",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/33/BTNEnsnare-Reforged.png/revision/latest?cb=20210425014548",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/03/BTNEnvenomedSpear-Reforged.png/revision/latest?cb=20210425015041",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c4/BTNDrum-Reforged.png/revision/latest?cb=20210425013205",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

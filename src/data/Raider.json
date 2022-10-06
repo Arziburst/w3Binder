@@ -1,0 +1,14 @@
+{
+    "unitName": "Raider",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6d/BTNRaider-Reforged.png/revision/latest?cb=20210512152938",
+    "spells": [
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/33/BTNEnsnare-Reforged.png/revision/latest?cb=20210425014548",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "orc"
+}
