@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6c/BTNCarrionSwarm.png/revision/latest?cb=20090111223036",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a4/BTNCarrionSwarm-Reforged.png/revision/latest?cb=20210417061112",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "e",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/14/BTNSleep.png/revision/latest?cb=20090112021235",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/9a/BTNSleep-Reforged.png/revision/latest?cb=20210516045735",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "v",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/89/PASBTNVampiricAura.png/revision/latest?cb=20090513193437",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/3e/BTNVampiricAura-Reforged.png/revision/latest?cb=20210516062958",
             "isClick": false,
             "isAura": true
         },
         {
             "key": "n",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/49/BTNInfernal.png/revision/latest?cb=20090112013310",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e0/BTNInfernal-Reforged.png/revision/latest?cb=20210508200700",
             "isClick": true,
             "isAura": false
         }

@@ -4,20 +4,20 @@
     "spells": [
         {
             "key": "g",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6a/BTNGatherGold.png/revision/latest?cb=20090112004203",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/ba/BTNGatherGold-Reforged.png/revision/latest?cb=20210427165634",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "e",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/18/BTNReturnGoods.png/revision/latest?cb=20090112020210",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a7/BTNReturnGoods-Reforged.png/revision/latest?cb=20210516012300",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNCannibalize.png/revision/latest?cb=20090111223001",
-            "isClick": true,
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a9/BTNCannibalize-Reforged.png/revision/latest?cb=20210417060851",
+            "isClick": false,
             "isAura": false
         }
     ],

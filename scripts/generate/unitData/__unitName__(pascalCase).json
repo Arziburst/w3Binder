@@ -1,11 +1,11 @@
 {
     "unitName": "__unitName__(titleCase)",
-    "unitImgUrl": false,
+    "unitImgUrl": "",
     "spells": [
         {
             "key": "",
-            "spellImgUrl": false,
-            "isClick": true,
+            "spellImgUrl": "",
+            "isClick": false,
             "isAura": false
         }
     ],

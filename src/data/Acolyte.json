@@ -5,14 +5,14 @@
         false,
         {
             "key": "u",
-            "spellImgUrl": false,
-            "isClick": false,
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/16/BTNUnsummonBuilding-Reforged.png/revision/latest?cb=20210516062752",
+            "isClick": true,
             "isAura": false
         },
         false,
         {
             "key": "c",
-            "spellImgUrl": false,
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/23/BTNSacrifice-Reforged.png/revision/latest?cb=20210516015950",
             "isClick": true,
             "isAura": false
         }

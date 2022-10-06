@@ -4,19 +4,19 @@
     "spells": [
         {
             "key": "g",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/73/BTNPurge.png/revision/latest?cb=20090112015657",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d0/BTNPurge-Reforged.png/revision/latest?cb=20210512152401",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "l",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/eb/BTNLightningShield.png/revision/latest?cb=20090112013759",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/05/BTNLightningShield-Reforged.png/revision/latest?cb=20210510102006",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "b",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8f/BTNBloodLustOff.png/revision/latest?cb=20090111221508",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b9/BTNBloodLust-Reforged.png/revision/latest?cb=20210415235358",
             "isClick": true,
             "isAura": false
         }

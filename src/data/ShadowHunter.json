@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "e",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNHealingWave.png/revision/latest?cb=20090112033621",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/2f/BTNHealingWave-Reforged.png/revision/latest?cb=20210508055336",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "x",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/24/BTNHex.png/revision/latest?cb=20090112033717",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fc/BTNHex-Reforged.png/revision/latest?cb=20210508062640",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "w",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNSerpentWard.png/revision/latest?cb=20090112040529",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/be/BTNSerpentWard-Reforged.png/revision/latest?cb=20210516044311",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "v",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fa/BTNBigBadVoodooSpell.png/revision/latest?cb=20090111201159",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4f/BTNBigBadVoodooSpell-Reforged.png/revision/latest?cb=20210415234615",
             "isClick": true,
             "isAura": false
         }

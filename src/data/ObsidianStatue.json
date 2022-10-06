@@ -4,19 +4,19 @@
     "spells": [
         {
             "key": "b",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/72/BTNReplenishHealthOff.png/revision/latest?cb=20090112040017",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/0d/BTNReplenishHealth-Reforged.png/revision/latest?cb=20210516011830",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/76/BTNReplenishManaOff.png/revision/latest?cb=20090112040050",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c3/BTNReplenishMana-Reforged.png/revision/latest?cb=20210516012027",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "t",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f2/BTNDestroyer.png/revision/latest?cb=20090111205037",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/46/BTNDestroyer-Reforged.png/revision/latest?cb=20210424152147",
             "isClick": false,
             "isAura": false
         }

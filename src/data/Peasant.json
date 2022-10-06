@@ -1,7 +1,38 @@
 {
     "unitName": "Peasant",
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8e/BTNPeasant-Reforged.png/revision/latest?cb=20210512144114",
-    "spells": false,
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/af/BTNRepair-Reforged.png/revision/latest?cb=20210516011604",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/ba/BTNGatherGold-Reforged.png/revision/latest?cb=20210427165634",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a7/BTNReturnGoods-Reforged.png/revision/latest?cb=20210516012300",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/1c/BTNHumanBuild-Reforged.png/revision/latest?cb=20210508192154",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/35/BTNCallToArms-Reforged.png/revision/latest?cb=20210417060820",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
     "type": "army",
     "race": "human",
     "buildings": [

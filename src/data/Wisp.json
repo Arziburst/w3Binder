@@ -1,7 +1,32 @@
 {
     "unitName": "Wisp",
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d3/BTNWisp-Reforged.png/revision/latest?cb=20210516064709",
-    "spells": false,
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/af/BTNRepair-Reforged.png/revision/latest?cb=20210516011604",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/ba/BTNGatherGold-Reforged.png/revision/latest?cb=20210427165634",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/6b/BTNWispSplode-Reforged.png/revision/latest?cb=20210516064719",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d8/BTNNightElfBuild-Reforged.png/revision/latest?cb=20210510110336",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
     "type": "army",
     "race": "nightElf",
     "buildings": [

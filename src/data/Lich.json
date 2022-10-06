@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "n",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/04/BTNGlacier.png/revision/latest?cb=20090112004354",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e9/BTNGlacier-Reforged.png/revision/latest?cb=20210427170351",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "f",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b2/BTNFrostArmorOff.png/revision/latest?cb=20090112033216",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/01/BTNFrostArmor-Reforged.png/revision/latest?cb=20210426033448",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "r",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/7a/BTNDarkRitual.png/revision/latest?cb=20090112000208",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d4/BTNDarkRitual-Reforged.png/revision/latest?cb=20210424150008",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "d",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/17/BTNDeathAndDecay.png/revision/latest?cb=20090112000303",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/00/BTNDeathAndDecay-Reforged.png/revision/latest?cb=20210424151333",
             "isClick": true,
             "isAura": false
         }

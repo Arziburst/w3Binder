@@ -1,0 +1,20 @@
+{
+    "unitName": "Boneyard",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4b/BTNBoneYard-Reforged.png/revision/latest?cb=20210415235603",
+    "spells": [
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dd/BTNFrostWyrm-Reforged.png/revision/latest?cb=20210426033736",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/91/BTNFreezingBreath-Reforged.png/revision/latest?cb=20210426033439",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

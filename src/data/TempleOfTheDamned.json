@@ -1,0 +1,38 @@
+{
+    "unitName": "Temple Of The Damned",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/3f/BTNTempleOfTheDamned-Reforged.png/revision/latest?cb=20210516060416",
+    "spells": [
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c7/BTNNecromancer-Reforged.png/revision/latest?cb=20210510105934",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e5/BTNBanshee-Reforged.png/revision/latest?cb=20210415233844",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/73/BTNSkeletonMage-Reforged.png/revision/latest?cb=20210516045529",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/3f/BTNNecromancerAdept-Reforged.png/revision/latest?cb=20210510105938",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "a",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/3c/BTNBansheeAdept-Reforged.png/revision/latest?cb=20210415233855",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

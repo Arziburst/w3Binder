@@ -1,0 +1,20 @@
+{
+    "unitName": "Ziggurat",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/81/BTNZiggurat-Reforged.png/revision/latest?cb=20210516064945",
+    "spells": [
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNZigguratUpgrade-Reforged.png/revision/latest?cb=20210516064949",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/05/BTNFrostTower-Reforged.png/revision/latest?cb=20210426033714",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

@@ -1,0 +1,20 @@
+{
+    "unitName": "Necropolis",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/21/BTNNecropolis-Reforged.png/revision/latest?cb=20210510105945",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/89/BTNAcolyte-Reforged.png/revision/latest?cb=20210415191508",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "u",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8d/BTNHallOfTheDead-Reforged.png/revision/latest?cb=20210508054505",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

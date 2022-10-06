@@ -1,0 +1,14 @@
+{
+    "unitName": "Sacrificial Pit",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/2c/BTNSacrificialPit-Reforged.png/revision/latest?cb=20210516020121",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/23/BTNSacrifice-Reforged.png/revision/latest?cb=20210516015950",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

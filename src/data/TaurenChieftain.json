@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "w",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNShockWave.png/revision/latest?cb=20090112021117",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e1/BTNShockWave-Reforged.png/revision/latest?cb=20210516045106",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "t",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/bc/BTNWarStomp.png/revision/latest?cb=20090112023315",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4d/BTNWarStomp-Reforged.png/revision/latest?cb=20210516063629",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "e",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/37/PASBTNCommand.png/revision/latest?cb=20090513192842",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/18/PASBTNCommand-Reforged.png/revision/latest?cb=20220925072338",
             "isClick": false,
             "isAura": true
         },
         {
             "key": "r",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/0a/PASBTNReincarnation.png/revision/latest?cb=20090513193342",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/01/BTNReincarnation-Reforged.png/revision/latest?cb=20210516011419",
             "isClick": false,
             "isAura": true
         }

@@ -1,0 +1,62 @@
+{
+    "unitName": "Tomb Of Relics",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c2/BTNTombOfRelics-Reforged.png/revision/latest?cb=20210516061233",
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8f/BTNRodOfNecromancy-Reforged.png/revision/latest?cb=20210516015704",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "a",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/74/BTNSacrificialDagger-Reforged.png/revision/latest?cb=20210516020115",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "k",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/38/BTNSacrificialSkull-Reforged.png/revision/latest?cb=20210516025036",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/59/BTNDustOfAppearance-Reforged.png/revision/latest?cb=20210425013559",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "p",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dc/BTNPotionGreenSmall-Reforged.png/revision/latest?cb=20210512150008",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/61/BTNPotionBlueSmall-Reforged.png/revision/latest?cb=20210512145615",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/31/BTNScrollUber-Reforged.png/revision/latest?cb=20210516042334",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b5/BTNOrbOfCorruption-Reforged.png/revision/latest?cb=20210512142526",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "h",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/68/BTNScrollOfTownPortal-Reforged.png/revision/latest?cb=20210516042330",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

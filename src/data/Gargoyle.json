@@ -1,0 +1,14 @@
+{
+    "unitName": "Gargoyle",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/80/BTNGargoyle-Reforged.png/revision/latest?cb=20210427165617",
+    "spells": [
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/37/BTNStoneForm-Reforged.png/revision/latest?cb=20210516055210",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "undead"
+}

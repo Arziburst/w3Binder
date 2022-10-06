@@ -4,9 +4,9 @@
     "spells": [
         {
             "key": "b",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/10/BTNHeadHunterBerserker.png/revision/latest?cb=20090112033559",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/2c/BTNHeadHunterBerserker-Reforged.png/revision/latest?cb=20210508054853",
             "isClick": false,
-            "isAura": false
+            "isAura": true
         }
     ],
     "type": "army",

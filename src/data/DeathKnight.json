@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/16/BTNDeathCoil.png/revision/latest?cb=20090112000314",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/93/BTNDeathCoil-Reforged.png/revision/latest?cb=20210424151338",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "e",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/01/BTNDeathPact.png/revision/latest?cb=20090112000325",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/2b/BTNDeathPact-Reforged.png/revision/latest?cb=20210424151342",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "u",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b7/PASBTNUnholyAura.png/revision/latest?cb=20090513193416",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/37/BTNUnholyAura-Reforged.png/revision/latest?cb=20210516062602",
             "isClick": false,
             "isAura": true
         },
         {
             "key": "d",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b1/BTNAnimateDead.png/revision/latest?cb=20090111200810",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/9e/BTNAnimateDead-Reforged.png/revision/latest?cb=20210415215609",
             "isClick": false,
             "isAura": false
         }

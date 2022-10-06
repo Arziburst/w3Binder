@@ -4,13 +4,7 @@
     "spells": [
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNCannibalize.png/revision/latest?cb=20090111223001",
-            "isClick": true,
-            "isAura": false
-        },
-        {
-            "key": "d",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/72/PASBTNPlagueCloud.png/revision/latest?cb=20090513193312",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a9/BTNCannibalize-Reforged.png/revision/latest?cb=20210417060851",
             "isClick": false,
             "isAura": false
         }

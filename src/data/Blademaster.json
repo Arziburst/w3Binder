@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "w",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8a/BTNWindWalkOn.png/revision/latest?cb=20090112023444",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/18/BTNWindWalkOn-Reforged.png/revision/latest?cb=20210516064300",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "r",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b0/BTNMirrorImage.png/revision/latest?cb=20090112014418",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/49/BTNMirrorImage-Reforged.png/revision/latest?cb=20210510103441",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a8/PASBTNCriticalStrike.png/revision/latest?cb=20090513193123",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/04/BTNCriticalStrike-Reforged.png/revision/latest?cb=20210417065445",
             "isClick": false,
             "isAura": true
         },
         {
             "key": "b",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/ed/BTNWhirlwind.png/revision/latest?cb=20090123023953",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c4/BTNWhirlwind-Reforged.png/revision/latest?cb=20210516064245",
             "isClick": false,
             "isAura": false
         }

@@ -4,19 +4,19 @@
     "spells": [
         {
             "key": "r",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/9c/BTNRaiseDeadOff.png/revision/latest?cb=20090112015731",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dc/BTNRaiseDead-Reforged.png/revision/latest?cb=20210512152942",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "u",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/cc/BTNUnholyFrenzy.png/revision/latest?cb=20090112022909",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/53/BTNUnholyFrenzy-Reforged.png/revision/latest?cb=20210516062607",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f6/BTNCripple.png/revision/latest?cb=20090111235632",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/2c/BTNCripple-Reforged.png/revision/latest?cb=20210417065357",
             "isClick": true,
             "isAura": false
         }

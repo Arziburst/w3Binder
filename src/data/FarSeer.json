@@ -4,25 +4,25 @@
     "spells": [
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/ee/BTNChainLightning.png/revision/latest?cb=20090111223436",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/03/BTNChainLightning-Reforged.png/revision/latest?cb=20210417061727",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "f",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNFarSight.png/revision/latest?cb=20090112003639",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/58/BTNFarSight-Reforged.png/revision/latest?cb=20210426031920",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "t",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/56/BTNSpiritWolf.png/revision/latest?cb=20090112021703",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8a/BTNSpiritWolf-Reforged.png/revision/latest?cb=20210516054546",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "e",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNEarthquake.png/revision/latest?cb=20090112001121",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/19/BTNEarthquake-Reforged.png/revision/latest?cb=20210425013848",
             "isClick": true,
             "isAura": false
         }

@@ -1,0 +1,32 @@
+{
+    "unitName": "Crypt Lord",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f8/BTNHeroCryptLord-Reforged.png/revision/latest?cb=20210508061627",
+    "spells": [
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c5/BTNImpale-Reforged.png/revision/latest?cb=20210508194402",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "s",
+            "spellImgUrl": false,
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d5/BTNCarrionScarabs-Reforged.png/revision/latest?cb=20210417060914",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "l",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/5e/BTNLocustSwarm-Reforged.png/revision/latest?cb=20210510102231",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "",
+    "race": ""
+}

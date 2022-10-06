@@ -1,7 +1,32 @@
 {
     "unitName": "Peon",
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/16/BTNPeon-Reforged.png/revision/latest?cb=20210512144316",
-    "spells": false,
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/af/BTNRepair-Reforged.png/revision/latest?cb=20210516011604",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/ba/BTNGatherGold-Reforged.png/revision/latest?cb=20210427165634",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a7/BTNReturnGoods-Reforged.png/revision/latest?cb=20210516012300",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b6/BTNBasicStruct-Reforged.png/revision/latest?cb=20210415234216",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
     "type": "army",
     "race": "orc",
     "buildings": [

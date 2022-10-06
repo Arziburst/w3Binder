@@ -1,0 +1,32 @@
+{
+    "unitName": "Graveyard",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNGraveYard-Reforged.png/revision/latest?cb=20210427173834",
+    "spells": [
+        {
+            "key": "s",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/95/BTNUnholyStrength-Reforged.png/revision/latest?cb=20210516062612",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "u",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d2/BTNUnholyArmor-Reforged.png/revision/latest?cb=20210516062551",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "a",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dd/BTNCreatureAttack-Reforged.png/revision/latest?cb=20210417065315",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/71/BTNCreatureCarapace-Reforged.png/revision/latest?cb=20210417065351",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

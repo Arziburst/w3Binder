@@ -1,0 +1,44 @@
+{
+    "unitName": "Slaughterhouse",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/78/BTNSlaughterHouse-Reforged.png/revision/latest?cb=20210516045732",
+    "spells": [
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e3/BTNMeatWagon-Reforged.png/revision/latest?cb=20210510103100",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "a",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f7/BTNAbomination-Reforged.png/revision/latest?cb=20210415154425",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "o",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/40/BTNObsidianStatue-Reforged.png/revision/latest?cb=20210510110540",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/01/BTNExhumeCorpses-Reforged.png/revision/latest?cb=20210425015404",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/66/BTNPlagueCloud-Reforged.png/revision/latest?cb=20210512145025",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/46/BTNDestroyer-Reforged.png/revision/latest?cb=20210424152147",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

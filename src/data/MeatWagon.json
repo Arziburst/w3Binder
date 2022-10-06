@@ -4,13 +4,13 @@
     "spells": [
         {
             "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f1/BTNUndeadLoadOff.png/revision/latest?cb=20090112022802",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/80/BTNUndeadLoad-Reforged.png/revision/latest?cb=20210516062329",
             "isClick": false,
             "isAura": false
         },
         {
             "key": "d",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fe/BTNUndeadUnLoad.png/revision/latest?cb=20090112022835",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/35/BTNUndeadUnLoad-Reforged.png/revision/latest?cb=20210516062546",
             "isClick": true,
             "isAura": false
         }

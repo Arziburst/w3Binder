@@ -1,0 +1,56 @@
+{
+    "unitName": "Crypt",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8f/BTNCrypt-Reforged.png/revision/latest?cb=20210417065623",
+    "spells": [
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c6/BTNGhoul-Reforged.png/revision/latest?cb=20210427170006",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/51/BTNCryptFiend-Reforged.png/revision/latest?cb=20210417065628",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "a",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/80/BTNGargoyle-Reforged.png/revision/latest?cb=20210427165617",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "z",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/3c/BTNGhoulFrenzy-Reforged.png/revision/latest?cb=20210427170056",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f9/BTNCryptFiendBurrow-Reforged.png/revision/latest?cb=20210417065642",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "s",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/37/BTNStoneForm-Reforged.png/revision/latest?cb=20210516055210",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a9/BTNCannibalize-Reforged.png/revision/latest?cb=20210417060851",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/46/BTNWeb-Reforged.png/revision/latest?cb=20210516064007",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "undead"
+}

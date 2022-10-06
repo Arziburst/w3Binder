@@ -4,13 +4,13 @@
     "spells": [
         {
             "key": "w",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/5e/BTNWebOff.png/revision/latest?cb=20090112023348",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/46/BTNWeb-Reforged.png/revision/latest?cb=20210516064007",
             "isClick": true,
             "isAura": false
         },
         {
             "key": "b",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a4/BTNCryptFiendBurrow.png/revision/latest?cb=20090111204534",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f9/BTNCryptFiendBurrow-Reforged.png/revision/latest?cb=20210417065642",
             "isClick": false,
             "isAura": false
         }
