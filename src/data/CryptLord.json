@@ -12,7 +12,7 @@
             "key": "s",
             "spellImgUrl": false,
             "isClick": false,
-            "isAura": false
+            "isAura": true
         },
         {
             "key": "c",
