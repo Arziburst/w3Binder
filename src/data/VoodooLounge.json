@@ -1,0 +1,56 @@
+{
+    "unitName": "Voodoo Lounge",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e8/BTNVoodooLounge-Reforged.png/revision/latest?cb=20210516063307",
+    "spells": [
+        {
+            "key": "h",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8a/BTNHealingSalve-Reforged.png/revision/latest?cb=20210508055310",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a8/BTNLesserClarityPotion-Reforged.png/revision/latest?cb=20210510101705",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "s",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNScrollOfHaste-Reforged.png/revision/latest?cb=20210516042125",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "p",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dc/BTNPotionGreenSmall-Reforged.png/revision/latest?cb=20210512150008",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/61/BTNPotionBlueSmall-Reforged.png/revision/latest?cb=20210512145615",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/31/BTNScrollUber-Reforged.png/revision/latest?cb=20210516042334",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "l",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/dd/BTNOrbOfLightning-Reforged.png/revision/latest?cb=20210512142914",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fd/BTNGreatHall-Reforged.png/revision/latest?cb=20210427174300",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

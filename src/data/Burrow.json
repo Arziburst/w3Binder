@@ -1,0 +1,14 @@
+{
+    "unitName": "Burrow",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/aa/BTNTrollBurrow-Reforged.png/revision/latest?cb=20210516061827",
+    "spells": [
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f4/BTNBattleStations-Reforged.png/revision/latest?cb=20210415234243",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

@@ -1,0 +1,32 @@
+{
+    "unitName": "Spirit Walker",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/1a/BTNSpiritWalkerEthereal.png/revision/latest?cb=20210516054537",
+    "spells": [
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/da/BTNSpiritLink-Reforged.png/revision/latest?cb=20210516054344",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c9/BTNDisenchant-Reforged.png/revision/latest?cb=20210424152527",
+            "isClick": true,
+            "isAura": false
+        },
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f1/BTNAncestralSpirit-Reforged.png/revision/latest?cb=20210415214934",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d3/BTNSpiritWalker-Reforged.png/revision/latest?cb=20210516054530",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "orc"
+}

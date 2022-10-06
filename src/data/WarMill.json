@@ -1,0 +1,38 @@
+{
+    "unitName": "War Mill",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/84/BTNForge-Reforged.png/revision/latest?cb=20210426033152",
+    "spells": [
+        {
+            "key": "m",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/3/30/BTNOrcMeleeUpOne-Reforged.png/revision/latest?cb=20210512143209",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/9d/BTNSteelRanged-Reforged.png/revision/latest?cb=20210516055119",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "s",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/1f/BTNSpikedBarricades-Reforged.png/revision/latest?cb=20210516054314",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "a",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a1/BTNSteelArmor-Reforged.png/revision/latest?cb=20210516055109",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/0a/BTNReinforcedBurrows-Reforged.png/revision/latest?cb=20210516011540",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

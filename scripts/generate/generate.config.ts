@@ -14,11 +14,13 @@ CLIGen(pkg.path, [
                         pattern:        '// unitImportJsonMarker',
                         pathToMarker:   './src/data/index.ts',
                         markerTemplate: './scripts/generate/unitData/.genignore/unitImportJsonMarker.ts',
+                        genDirection:   'before',
                     },
                     {
                         pattern:        '// unitJsonMarker',
                         pathToMarker:   './src/data/index.ts',
                         markerTemplate: './scripts/generate/unitData/.genignore/unitJsonMarker.ts',
+                        genDirection:   'before',
                     },
                 ],
             },

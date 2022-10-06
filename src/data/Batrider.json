@@ -1,0 +1,14 @@
+{
+    "unitName": "Batrider",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/83/BTNTrollBatRider-Reforged.png/revision/latest?cb=20210516061823",
+    "spells": [
+        {
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/49/BTNUnstableConcoction-Reforged.png/revision/latest?cb=20210516062748",
+            "isClick": true,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "orc"
+}

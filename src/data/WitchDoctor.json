@@ -1,0 +1,26 @@
+{
+    "unitName": "Witch Doctor",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/a9/BTNWitchDoctor-Reforged.png/revision/latest?cb=20210516064723",
+    "spells": [
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/7c/BTNSentryWard-Reforged.png/revision/latest?cb=20210516043654",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/40/BTNStasisTrap-Reforged.png/revision/latest?cb=20210516055052",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c5/BTNHealingWard-Reforged.png/revision/latest?cb=20210508055322",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "army",
+    "race": "orc"
+}

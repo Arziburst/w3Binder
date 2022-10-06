@@ -1,0 +1,32 @@
+{
+    "unitName": "Great Hall",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fd/BTNGreatHall-Reforged.png/revision/latest?cb=20210427174300",
+    "spells": [
+        {
+            "key": "p",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/16/BTNPeon-Reforged.png/revision/latest?cb=20210512144316",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/e/e9/BTNPillage-Reforged.png/revision/latest?cb=20210512144651",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d1/BTNPackBeast-Reforged.png/revision/latest?cb=20210512143738",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "u",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/a/af/BTNStrongHold-Reforged.png/revision/latest?cb=20210516055422",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

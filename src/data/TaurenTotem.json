@@ -1,0 +1,32 @@
+{
+    "unitName": "Tauren Totem",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/01/BTNTaurenTotem-Reforged.png/revision/latest?cb=20210516060255",
+    "spells": [
+        {
+            "key": "w",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/1/1a/BTNSpiritWalkerEthereal.png/revision/latest?cb=20210516054537",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/0a/BTNTauren-Reforged.png/revision/latest?cb=20210516060056",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/7/78/BTNSpiritWalkerAdeptTraining-Reforged.png/revision/latest?cb=20210516054534",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "p",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/6/67/BTNSmash-Reforged.png/revision/latest?cb=20210516050111",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}

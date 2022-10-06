@@ -1,0 +1,50 @@
+{
+    "unitName": "Barracks",
+    "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/98/BTNBarracks-Reforged.png/revision/latest?cb=20210415234052",
+    "spells": [
+        {
+            "key": "g",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/90/BTNGrunt-Reforged.png/revision/latest?cb=20210427174438",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c6/BTNHeadhunter-Reforged.png/revision/latest?cb=20210508054849",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/0/04/BTNDemolisher-Reforged.png/revision/latest?cb=20210424151935",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "e",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/2/2c/BTNHeadHunterBerserker-Reforged.png/revision/latest?cb=20210508054853",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "n",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/fd/BTNFireRocks-Reforged.png/revision/latest?cb=20210426032520",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/83/BTNBerserk-Reforged.png/revision/latest?cb=20210415234433",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "r",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4e/BTNRegenerate-Reforged.png/revision/latest?cb=20210516011403",
+            "isClick": false,
+            "isAura": false
+        }
+    ],
+    "type": "building",
+    "race": "orc"
+}
