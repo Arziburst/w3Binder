@@ -3,8 +3,26 @@
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/4a/BTNAltarOfStorms-Reforged.png/revision/latest?cb=20210415212213",
     "spells": [
         {
-            "key": "",
-            "spellImgUrl": "",
+            "key": "h",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/86/BTNShadowHunter-Reforged.png/revision/latest?cb=20210516044259",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/9/96/BTNHeroBlademaster-Reforged.png/revision/latest?cb=20210508061619",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "f",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/b5/BTNHeroFarseer-Reforged.png/revision/latest?cb=20210508062303",
+            "isClick": false,
+            "isAura": false
+        },
+        {
+            "key": "t",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/b/be/BTNHeroTaurenChieftain-Reforged.png/revision/latest?cb=20210508062622",
             "isClick": false,
             "isAura": false
         }

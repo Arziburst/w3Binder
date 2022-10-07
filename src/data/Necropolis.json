@@ -9,6 +9,12 @@
             "isAura": false
         },
         {
+            "key": "b",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/d/d1/BTNPackBeast-Reforged.png/revision/latest?cb=20210512143738",
+            "isClick": false,
+            "isAura": false
+        },
+        {
             "key": "u",
             "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/8/8d/BTNHallOfTheDead-Reforged.png/revision/latest?cb=20210508054505",
             "isClick": false,

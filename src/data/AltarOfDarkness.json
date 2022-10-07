@@ -3,14 +3,14 @@
     "unitImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/4/48/BTNAltarOfDarkness-Reforged.png/revision/latest?cb=20210415212128",
     "spells": [
         {
-            "key": "d",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/5f/BTNHeroDeathKnight-Reforged.png/revision/latest?cb=20210508061720",
+            "key": "c",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f8/BTNHeroCryptLord-Reforged.png/revision/latest?cb=20210508061627",
             "isClick": false,
             "isAura": false
         },
         {
-            "key": "l",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c7/BTNHeroLich-Reforged.png/revision/latest?cb=20210508062320",
+            "key": "d",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/5/5f/BTNHeroDeathKnight-Reforged.png/revision/latest?cb=20210508061720",
             "isClick": false,
             "isAura": false
         },
@@ -21,8 +21,8 @@
             "isAura": false
         },
         {
-            "key": "c",
-            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/f/f8/BTNHeroCryptLord-Reforged.png/revision/latest?cb=20210508061627",
+            "key": "l",
+            "spellImgUrl": "https://static.wikia.nocookie.net/wowpedia/images/c/c7/BTNHeroLich-Reforged.png/revision/latest?cb=20210508062320",
             "isClick": false,
             "isAura": false
         }
